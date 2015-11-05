@@ -14,14 +14,15 @@ cover:  "assets/category/type-javascript.png"
 
 先看个例子:
 
-```
+```html
 <video controls autoplay name="media"> 
     <source id="mp4" src="http://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4">
 </video>
 ```
 &emsp;&emsp;这样一个标签可以在浏览器产生几个界面你相对较复杂的播放器，怎么做到的?
 &emsp;&emsp;为了理解问题，可以选择chrome设置里面的show userAgent shawdow，就可以看到shadow dom里的内容。
-```
+
+```html
 <video src="a.mp4" width="480" height="360">
     #shadow root
     <div pseudo="-webkit-media-controls">
@@ -43,6 +44,7 @@ cover:  "assets/category/type-javascript.png"
         </div>
     </div>
 </video>
+
 ```
 &emsp;&emsp;shadow-root里面的内容就是所有视频播放器控制组件的所在之处，css也可以看到，可见video标签内部也是很多个div和input形成的。
 &emsp;&emsp;另外浏览器之所以将其置灰，是为了表明这部分是在 shadow DOM 里，对于页面的其他部分来说它是 不可用的 。这里的 不可用 意味着你写的 CSS 选择器和 JavaScript 代码都不会影响到这部分内容。实际上，就是让video 标签的逻辑和样式都被浏览器封装了。
@@ -57,7 +59,7 @@ cover:  "assets/category/type-javascript.png"
 （不过需要注意的是，目前支持chrome31、android4.4以上版本）
 下面看个示例，是实现一个图文组合的组件功能：
 
-```
+```html
 <!doctype html>
 <html>
 <head>
@@ -70,10 +72,12 @@ cover:  "assets/category/type-javascript.png"
 <x-image src="http://9.url.cn/edu/banner/img/aa73d17e_760_300.jpg" width="320" height="150" alt="banner自定义文本"></x-image>
 </body>
 </html>
+
 ```
 
 组价模板的代码文件如下
-```
+
+```html
 <!-- 定义组件 -->
 <template>
     <!-- 组件模板 -->
@@ -188,7 +192,9 @@ cover:  "assets/category/type-javascript.png"
 
     })(document.currentScript.ownerDocument); // ownerDocument指向被导入的文档对象（本文件）
 </script>
+
 ```
+
 html中使用html import方式引入外部的shadow dom内容，在支持shadow dom的浏览器上显示如下效果，同时在自定义的组件里可以按照自己的需要向外暴露可配置属性和webApi接口。
 
 ![](http://7tszky.com1.z0.glb.clouddn.com/FvIroGHVjTDqvFRPu0i1vgg0y2a2)

@@ -30,7 +30,7 @@ layout: default
 
 {% if page.tags.size > 0 %}
 <section class="tags">
-	<strong>Tags:</strong> {% for tag in page.tags %}<a target="_blank" href="{{ site.baseurl }}tag/{{ tag }}">{{ tag }}</a>{% if forloop.last == false %},&nbsp;{% endif %}{% endfor %}
+	<strong>Tags:</strong> {% for tag in page.tags %}<a target="_blank" href="{{ site.baseurl }}tags/?tag={{ tag }}">{{ tag }}</a>{% if forloop.last == false %},&nbsp;{% endif %}{% endfor %}
 </section>
 {% endif %}
 

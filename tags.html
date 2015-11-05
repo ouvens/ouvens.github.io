@@ -1,0 +1,53 @@
+---
+layout: page
+title: "标签分类"
+permalink: /tags/
+---
+
+{% for tag in site.tags %}
+    {% capture cat %}{{ tag | first }}{% endcapture %}
+        <div class="tag tag-hide" data-tag="{{ cat }}">
+            <h2>{{ cat | capitalize }}</h2>
+            <ul class="posts-list">
+            {% for post in site.tags[cat] %}
+                <li>
+                    <strong>
+                        <a target="_blank" href="{{ post.url | remove_first: '/' | prepend: site.baseurl }}">{{ post.title }}</a>
+                    </strong>
+                    <span class="post-date">- {{ post.date | date_to_long_string }}</span>
+                </li>
+            {% endfor %}
+            </ul>
+
+            {% if forloop.last == false %}<hr>{% endif %}
+        </div>
+{% endfor %}
+<br>
+
+<script type="text/javascript">
+    function getParam(par){
+        var search = document.location.href; 
+        var get = search.indexOf(par +"=");
+        if(get == -1){
+            return false;   
+        }
+        var params = search.slice(par.length + get + 1); 
+        var nextPar = params.indexOf("&");
+        if(nextPar != -1){
+            params = params.slice(0, nextPar);
+        }
+        return params || "";
+    }
+
+    var keywords = getParam('tag') && getParam('tag').toLowerCase();
+
+    var $tag = $('.post-content');
+    if(keywords){
+        $tag.find('.tag').hide();
+        $tag.find('.tag[data-tag=' + keywords + ']').show();
+        $('.post-header .post-title').text(keywords);
+    }else{
+        $tag.find('.tag').show();
+        $('.post-header .post-title').text('所有标签');
+    }
+</script>

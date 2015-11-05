@@ -1,0 +1,103 @@
+# External gems
+gems:
+  # - jekyll-archives # Sorry, not GitHub pages friendly!
+  - jekyll-sitemap
+  - jekyll-paginate
+
+exclude:
+  - "/vendor/"
+
+# Site settings
+encoding: "utf-8"
+title: "极限前端"
+subtitle: "极限前端, 讲述前端高效技术与前沿"
+email: ouvenzhang@tencent.com
+name: ouvenzhang
+description: "极限前端, ouenzhang的博客, github地址, 前端技术, 讲述前端高效技术与前沿。"
+baseurl: ""  # the subpath of your site, e.g. /blog/
+url: "http://ouvens.github.io" # the base hostname & protocol for your site
+cover: "assets/header_image.png"
+logo: "assets/logo.png"
+keywords: "极限前端, ouenzhang, 博客, github, 前端技术, javascript, css, html"
+image: "http://ouvens.github.io/blog/assets/logo.png"
+
+# Build settings
+markdown: kramdown
+highlighter: true
+# markdown: redcarpet
+# redcarpet:
+#     extensions: [ "fenced_code_blocks", "hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "highlight", "prettify","no_intra_emphasis"]
+
+paginate: 10
+paginate_path: "/page:num/"
+
+# Archive settings (see https://github.com/jekyll/jekyll-archives/)
+jekyll-archives:
+  enabled: 
+    - categories
+    - tags
+  layout: 'archive'
+  permalinks:
+    category: '/category/:name/'
+    tag: '/tag/:name/'
+
+# Disqus comments
+# disqus_shortname: bencentra
+
+# Google analytics
+# ga_tracking_id: "UA-XXXX-1"
+
+# Category descriptions (for archive pages)
+descriptions:
+  - cat: frontend-javascript
+    desc: "About javascript."
+
+  - cat: frontend-client
+    desc: "About Mobile web app."
+
+# Social icons and sharing options
+#
+# Social settings are used in two places:
+# * In the footer, as links to your personal profiles
+# * After each blog post for sharing widgets
+# 
+# Example:
+# 
+# social:
+#   - name: Twitter                         # Name of the service
+#     icon: twitter                         # Font Awesome icon to use (minus fa- prefix)
+#     username: "@TheBenCentra"             # (User) Name to display in the footer link
+#     url: https://twitter.com/TheBenCentra # URL of your profile (leave blank to not display in footer)
+#     desc: Follow me on Twitter            # Description to display as link title, etc
+#     share: true                           # Include in the "Share" section of posts
+social:
+
+# - name: Facebook
+#   icon: facebook
+#   username: thebencentra
+#   url: 
+#   desc: Friend me on Facebook
+#   share: true
+
+  - name: GitHub
+    icon: github
+    username: ouvens
+    url: https://github.com/ouvens
+    desc: Fork me on GitHub
+    share: true
+
+
+# Social sharing protocols
+# These are for automatically generating sharing metadata for FB and Twitter
+# OS Protocol is for sharing the source of your site, if you're interested. For more, see osprotocol.com
+protocols:
+    fb_image: "assets/logo.png"
+    fb_image_width: 612
+    fb_image_height: 605
+    fb_image_type: "image/png"
+
+    twitter_image: "assets/logo.png"
+
+    os_repo: "https://github.com/RichardLitt/wordhoardpress.com"
+    os_rcs_type: "git"
+    os_src: "git@github.com:RichardLitt/wordhoardpress.com.git"

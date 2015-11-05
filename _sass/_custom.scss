@@ -1,0 +1,23 @@
+
+.post-excerpt p{
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    height: 90px;
+}
+
+pre code.language-text{
+    font-size: modular-scale(-1);
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: #23241f;
+    -webkit-text-size-adjust: none;
+    color: #f8f8f2;
+}
+.post-header-container{
+    background-color: #0192e1;
+}

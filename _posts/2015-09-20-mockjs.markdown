@@ -1,0 +1,146 @@
+---
+layout: post
+title:  "Mock.js前端开发cgi数据模拟工具"
+date:   2015-09-20
+author: ouven
+categories: frontend-javascript
+tags: Mockjs 前端开发 cgi数据模拟工具
+cover:  "assets/category/type-javascript.png"
+---
+
+### 1. 什么是Mockjs
+
+
+http://mockjs.com/
+
+&emsp;&emsp;Mockjs是个能够拦截页面ajax请求并模拟返回数据的小工具，借助Mockjs，前端开发中在后台测试接口还没有给的时候就可以自己拦截请求模拟数据进行愉快的开发了，所以只要制定好了协议，前后端分离开发的成本可以降到基本为0，也不需要联调工具了
+
+### 2，Mockjs主要功能
+
+- 基于数据模板生成模拟数据
+- 基于html模板申城模拟数据
+- 拦截并模拟ajax请求
+
+&emsp;&emsp;当然mock模拟的数据不只是随便的输出字符串，它包含了各种格式的模拟数据，例如姓名，段落，时间，日期，图片地址，身份证号，电话，邮箱，ip等等，所以以后搞数据自动校验什么的再也不用手动输入测试了。也就是Mock自动了做了很多测试调试中的那部分体力活，我们只需要安静的写代码就好了。
+&emsp;&emsp;数据模板则是根据一个模板自动根据某个规则产生数据，例如序号产生自增的数组等
+
+###### 数据模板定义 DTD
+数据模板中的每个属性由 3 部分构成：属性名、生成规则、属性值：
+
+```
+ 'name|rule': value
+```
+
+例如：
+ 
+属性名 和 生成规则 之间用 | 分隔。生成规则是可选的。生成规则 有 7 种格式：
+
+```
+'name|min-max': value
+'name|count': value
+'name|min-max.dmin-dmax': value
+'name|min-max.dcount': value
+'name|count.dmin-dmax': value
+'name|count.dcount': value
+'name|+step': value
+```
+
+&emsp;&emsp;生成规则的含义需要依赖属性值才能确定。属性值中可以含有@占位符。属性值还指定了最终值的初始值和类型，其中属性值的生成是根据Mockjs里面的随机几个固定字符串生成的。
+
+```
+{
+    'list|1-10': [{
+        'id|+1': 1
+    }]
+}
+```
+
+生成结果为：
+
+```
+{
+    "list":[
+        {"id":1},
+        {"id":2},
+        {"id":3},
+        {"id":4},{"id":5}
+    ]
+}
+```
+
+属性值的类型则可实用@来制定格式
+
+```
+{
+    name: '@chineseName',
+    ip: '@ip',
+    email: '@email',
+    avatar: '@image'
+}
+```
+
+生成结果为：
+
+```
+{
+    name: "朱信生", 
+    ip: "248.149.5.158", 
+    email: "u.wilson@lee.edu", 
+    avatar: "http://dummyimage.com/180x150"
+}
+```
+
+以中文名字生成为例子，看下Mockjs是怎么实现的：
+
+```
+chineseName: function(count) {
+    var surnames = "赵钱孙李周吴郑王冯陈褚卫蒋沈韩杨朱秦尤许何吕施张孔曹严华金魏陶姜戚谢邹喻柏水窦章云苏潘葛奚范彭郎鲁韦昌马苗凤花方俞任袁柳酆鲍史唐".split("");
+    var forenames = "贵福生龙元全国胜学祥才发武新利清飞彬富顺信子杰涛昌成康星光天达安岩中茂进林有坚和彪博绍功松善厚庆磊民友裕河哲江超浩亮政谦亨奇固之轮翰朗伯宏言若鸣朋斌梁栋维启克伦翔旭鹏月莺媛艳瑞凡佳嘉琼勤珍贞莉桂娣叶璧璐娅琦晶妍茜秋珊莎锦黛青倩婷姣婉娴瑾颖露瑶怡婵雁蓓".split("");
+    if (typeof count !== "number") {
+        count = Math.random() > .66 ? 2 : 3;
+    }
+    var surname = this.pick(surnames);
+    var forename = "";
+    count = count - 1;
+    for (var i = 0; i < count; i++) {
+        forename += this.pick(forenames);
+    }
+    return surname + forename;
+}
+```
+
+好吧，看完也是服了作者了~
+
+### 3.使用实例
+用起来也很简单
+
+```
+<script src="jquery-1.11.3.js"></script>
+<script src="mock.js"></script>
+<script>
+Mock.mock('./data.json',{
+    name: '@chineseName',
+    ip: '@ip',
+    email: '@email',
+    phone: '@phone',
+    avatar: '@image'
+});
+
+$.ajax({
+    url: './data.json',
+    type: 'get',
+    data: {
+        index:1
+    },
+    dataType: 'json',
+    success: function(res){
+        console.log(res);
+    },
+    error: function(msg){
+        console.log(msg);
+    }
+});
+</script>
+```
+
+当然，mock也支持require，sea，cmd方式引用，整体上是一个非常轻量实用的工具。

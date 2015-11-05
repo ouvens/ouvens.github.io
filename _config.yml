@@ -1,6 +1,6 @@
 # External gems
 gems:
-  # - jekyll-archives # Sorry, not GitHub pages friendly!
+  - jekyll-archives # Sorry, not GitHub pages friendly!
   - jekyll-sitemap
   - jekyll-paginate
 
@@ -14,7 +14,7 @@ subtitle: "极限前端, 讲述前端高效技术与前沿"
 email: ouvenzhang@tencent.com
 name: ouvenzhang
 description: "极限前端, ouenzhang的博客, github地址, 前端技术, 讲述前端高效技术与前沿。"
-baseurl: ""  # the subpath of your site, e.g. /blog/
+baseurl: "/blog/"  # the subpath of your site, e.g. /blog/
 url: "http://ouvens.github.io" # the base hostname & protocol for your site
 cover: "assets/header_image.png"
 logo: "assets/logo.png"
@@ -22,11 +22,11 @@ keywords: "极限前端, ouenzhang, 博客, github, 前端技术, javascript, cs
 image: "http://ouvens.github.io/blog/assets/logo.png"
 
 # Build settings
-markdown: kramdown
+# markdown: kramdown
 highlighter: true
-# markdown: redcarpet
-# redcarpet:
-#     extensions: [ "fenced_code_blocks", "hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "highlight", "prettify","no_intra_emphasis"]
+markdown: redcarpet
+redcarpet:
+    extensions: [ "fenced_code_blocks", "hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "highlight", "prettify","no_intra_emphasis"]
 
 paginate: 10
 paginate_path: "/page:num/"

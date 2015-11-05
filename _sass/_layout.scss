@@ -25,7 +25,10 @@ body{
     box-sizing: padding-box;
     min-height: 100%;
     position: relative;
-    padding-bottom: 306px;
+    padding-bottom: 450px;
+    @include media ($tablet) {
+        padding-bottom: 300px;       
+    }
 }
 ol.default {
   @extend %default-ol;

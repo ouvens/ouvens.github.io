@@ -37,6 +37,7 @@ foo1 = 3;
 
 console.log(foo, bar); // => 1, 9
 console.log(foo, bar, str); // => 1, 9,'ouven'
+
 ```
 
 >  const和let使用时注意，let 和 const 都是块作用域的
@@ -51,6 +52,7 @@ console.log(foo, bar, str); // => 1, 9,'ouven'
 }
 console.log(a); // ReferenceError
 console.log(b); // ReferenceError
+
 ```
 
 ## 二、字符串
@@ -69,7 +71,9 @@ var fullName = "Bob " + this.lastName;
  
 // good
 var fullName = 'Bob ' + this.lastName;
+
 ```
+
 超过80个字符的字符串应该使用字符串连接换行
 注：如果过度使用长字符串连接可能会对性能有影响。jsPerf & Discussion
 
@@ -94,6 +98,7 @@ var errorMessage = 'This is a super long error that ' +
   'how Batman had anything to do ' +
   'with this, you would get nowhere ' +
   'fast.';
+  
 ```
 > 编程构建字符串时，使用字符串模板而不是字符串连接
 

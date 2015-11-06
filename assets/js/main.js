@@ -70,7 +70,6 @@
                 return;
             }
 
-            window.hljs && hljs.initHighlightingOnLoad();
         });
     }*/
 
@@ -85,6 +84,7 @@
         })
     }
 
+    window.hljs && hljs.initHighlightingOnLoad();
     var menuToggle = $('#js-mobile-menu').unbind();
     $('#js-navigation-menu').removeClass("show");
     

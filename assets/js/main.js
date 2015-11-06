@@ -66,8 +66,8 @@
      */
     if(/(\d{1,4}\/){3}/.test(location.href)) {
         loadJS({
-            'highlight': '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js',
-            'lightbox': '//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js'
+            'highlight': 'http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js',
+            'lightbox': 'http://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js'
         }, function() {
 
             if (!window.hljs) {

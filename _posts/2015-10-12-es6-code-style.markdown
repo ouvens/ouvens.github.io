@@ -100,6 +100,7 @@ var errorMessage = 'This is a super long error that ' +
   'fast.';
   
 ```
+
 > 编程构建字符串时，使用字符串模板而不是字符串连接
 
 模板给你一个可读的字符串，简洁的语法与适当的换行和字符串插值特性。

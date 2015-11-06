@@ -47,34 +47,9 @@
         $('.post-header .post-title').text('所有标签');
     }
 
-    function loadJS(urlMap, fn) {
-        setTimeout(function() {
-            for (var key in urlMap) {
-                var script = document.createElement('script');
-                script.src = urlMap[key];
-                script.setAttribute('data', key);
-                script.onload = function() {
-                    fn();
-                };
-                document.body.appendChild(script);
-            }
-        }, 0);
-    }
-
-    if(/(\d{1,4}\/){3}/.test(location.href)) {
-        loadJS({
-            'highlight': '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js',
-            'lightbox': '//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js'
-        }, function() {
-            if (!window.hljs) {
-                return;
-            }
-
-            window.hljs && window.hljs.initHighlightingOnLoad();
-
-        });
-    }
-
+    /**
+     * 头部banner自适应改变
+     */
     var $coverBanner = $('.site-header-container.has-cover');
     if(device === 'pc'){
         $coverBanner.css({
@@ -86,7 +61,7 @@
         })
     }
 
-    
+    window.hljs && window.hljs.initHighlightingOnLoad();
     var menuToggle = $('#js-mobile-menu').unbind();
     $('#js-navigation-menu').removeClass("show");
     
@@ -98,7 +73,6 @@
             }
         });
     });
-
     /**
      * 搜索框输入功能,支持回车和点击搜索
      */

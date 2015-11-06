@@ -23,31 +23,3 @@ permalink: /tags/
         </div>
 {% endfor %}
 <br>
-
-<script type="text/javascript">
-    function getParam(par){
-        var search = document.location.href; 
-        var get = search.indexOf(par +"=");
-        if(get == -1){
-            return false;   
-        }
-        var params = search.slice(par.length + get + 1); 
-        var nextPar = params.indexOf("&");
-        if(nextPar != -1){
-            params = params.slice(0, nextPar);
-        }
-        return decodeURIComponent(params) || "";
-    }
-
-    var keywords = getParam('tag') && getParam('tag').toLowerCase();
-
-    var $tag = $('.post-content');
-    if(keywords){
-        $tag.find('.tag').hide();
-        $tag.find('.tag[data-tag=' + keywords + ']').show();
-        $('.post-header .post-title').text(keywords);
-    }else{
-        $tag.find('.tag').show();
-        $('.post-header .post-title').text('所有标签');
-    }
-</script>

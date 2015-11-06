@@ -29,31 +29,3 @@ permalink: /category/
 
 {% endfor %}
 <br>
-
-<script type="text/javascript">
-    function getParam(par){
-        var search = document.location.href; 
-        var get = search.indexOf(par +"=");
-        if(get == -1){
-            return false;   
-        }
-        var params = search.slice(par.length + get + 1); 
-        var nextPar = params.indexOf("&");
-        if(nextPar != -1){
-            params = params.slice(0, nextPar);
-        }
-        return decodeURIComponent(params) || "";
-    }
-
-    var keywords = getParam('cate') && getParam('cate').toLowerCase();
-
-    var $category = $('.post-content');
-    if(keywords){
-        $category.find('.category').hide();
-        $category.find('.category[data-cate=' + keywords + ']').show();
-        $('.post-header .post-title').text(keywords);
-    }else{
-        $category.find('.category').show();
-        $('.post-header .post-title').text('所有文章');
-    }
-</script>

@@ -138,9 +138,6 @@ pre code.hljs {
         @include media ($tablet) {
             display: none;
         }
-        &:hover {
-            text-decoration: none;
-        }
     }
     // Nav menu
     .navigation-wrapper {
@@ -163,7 +160,7 @@ pre code.hljs {
             font-size: 1.25em;
         }
     }
-    nav {
+    span.nav {
         float: none;
         padding: 1.25em 0;
         @include media ($tablet) {

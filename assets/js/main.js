@@ -40,7 +40,7 @@
     var $tag = $('.post-content');
     if (tagKeywords) {
         $tag.find('.tag').hide();
-        $tag.find('.tag[data-tag=' + tagKeywords + ']').show();
+        $tag.find('.tag[data-tag*=' + tagKeywords + ']').show();
         $('.post-header .post-title').text(tagKeywords);
     } else {
         $tag.find('.tag').show();
@@ -96,4 +96,18 @@
             }
         });
     });
+
+    /**
+     * 搜索框输入功能,支持回车和点击搜索
+     */
+    $('#search-input').on('keypress', '.search-text', function(e){
+        if(e.keyCode === 13 && this.value.length > 0){
+            location.replace("/tags/?tag=" + this.value);
+        }
+    }).on('click', '.search-btn', function(){
+        var value = $('#search-input').find('.search-text').val();
+        if(value.length > 0){
+            location.replace("/tags/?tag=" + value);
+        }
+    })
 })();

@@ -6,9 +6,10 @@ src: url("./fonts/iconfont.eot?#iefix") format("eot"),
     url("./fonts/iconfont.ttf") format("truetype");
 }
 
-.icon-font{font-family:"iconfont";font-size:18px;font-style:normal;font-weight: normal;font-variant: normal;text-transform: none;line-height: 1;position: relative;vertical-align:-1px;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+.icon-font{font-family:"iconfont";font-size:18px;font-style:normal;font-weight: bolder;font-variant: normal;text-transform: none;line-height: 1;position: relative;vertical-align:-1px;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
 
 .i-heart:before{content: "\f002";}
+.i-search:before{content: "\f012";}
 .i-star:before{content: "\f01d";}
 .i-v-left:before{content: "\f022";}
 .i-v-right:before{content: "\f02f";}

@@ -31,9 +31,9 @@ pre code.language-text{
     border-radius: 5px;
     background-color: #0c6eb0;
     color: #fff;
-}
-.newer-posts:hover{
-    color: #ddd;
+    &:hover{
+        color: #ddd;
+    }
 }
 
 .icon-page{
@@ -44,4 +44,30 @@ pre code.language-text{
 }
 .icon-font.i-list{
     font-size: 32px;
+}
+
+.navigation{
+    .search-input{
+        position: absolute;
+        top: 10px;
+        left: 50px;
+        right: 50px;
+        @include media ($tablet) {
+            right: 360px;
+            left: 80px;
+        }
+    .icon-font{
+            position: absolute;
+            right: 10px;
+            top: 8px;
+            font-size: 24px;
+            &:hover{
+                cursor: pointer;
+                color: #777;
+            }
+        }
+    }
+    .search-text{
+
+    }
 }

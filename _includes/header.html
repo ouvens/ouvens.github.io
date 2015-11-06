@@ -1,4 +1,4 @@
-<header class="navigation" role="banner">
+<div class="navigation" role="banner">
     <div class="navigation-wrapper">
     <a href="{{ site.baseurl }}" class="logo">
     	{% if site.logo %}
@@ -7,10 +7,14 @@
       <span>{{ site.title }}</span>
       {% endif %}
     </a>
+    <span class="search-input" id="search-input">
+      <input type="text" value="" class="search-text" placeholder="输入搜索关键字">
+      <i class="icon-font i-search search-btn"></i>
+    </span>
     <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
     	<i class="icon-font i-list fa fa-bars"></i>
     </a>
-    <nav role="navigation">
+    <span class="nav" role="navigation">
       <ul id="js-navigation-menu" class="navigation-menu show">
       	{% for page in site.pages %}
           {% if page.title and page.main_nav != false %}
@@ -20,6 +24,6 @@
           {% endif %}
         {% endfor %}
       </ul>
-    </nav>
+    </span>
   </div>
-</header>
+</div>

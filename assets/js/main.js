@@ -47,7 +47,7 @@
         $('.post-header .post-title').text('所有标签');
     }
 
-    function loadJS(urlMap, fn) {
+/*    function loadJS(urlMap, fn) {
         setTimeout(function() {
             for (var key in urlMap) {
                 var script = document.createElement('script');
@@ -61,9 +61,6 @@
         }, 0);
     }
 
-    /**
-     * 含有代码的页面加载高亮显示
-     */
     if(/(\d{1,4}\/){3}/.test(location.href)) {
         loadJS({
             'highlight': '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js',
@@ -75,7 +72,7 @@
 
             window.hljs && hljs.initHighlightingOnLoad();
         });
-    }
+    }*/
 
     var $coverBanner = $('.site-header-container.has-cover');
     if(device === 'pc'){

@@ -43,38 +43,33 @@ layout: default
     {% if paginator.previous_page %}
       {% if paginator.page == 2 %}
       <a class="newer-posts" href="{{ site.baseurl }}">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-square fa-stack-2x"></i>
-          <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+        <span class="icon-page">
+          <i class="icon-font i-v-left"></i>
         </span>
       </a>
       {% else %}
       <a class="newer-posts" href="{{ site.baseurl }}page{{paginator.previous_page}}">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-square fa-stack-2x"></i>
-          <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+        <span class="icon-page">
+          <i class="icon-font i-v-left"></i>
         </span>
       </a>
       {% endif %}
     {% else %}
-    <span class="fa-stack fa-lg">
-      <i class="fa fa-square fa-stack-2x"></i>
-      <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+    <span class="icon-page">
+      <i class="icon-font i-v-left"></i>
     </span>
     {% endif %}
 
     <span class="page-number">第{{ paginator.page }}页  共{{ paginator.total_pages }}页</span>
     {% if paginator.next_page %}
     <a class="newer-posts" href="{{ site.baseurl }}page{{paginator.next_page}}">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-square fa-stack-2x"></i>
-        <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+      <span class="icon-page">
+        <i class="icon-font i-v-right"></i>
       </span>
     </a>
     {% else %}
-    <span class="fa-stack fa-lg">
-      <i class="fa fa-square fa-stack-2x"></i>
-      <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+    <span class="icon-page">
+      <i class="icon-font i-v-right"></i>
     </span>
     {% endif %}
 

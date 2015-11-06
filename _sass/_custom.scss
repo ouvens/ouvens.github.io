@@ -25,8 +25,23 @@ pre code.language-text{
 .post-content .category-hide{
     display: none;
 }
+.newer-posts{
+    display: inline-block;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #0c6eb0;
+    color: #fff;
+}
+.newer-posts:hover{
+    color: #ddd;
+}
 
+.icon-page{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+}
 .icon-font.i-list{
-    font-weight: bold;
     font-size: 32px;
 }

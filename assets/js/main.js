@@ -1,5 +1,4 @@
-;
-(function() {
+;(function() {
     var device = navigator.userAgent.match(/iPhone|iPod|Android|iPad/i)? 
         'ios' : navigator.userAgent.match(/Android/i)? 'android' : 'pc';
 
@@ -62,7 +61,6 @@
         }, 0);
     }
 
-
     /**
      * 含有代码的页面加载高亮显示
      */
@@ -83,11 +81,11 @@
     var $coverBanner = $('.site-header-container.has-cover');
     if(device === 'pc'){
         $coverBanner.css({
-            'background-image': 'url(assets/header_image.png)'
+            'background-image': 'url(/assets/header_image.png)'
         })
     }else{
         $coverBanner.css({
-            'background-image': 'url(assets/header_image_m.png)'
+            'background-image': 'url(/assets/header_image_m.png)'
         })
     }
 
@@ -102,5 +100,4 @@
             }
         });
     });
-
 })();

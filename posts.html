@@ -42,7 +42,7 @@ permalink: /category/
         if(nextPar != -1){
             params = params.slice(0, nextPar);
         }
-        return params || "";
+        return decodeURIComponent(params) || "";
     }
 
     var keywords = getParam('cate') && getParam('cate').toLowerCase();

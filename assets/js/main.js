@@ -47,7 +47,7 @@
         $('.post-header .post-title').text('所有标签');
     }
 
-/*    function loadJS(urlMap, fn) {
+    function loadJS(urlMap, fn) {
         setTimeout(function() {
             for (var key in urlMap) {
                 var script = document.createElement('script');
@@ -70,8 +70,10 @@
                 return;
             }
 
+            window.hljs && window.hljs.initHighlightingOnLoad();
+
         });
-    }*/
+    }
 
     var $coverBanner = $('.site-header-container.has-cover');
     if(device === 'pc'){
@@ -84,7 +86,7 @@
         })
     }
 
-    window.hljs && hljs.initHighlightingOnLoad();
+    
     var menuToggle = $('#js-mobile-menu').unbind();
     $('#js-navigation-menu').removeClass("show");
     
@@ -110,4 +112,5 @@
             location.replace("/tags/?tag=" + value);
         }
     })
+    
 })();

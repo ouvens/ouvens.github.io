@@ -1,5 +1,8 @@
 ;
 (function() {
+    var device = navigator.userAgent.match(/iPhone|iPod|Android|iPad/i)? 
+        'ios' : navigator.userAgent.match(/Android/i)? 'android' : 'pc';
+
     function getParam(par) {
         var search = document.location.href;
         var get = search.indexOf(par + "=");
@@ -56,28 +59,48 @@
                 };
                 document.body.appendChild(script);
             }
-        }, 400);
+        }, 0);
     }
-    loadJS({
-        'highlight': 'http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js',
-        'lightbox': 'http://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js'
-    }, function() {
 
-        if (!window.hljs) {
-            return;
-        }
 
-        window.hljs && hljs.initHighlightingOnLoad();
+    /**
+     * 含有代码的页面加载高亮显示
+     */
+    if(/(\d{1,4}\/){3}/.test(location.href)) {
+        loadJS({
+            'highlight': 'http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js',
+            'lightbox': 'http://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js'
+        }, function() {
 
-        var menuToggle = $('#js-mobile-menu').unbind();
-        $('#js-navigation-menu').removeClass("show");
-        menuToggle.on('click', function(e) {
-            e.preventDefault();
-            $('#js-navigation-menu').slideToggle(function() {
-                if ($('#js-navigation-menu').is(':hidden')) {
-                    $('#js-navigation-menu').removeAttr('style');
-                }
-            });
+            if (!window.hljs) {
+                return;
+            }
+
+            window.hljs && hljs.initHighlightingOnLoad();
+        });
+    }
+
+    var $coverBanner = $('.site-header-container.has-cover');
+    if(device === 'pc'){
+        $coverBanner.css({
+            'background-image': 'url(assets/header_image.png)'
+        })
+    }else{
+        $coverBanner.css({
+            'background-image': 'url(assets/header_image_m.png)'
+        })
+    }
+
+    var menuToggle = $('#js-mobile-menu').unbind();
+    $('#js-navigation-menu').removeClass("show");
+    
+    menuToggle.on('click', function(e) {
+        e.preventDefault();
+        $('#js-navigation-menu').slideToggle(function() {
+            if ($('#js-navigation-menu').is(':hidden')) {
+                $('#js-navigation-menu').removeAttr('style');
+            }
         });
     });
+
 })();

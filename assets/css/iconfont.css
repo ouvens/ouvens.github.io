@@ -1,0 +1,12 @@
+@font-face { 
+font-family: "iconfont";
+src: url("./fonts/iconfont.eot");
+src: url("./fonts/iconfont.eot?#iefix") format("eot"),
+    url("./fonts/iconfont.woff") format("woff"),
+    url("./fonts/iconfont.ttf") format("truetype");
+}
+
+.icon-font{font-family:"iconfont";font-size:18px;font-style:normal;font-weight: normal;font-variant: normal;text-transform: none;line-height: 1;position: relative;vertical-align:-2px;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+.i-heart:before{content: "\f002";}
+.i-star:before{content: "\f01d";}
+.i-list:before{content: "\f05d";}

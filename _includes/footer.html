@@ -16,7 +16,7 @@
         <ul class="social-media-list">
       	<li>
       		<a href="mailto:{{ site.email }}">
-	      		<i class="fa fa-envelope-o"></i>
+	      		<i class="icon-font i-star"></i>
 	      		<span class="username">{{ site.email }}</span>
       		</a>
       	</li>
@@ -25,7 +25,7 @@
 	      	{% if social.url != null %}
 	      	<li>
 	           <a href="{{ social.url }}" title="{{ social.desc }}">
-	               <i class="fa fa-{{ social.icon }}"></i>
+	               <i class="icon-font i-heart"></i>
 	               <span class="username">{% if social.username %}{{ social.username }}{% else %}{{ social.name }}{% endif %}</span>
 	           </a>
 	        </li>

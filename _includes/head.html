@@ -6,6 +6,10 @@
     
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <link rel="dns-prefetch" href="cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="1.url.cn" />
+
     <meta name="description" itemprop="description" content="{{ site.description }}">
     <meta itemprop="name" content="{{ site.title }}">
     <meta itemprop="image" content="{{ site.image }}">
@@ -18,9 +22,9 @@
     {% endif %}
 
     <!-- External libraries -->
-    <link rel="stylesheet" href="{{ "assets/css/font-awesome.css" | prepend: site.baseurl }}">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/monokai_sublime.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+    <link rel="stylesheet" href="{{ "assets/css/iconfont.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/monokai_sublime.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
 
     <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
     <link rel="shortcut icon" href="{{ "assets/favicon.ico" | prepend: site.baseurl }}" type="image/x-icon">
@@ -31,6 +35,6 @@
 
   	<!-- Site styles -->
     <link rel="stylesheet" href="{{ "css/main.css" | prepend: site.baseurl }}">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 </head>

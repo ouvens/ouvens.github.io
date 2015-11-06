@@ -10,7 +10,7 @@ permalink: /category/
             <h2>{{ cat | capitalize }}</h2>
             {% for desc in site.descriptions %}
                 {% if desc.cat == cat %}
-                    <p class="desc"><em>{{ desc.desc }}</em></p>
+                    <p class="desc">{{ desc.desc }}</p>
                 {% endif %}
             {% endfor %}
             <ul class="posts-list">

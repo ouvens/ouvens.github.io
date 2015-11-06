@@ -29,7 +29,6 @@
         $('.post-header .post-title').text(keywords);
     } else {
         $category.find('.category').show();
-        $('.post-header .post-title').text('所有文章');
     }
 
     /**
@@ -44,7 +43,6 @@
         $('.post-header .post-title').text(tagKeywords);
     } else {
         $tag.find('.tag').show();
-        $('.post-header .post-title').text('所有标签');
     }
 
     /**

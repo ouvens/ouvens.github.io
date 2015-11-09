@@ -20,11 +20,11 @@ cover: "assets/category/type-css.png"
 }
 ```
 
-其他浏览器下左边距是10px，IE6下左边距是20px）
+其他浏览器下左边距是10px，IE6下左边距是20px
 
 解决方法：
 
-```
+```css
 .content{
     float:left;
     margin-left:10px;

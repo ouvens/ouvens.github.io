@@ -1,10 +1,10 @@
 ---
 layout: post
 title:  "javascript基础--监听模式与观察者模式"
-date:  2015-01-07
+date:  2015-02-07
 author: ouven
 categories: frontend-javascript
-tags: javascript基础 监听模式与观察者模式
+tags: javascript基础
 cover: "assets/category/type-javascript.png"
 ---
 

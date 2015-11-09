@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "javascript基础-javascript语言精髓"
+title:  "javascript基础--javascript语言精髓"
 date:   2015-01-04
 author: ouven
 categories: frontend-javascript

@@ -22,6 +22,7 @@ var ie6=!-[1,]&&!window.XMLHttpRequest
 代码中存在 document.formName.item("itemName") 这样的语句，不能在FF下运行
 解决方法：
 改用 document.formName.elements["elementName"]
+
 2. 集合类对象问 
 问题：
 代码中许多集合类对象取用时使用()，IE能接受，FF不能
@@ -207,5 +208,6 @@ FF:
         window.releaseEvents(Event.MOUSEMOVE|Event.MOUSEUP);  
     }  
 ```
+
 本文主要介绍的是IE和FF两个浏览器中的兼容性问题。随着浏览器种类的增多，出现的兼容性问题肯定也越来越多。浏览器兼容性问题的“解决”需要浏览器开发商、W3C、开发者共同的努力才能实现。
  

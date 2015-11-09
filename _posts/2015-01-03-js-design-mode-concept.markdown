@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "javascript设计模式概述"
+title:  "javascript基础-设计模式概述"
 date:   2015-01-03
 author: ouven
 categories: frontend-javascript

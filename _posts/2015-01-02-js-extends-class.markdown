@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "js继承与实现"
+title:  "javascript基础-继承与实现"
 date:   2015-01-02
 author: ouven
 categories: frontend-javascript

@@ -139,3 +139,10 @@ var sub = Object.create(new Base());
 sub.name = "sub";
 
 ```
+
+||instanceof 父类|instanceof子类|子类constructor|不可枚举方法的继承|可多继承|
+|---|---|---|---|---|---|
+|原型链继承|true|true|false|true|false|
+|构造继承|false|true|true|true|true|
+|实例继承|true|false|false|true|false|
+|拷贝继承|false|true|true|false|true|

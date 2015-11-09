@@ -45,17 +45,14 @@ ul.default {
 }
 
 code {
-    background-color: #eee;
-    display: inline-block;
     border-radius: 3px;
-    padding: 0 3px;
 }
 
 pre code.hljs {
-    font-family: "Arial";
-    font-size: modular-scale(-1);
-    letter-spacing: 1px;
-    padding: 20px;
+    font-family: consolas, cursive, sans-serif, Microsoft Yahei;
+    font-size: 1em;
+    padding: 15px;
+    line-height: 1.5;
 }
 
 .page-divider {

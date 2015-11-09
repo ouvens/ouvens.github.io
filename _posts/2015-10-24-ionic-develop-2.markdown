@@ -18,7 +18,7 @@ cover:  "assets/category/type-client.png"
 
 ionic start projectPath repositryPath
 eg:
-ionic start ./demo "E:\github\qvm|dist" #注意不要写成E:\github\dist，否则报错了，这里如果需要做的话只需要做到将dist的目录创建就可以了，而且文件使用相对路径
+ionic start ./demo "E:\github\qvm\dist" #注意带上引号，否则报错了，这里如果需要做的话只需要做到将dist的目录创建就可以了，而且文件使用相对路径
 
 ionic serve -p 80 #在80端口启动调试服务并自动watch
 ionic platform add android/ios

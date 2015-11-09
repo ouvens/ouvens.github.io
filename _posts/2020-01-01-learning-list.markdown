@@ -30,3 +30,13 @@ cover:  "assets/category/type-client.png"
 - 前端性能优化
 
 - 全栈开发技术
+
+- 桌面应用程序解决方案
+
+    1，node-webkit
+    [ http://nwjs.io/ ]
+    2，atom-shell(后改名为electron)
+    3，网易Hex 
+    4，NW.js
+    5，cosjs
+    6，pomelo

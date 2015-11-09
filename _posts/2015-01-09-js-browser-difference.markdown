@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "javascript基础--js不同浏览器的差异性"
-date:   2015-01-01
+date:   2015-01-09
 author: ouven
 categories: frontend-javascript
 tags: js兼容性

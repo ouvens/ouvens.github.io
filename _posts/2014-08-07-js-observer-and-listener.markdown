@@ -1,13 +1,15 @@
 ---
 layout: post
 title:  "javascript基础--监听与观察者模式"
-date: 2014-02-07
+date: 2014-08-07
 author: ouven
 categories: frontend-javascript
-tags: javascript基础
+tags: javascript 编程模式
 cover: "assets/category/type-javascript.png"
 ---
 
+
+### 监听与观察者模式
 
 这里主要看下监听者模式和观察者模式的两个例子
 

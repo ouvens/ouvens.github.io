@@ -3,8 +3,8 @@ layout: post
 title:  "javascript基础--监听与观察者模式"
 date: 2014-08-07
 author: ouven
-categories: frontend-css
-tags: javascript 编程模式
+categories: frontend-javascript
+tags: javascript基础 编程模式
 cover: "assets/category/type-javascript.png"
 ---
 
@@ -15,7 +15,7 @@ cover: "assets/category/type-javascript.png"
 
 ### 1、请看监听模式的代码示例
 
-```javscript
+```javascript
 
 // 事件对象
 var Event = function(obj) {
@@ -78,7 +78,7 @@ f1 do something two!
 
 ### 2、观察者模式的代码示例： 
 
-```javscript
+```javascript
 // 观察者对象1
 var F2 = function() {
     this.update = function(observable, obj) {

@@ -3,7 +3,6 @@ layout: post
 title:  "isomorphic reactjs"
 date:   2015-09-20
 author: ouven
-categories: frontend-javascript
 tags: isomorphic reactjs javascript
 cover:  "assets/category/type-javascript.png"
 ---

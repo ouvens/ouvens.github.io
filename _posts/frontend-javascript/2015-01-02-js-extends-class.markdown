@@ -3,7 +3,6 @@ layout: post
 title:  "javascript基础--继承与实现"
 date:   2015-01-02
 author: ouven
-categories: frontend-javascript
 tags: 前端 类 继承
 cover:  "assets/category/type-javascript.png"
 ---

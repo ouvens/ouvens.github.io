@@ -3,7 +3,6 @@ layout: post
 title:  "es6 编码规范"
 date:   2015-10-12
 author: ouven
-categories: frontend-javascript
 tags:	es6 编码规范 
 cover:  "assets/category/type-javascript.png"
 ---

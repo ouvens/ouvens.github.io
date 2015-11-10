@@ -3,7 +3,6 @@ layout: post
 title:  "前端性能测试"
 date:   2015-03-16
 author: ouven
-categories: frontend-javascript
 tags: 前端性能 性能测试
 cover:  "assets/category/type-javascript.png"
 ---

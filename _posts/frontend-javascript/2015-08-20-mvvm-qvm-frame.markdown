@@ -3,7 +3,6 @@ layout: post
 title:  "移动端mvvm框架qvm实现"
 date:   2015-08-20
 author: ouven
-categories: frontend-javascript
 tags:   mvvm qvm
 cover:  "assets/category/type-javascript.png"
 ---

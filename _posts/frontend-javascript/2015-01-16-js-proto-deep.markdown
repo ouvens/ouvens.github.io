@@ -3,7 +3,6 @@ layout: post
 title:  "javascript基础--深入理解proto与__proto__"
 date:  2014-05-16
 author: ouven
-categories: frontend-javascript
 tags: javascript proto __proto__
 cover: "assets/category/type-javascript.png"
 ---

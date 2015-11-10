@@ -3,7 +3,6 @@ layout: post
 title:  "ionic进阶开发中的命令使用"
 date:   2015-10-24
 author: ouven
-categories: frontend-client
 tags: ionic 进阶开发
 cover:  "assets/category/type-client.png"
 ---

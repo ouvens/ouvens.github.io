@@ -3,7 +3,6 @@ layout: post
 title:  "css学习资源汇总"
 date:  2015-11-06
 author: ouven
-categories: frontend-css
 tags: css 资源汇总
 cover: "assets/category/type-css.png"
 ---

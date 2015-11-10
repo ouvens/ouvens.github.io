@@ -3,7 +3,6 @@ layout: post
 title:  "css清除元素间距"
 date:  2015-08-06
 author: ouven
-categories: frontend-css
 tags: css 清除元素间距
 cover: "assets/category/type-css.png"
 ---

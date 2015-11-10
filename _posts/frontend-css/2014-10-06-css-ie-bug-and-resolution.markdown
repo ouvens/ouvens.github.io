@@ -3,7 +3,6 @@ layout: post
 title:  "css在IE下问题及解决方法"
 date:  2015-11-06
 author: ouven
-categories: frontend-css
 tags: css iebug
 cover: "assets/category/type-css.png"
 ---

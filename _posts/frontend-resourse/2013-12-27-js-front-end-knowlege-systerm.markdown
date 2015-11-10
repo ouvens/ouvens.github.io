@@ -3,7 +3,6 @@ layout: post
 title:  "前端基础--知识体系"
 date:   2013-12-27
 author: ouven
-categories: frontend-javascript
 tags: javascript 前端知识
 cover:  "assets/category/type-javascript.png"
 ---

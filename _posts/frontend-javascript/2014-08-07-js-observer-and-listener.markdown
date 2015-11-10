@@ -3,7 +3,6 @@ layout: post
 title:  "javascript基础--监听与观察者模式"
 date: 2014-08-07
 author: ouven
-categories: frontend-javascript
 tags: javascript基础 编程模式
 cover: "assets/category/type-javascript.png"
 ---

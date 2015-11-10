@@ -3,7 +3,6 @@ layout: post
 title:  "前端学习资源汇总"
 date:   2014-01-01
 author: ouven
-categories: frontend
 tags: 前端 学习资源
 cover:  "assets/category/type-client.png"
 ---

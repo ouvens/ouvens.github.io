@@ -3,7 +3,6 @@ layout: post
 title:  "Mock.js前端开发cgi数据模拟工具"
 date:   2015-09-20
 author: ouven
-categories: frontend-javascript
 tags: Mockjs 前端开发 cgi数据模拟工具
 cover:  "assets/category/type-javascript.png"
 ---

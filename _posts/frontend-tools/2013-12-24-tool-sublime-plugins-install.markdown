@@ -3,7 +3,6 @@ layout: post
 title:  "sublime插件安装说明"
 date:   2013-12-24
 author: ouven
-categories: frontend-tools
 tags: sublime 插件安装
 cover:  "assets/category/type-tool.png"
 ---
@@ -30,6 +29,7 @@ pl="SublimeLinter,SublimeLinter-jscs,SublimeLinter-jshint,SublimeLinter-csslint,
 备注
 脚本中最前面的pl参数就是会安装的package control插件，可以根据需要增删插件，注意要区分大小写
 脚本中预安装的插件列表
+
 - SublimeLinter
 - SublimeLinter-jscs
 - SublimeLinter-jshint

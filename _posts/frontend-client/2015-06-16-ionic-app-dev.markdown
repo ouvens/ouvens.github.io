@@ -3,7 +3,6 @@ layout: post
 title:  "Ionic Hybrid跨终端应用程序开发方案研究"
 date:   2015-06-16
 author: ouven
-categories: frontend-client
 tags: ionic
 cover:  "assets/category/type-client.png"
 ---

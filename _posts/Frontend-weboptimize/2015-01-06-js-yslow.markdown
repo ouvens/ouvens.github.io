@@ -3,7 +3,6 @@ layout: post
 title:  "页面优化规则--yslow与pagespeed"
 date:  2015-01-06
 author: ouven
-categories: frontend-weboptimize
 tags: javascript 前端优化 yslow pagespeed
 cover: "assets/category/type-javascript.png"
 ---

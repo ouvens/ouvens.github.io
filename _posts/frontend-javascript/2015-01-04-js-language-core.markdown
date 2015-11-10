@@ -3,7 +3,6 @@ layout: post
 title:  "javascript基础--javascript语言精髓"
 date:   2015-01-04
 author: ouven
-categories: frontend-javascript
 tags: javascript 语言精髓
 cover: "assets/category/type-javascript.png"
 ---

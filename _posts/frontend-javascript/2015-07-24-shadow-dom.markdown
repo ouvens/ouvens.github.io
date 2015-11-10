@@ -3,7 +3,6 @@ layout: post
 title:  "shadow dom解析"
 date:   2015-07-24
 author: ouven
-categories: frontend-javascript
 tags:	polymer vm特性
 cover:  "assets/category/type-javascript.png"
 ---

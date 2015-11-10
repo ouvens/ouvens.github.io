@@ -3,7 +3,6 @@ layout: post
 title:  "polymer组件化与vm特性"
 date:   2015-05-24
 author: ouven
-categories: frontend-javascript
 tags:	polymer vm特性
 cover:  "assets/category/type-javascript.png"
 ---

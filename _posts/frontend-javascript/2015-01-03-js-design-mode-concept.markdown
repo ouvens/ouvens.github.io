@@ -3,7 +3,6 @@ layout: post
 title:  "javascript基础--设计模式概述"
 date:   2015-01-03
 author: ouven
-categories: frontend-javascript
 tags: javascript 设计模式
 cover:  "assets/category/type-javascript.png"
 ---

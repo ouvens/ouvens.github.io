@@ -3,7 +3,6 @@ layout: post
 title:  "Nativescript跨终端应用程序开发方案研究"
 date:   2015-06-18
 author: ouven
-categories: frontend-client
 tags: nativescript
 cover:  "assets/category/type-client.png"
 ---

@@ -4,6 +4,7 @@ title:  "fis3试用与构建配置研究"
 date:   2015-08-15
 author: ouven
 tags: fis3
+categories: frontend-weboptimize
 cover:  "assets/category/type-javascript.png"
 ---
 

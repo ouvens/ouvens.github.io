@@ -3,6 +3,7 @@ layout: post
 title:  "webpack--更优秀的打包管理工具"
 date:   2015-04-01
 author: ouven
+categories: frontend-weboptimize
 tags:	webpack 打包工具
 cover:  "assets/category/type-javascript.png"
 

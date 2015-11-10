@@ -1,0 +1,293 @@
+---
+layout: post
+title:  "BFC"
+date:  2014-11-19
+author: ouven
+tags: css bfc
+categories: frontend-css
+cover: "assets/category/type-css.png"
+---
+
+
+### 一、BFC是什么？
+
+BFC（Block Formatting Context）直译为“块级格式化上下文”。
+
+是 W3C CSS 2.1 规范中的一个概念，它决定了元素如何对其内容进行定位，以及与其他元素的关系和相互作用。当涉及到可视化布局的时候，Block Formatting Context提供了一个环境，HTML元素在这个环境中按照一定规则进行布局。一个环境中的元素不会影响到其它环境中的布局。比如浮动元素会形成BFC，浮动元素内部子元素的主要受该浮动元素影响，两个浮动元素之间是互不影响的。也可以说BFC就是一个作用范围。可以把它理解成是一个独立的容器，并且这个容器的里box的布局，与这个容器外的毫不相干。
+
+另一个通俗点的解释是：在普通流中的 Box(框) 属于一种 formatting context(格式化上下文) ，类型可以是 block ，或者是 inline ，但不能同时属于这两者。并且， Block boxes(块框) 在 block formatting context(块格式化上下文) 里格式化， Inline boxes(块内框) 则在 inline formatting context(行内格式化上下文) 里格式化。任何被渲染的元素都属于一个 box ，并且不是 block ，就是 inline 。即使是未被任何元素包裹的文本，根据不同的情况，也会属于匿名的 block boxes 或者 inline boxes。所以上面的描述，即是把所有的元素划分到对应的 formatting context 里。
+
+BFC的元素有以下规则：
+
+1、在创建了 Block Formatting Context 的元素中，其子元素按文档流一个接一个地放置。垂直方向上他们的起点是一个包含块的顶部，两个相邻的元素之间的垂直距离取决于‘margin’ 特性。
+
+2、在 Block Formatting Context 中，每一个元素左外边与包含块的左边相接触（对于从右到左的格式化，右外边接触右边）， 即使存在浮动也是如此（尽管一个元素的内容区域会由于浮动而压缩），除非这个元素也创建了一个新的 Block Formatting Context 。
+
+3、Block Formatting Context就是页面上的一个隔离的独立容器，容器里面的子元素不会在布局上影响到外面的元素，反之也是如此。
+
+4、根据 CSS 2.1 9.5 Floats 中的描述，创建了 Block Formatting Context 的元素不能与浮动元素重叠。
+
+表格的 border-box、块级的替换元素、或是在普通流中创建了新的 block formatting context（如元素的 'overflow' 特性不为 'visible' 时）的元素不可以与位于相同的 block formatting context 中的浮动元素相重叠。
+
+5 、当容器有足够的剩余空间容纳 BFC 的宽度时，所有浏览器都会将 BFC 放置在浮动元素所在行的剩余空间内。 
+
+6、 在 IE6 IE7 IE8 Chrome Opera 中，当 BFC 的宽度介于 "容器剩余宽度" 与 "容器宽度" 之间时，BFC 会显示在浮动元素的下一行；在 Safari 中，BFC 则仍然保持显示在浮动元素所在行，并且 BFC 溢出容器；在 Firefox 中，当容器本身也创建了 BFC 或者容器的 'padding-top'、'border-top-width' 这些特性不都为 0 时表现与 IE8(S)、Chrome 类似，否则表现与 Safari 类似。 
+
+经验证，最新版本的浏览中只有firefox会在同一行显示，其它浏览器均换行。
+
+7、 在 IE6 IE7 IE8 Opera 中，当 BFC 的宽度大于 "容器宽度" 时，BFC 会显示在浮动元素的下一行；在 Chrome Safari 中，BFC 则仍然保持显示在浮动元素所在行，并且 BFC 溢出容器；在 Firefox 中，当容器本身也创建了 BFC 或者容器的 'padding- top'、'border-top-width' 这些特性不都为 0 时表现与 IE8(S) 类似，否则表现与 Chrome 类似。
+
+经验证，最新版本的浏览中只有firefox会在同一行显示，其它浏览器均换行。
+
+8、根据CSS2.1 规范第10.6.7部分的高度计算规则，在计算生成了 block formatting context 的元素的高度时，其浮动子元素应该参与计算。
+
+例子：
+
+```html
+<!doctype html>
+<html><head>
+<meta charset="utf8">
+<title>无标题文档</title>
+<style>
+*{ padding:0; margin:0; }
+#c1,#c2{
+    border:blue 1px solid;
+}
+#red, #yellow, #orange, #green{
+    width:100px;
+    height:100px;
+    float:left; 
+}
+#red{ 
+    background-color:red; 
+}
+#yellow{ 
+    background-color:yellow; 
+}
+#orange{ 
+    background-color:orange;
+}
+#green{
+    background-color:green;
+}
+</style>
+</head>
+<body>
+<div id="c1">
+<div id="red"></div>
+<div id="yellow"></div>
+</div>
+<div id="c2">
+<div id="orange"></div>
+<div id="green"></div>
+</div>
+<p>Here is the text!</p>
+</body>
+</html>
+```
+
+该段代码本意要形成两行两列的布局，但是由于#red，#yellow，#orange，#green四个div在同一个布局环境BFC中，因此虽然它们位于两个不同的div（#c1和#c2）中，但仍然不会换行，而是一行四列的排列。
+
+若要使之形成两行两列的布局，就要创建两个不同的布局环境，也可以说要创建两个BFC。那到底怎么创建BFC呢？
+
+二、如何产生BFC：当一个HTML元素满足下面条件的任何一点，都可以产生Block Formatting Context：
+
+float的值不为none。
+overflow的值不为visible。
+display的值为table-cell, table-caption, inline-block中的任何一个。
+position的值不为relative和static。
+如果还其它方式，请在回复中给出，我会及时更新！！
+
+上面的例子，我再加两行代码，创建两个BFC：
+
+```css
+#c1{overflow:hidden;}
+#c2{overflow:hidden;}
+```
+
+上面创建了两个布局环境BFC。内部子元素的左浮动不会影响到外部元素。所以#c1和#c2没有受浮动的影响，仍然各自占据一行！
+
+### 三、BFC能用来做什么？
+
+ a、不和浮动元素重叠
+
+如果一个浮动元素后面跟着一个非浮动的元素，那么就会产生一个覆盖的现象，很多自适应的两栏布局就是这么做的。
+
+看下面一个例子
+
+```html
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf8">
+<title>无标题文档</title>
+<style>
+html,body
+{height:100%; }
+*{ padding:0; margin:0; color:#fff; text-decoration:none; list-style:none; font-family:"微软雅黑" }
+.aside
+{background:#f00;width:170px;float:left;height:300px;}
+.main
+{background:#090;height:100%;}</style>
+</head>
+<body>
+<div class="aside"></div>
+<div class="main"></div>
+</body>
+</html>
+```
+此时会发现浮动元素与父元素重叠
+
+很明显，.aside和.mian重叠了。试分析一下，由于两个box都处在同一个BFC中，都是以BFC边界为起点，如果两个box本身都具备BFC的话，会按顺序一个一个排列布局，现在.main并不具备BFC，按照规则2，内部元素都会从左边界开始，除非它本身具备BFC，按上面规则4拥有BFC的元素是不可以跟浮动元素重叠的，所以只要为.mian再创建一个BFC,就可以解决这个重叠的问题。上面已经说过创建BFC的方法，可以根据具体情况选用不同的方法，这里我选用的是加overflow:hidden。
+
+由于ie的原因需要再加一个解发haslayout的zoom:1，有关haslayout后面会讲到。
+
+b、清除元素内部浮动
+
+只要把父元素设为BFC就可以清理子元素的浮动了，最常见的用法就是在父元素上设置overflow: hidden样式，对于IE6加上zoom:1就可以了(IE Haslayout)。
+
+看下面例子：
+
+```html
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>无标题文档</title>
+<style>
+html,body
+{height:100%; }
+ 
+*{ padding:10px; margin:0; color:#000; text-decoration:none; list-style:none; font-family:"微软雅黑" }
+ 
+.outer{width:300px;border:1px solid #666;padding:10px;}
+ 
+.innerLeft{height:100px;width:100px;float:left;background:#f00;}
+ 
+.innerRight{height:100px;width:100px;float:right;background:#090;}</style></head>
+<body>
+<div class="outer">
+<div class="innerLeft"></div>
+<div class="innerRight"></div>
+</div>
+</body>
+</html>
+
+```
+
+效果此时子元素会脱离文档流覆盖父元素
+
+根据 CSS2.1 规范第 10.6.3 部分的高度计算规则，在进行普通流中的块级非替换元素的高度计算时，浮动子元素不参与计算。
+
+同时 CSS2.1 规范第10.6.7部分的高度计算规则，在计算生成了 block formatting context 的元素的高度时，其浮动子元素应该参与计算。
+
+所以，触发外部容器BFC，高度将重新计算。比如给outer加上属性overflow:hidden触发其BFC。
+
+c、解决上下相邻两个元素重叠
+
+ 看下面例子：
+
+```html
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+ 
+html,body
+{height:100%; }
+ 
+*{ padding:0; margin:0; color:#fff; text-decoration:none; list-style:none; font-family:"微软雅黑" }
+ 
+.rowone
+{background:#f00;height:100px;margin-bottom:20px;overflow:hidden;}
+ 
+.rowtow
+{background:#090;height:100px;margin-top:20px;position:relative}</style></head>
+ 
+<body><div class="rowone"></div><div class="rowtow"></div></body></html>
+```
+
+根据 CSS 2.1 8.3.1 Collapsing margins 第一条，两个相邻的普通流中的块框在垂直位置的空白边会发生折叠现象。也就是处于同一个BFC中的两个垂直窗口的margin会重叠。
+
+根据 CSS 2.1 8.3.1 Collapsing margins 第三条，生成 block formatting context 的元素不会和在流中的子元素发生空白边折叠。所以解决这种问题的办法是要为两个容器添加具有BFC的包裹容器。
+
+所以解这个问题的办法就是,把两个容器分别放在两个据有BFC的包裹容器中，IE里就是触发layout的两个包裹容器中！
+
+```html
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"><title>无标题文档</title><style>
+html, body
+{ height:100%; }
+*
+{ padding:0; margin:0; color:#fff; text-decoration:none; list-style:none; font-family:"微软雅黑" }
+.mg
+{overflow:hidden; }
+.rowone
+{ background:#f00; height:100px; margin-bottom:20px; }
+.rowtow
+{ background:#090; height:100px; margin-top:20px; }
+</style>
+</head>
+<body>
+<div class="mg">
+    <div class="rowone"></div>
+</div>
+<div class="mg">
+    <div class="rowtow"></div>
+</div>
+</body>
+</html>
+
+```
+
+### 四、什么是IE的haslayout
+
+在中如果使用了zoom:1,实际上可以触发了IE的layout属性。Layout 是 IE 浏览器渲染引擎的一个内部组成部分。在 IE 浏览器中，一个元素要么自己对自身的内容进行组织和计算大小， 要么依赖于包含块来计算尺寸和组织内容。为了协调这两种方式的矛盾，渲染引擎采用了 ‘hasLayout’ 属性，属性值可以为 true 或 false。 当一个元素的 ‘hasLayout’ 属性值为 true 时，我们说这个元素有一个布局（layout），或拥有布局。可以通过 hasLayout 属性来判断一个元素是否拥有 layout ，
+
+如 object.currentStyle.hasLayout 。
+
+hasLayout 与 BFC 有很多相似之处，但 hasLayout 的概念会更容易理解。在 Internet Explorer 中，元素使用“布局”概念来控制尺寸和定位，分为拥有布局和没有布局两种情况，拥有布局的元素由它控制本身及其子元素的尺寸和定位，而没有布局的元素则通过父元素（最近的拥有布局的祖先元素）来控制尺寸和定位，而一个元素是否拥有布局则由 hasLayout 属性告知浏览器，它是个布尔型变量，true 代表元素拥有布局，false 代表元素没有布局。简而言之，hasLayout 只是一个 IE 下专有的属性，hasLayout 为 true 的元素浏览器会赋予它一系列的效果。
+
+特别注意的是，hasLayout 在 IE 8 及之后的 IE 版本中已经被抛弃，所以在实际开发中只需针对 IE 8 以下的浏览器为某些元素触发 hasLayout。
+
+### 五、怎样触发layout
+
+一个元素触发 hasLayout 会影响一个元素的尺寸和定位，这样会消耗更多的系统资源，因此 IE 设计者默认只为一部分的元素触发 hasLayout （即默认有部分元素会触发 hasLayout ，这与 BFC 基本完全由开发者通过特定 CSS 触发并不一样），这部分元素如下：
+
+```html
+<html>, <body><table>, <tr>, <th>, <td><img><hr><input>, <button>, <select>, <textarea>, <fieldset>, <legend><iframe>, <embed>, <object>, <applet><marquee>
+```
+
+除了 IE 默认会触发 hasLayout 的元素外，Web 开发者还可以使用特定的 CSS 触发元素的 hasLayout 。
+
+通过为元素设置以下任一 CSS ，可以触发 hasLayout （即把元素的 hasLayout 属性设置为 true）。
+
+```css
+display: inline-block
+height: (除 auto 外任何值)
+width: (除 auto 外任何值)
+float: (left 或 right)
+position: absolute
+writing-mode: tb-rl
+zoom: (除 normal 外任意值)
+min-height: (任意值)
+min-width: (任意值)
+max-height: (除 none 外任意值)
+max-width: (除 none 外任意值)
+overflow: (除 visible 外任意值，仅用于块级元素)
+overflow-x: (除 visible 外任意值，仅用于块级元素)
+overflow-y: (除 visible 外任意值，仅用于块级元素)
+position: fixed
+```
+
+对于内联元素(可以是默认被浏览器认为是内联元素的 span 元素，也可以是设置了 display: inline 的元素)，width 和 height 只在 IE5.x 下和 IE6 或更新版本的 quirks 模式下能触发元素的 hasLayout ，但是对于 IE6，如果浏览器运行于标准兼容模式下，内联元素会忽略 width 或 height 属性，所以设置 width 或 height 不能在此种情况下令该元素触发 hasLayout 。但 zoom 除了在 IE 5.0 中外，总是能触发 hasLayout 。zoom 用于设置或检索元素的缩放比例，为元素设置 zoom: 1 既可以触发元素的 hasLayout 同时不会对元素造成多余的影响。因此综合考虑浏览器之间的兼容和对元素的影响， 建议使用 zoom: 1 来触发元素的 hasLayout 。
+
+### 六、能解决的问题
+
+hasLayout表现出来的特性跟BFC很相似，所以可以认为是IE中的BFC。上面的规则几乎都遵循，所以上面的问题在IE里都可以通过触发hasLayout来解决。
+
+虽然 hasLayout 也会像 BFC 那样影响着元素的尺寸和定位，但它却又不是一套完整的标准，并且由于它默认只为某些元素触发，这导致了 IE 下很多前端开发的 bugs ，触发 hasLayout 更大的意义在于解决一些 IE 下的 bugs ，而不是利用它的一些“副作用”来达到某些效果。另外由于触发 hasLayout 的元素会出现一些跟触发 BFC 的元素相似的效果，因此为了统一元素在 IE 与支持 BFC 的浏览器下的表现，Kayo 建议为触发了 BFC 的元素同时触发 hasLayout ，当然还需要考虑实际的情况，也有可能只需触发其中一个就可以达到表现统一。

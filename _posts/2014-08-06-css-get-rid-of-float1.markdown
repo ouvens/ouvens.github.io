@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "css清除元素间距"
-date:  2015-08-06
+title:  "css清除元素间距s"
+date:  2015-08-02
 author: ouven
 categories: frontend-css
 tags: css 清除元素间距

@@ -136,7 +136,10 @@ html,body
 </body>
 </html>
 ```
-此时会发现浮动元素与父元素重叠
+
+效果如下：
+
+![](http://7tszky.com1.z0.glb.clouddn.com/FmznDMLoTZ1im2ejU7aFp2KQXhuf)
 
 很明显，.aside和.mian重叠了。试分析一下，由于两个box都处在同一个BFC中，都是以BFC边界为起点，如果两个box本身都具备BFC的话，会按顺序一个一个排列布局，现在.main并不具备BFC，按照规则2，内部元素都会从左边界开始，除非它本身具备BFC，按上面规则4拥有BFC的元素是不可以跟浮动元素重叠的，所以只要为.mian再创建一个BFC,就可以解决这个重叠的问题。上面已经说过创建BFC的方法，可以根据具体情况选用不同的方法，这里我选用的是加overflow:hidden。
 
@@ -175,7 +178,9 @@ html,body
 
 ```
 
-效果此时子元素会脱离文档流覆盖父元素
+效果如下
+
+![](http://7tszky.com1.z0.glb.clouddn.com/FhlmsN3R1HQLmjtAKK2e3gzB13Ae)
 
 根据 CSS2.1 规范第 10.6.3 部分的高度计算规则，在进行普通流中的块级非替换元素的高度计算时，浮动子元素不参与计算。
 
@@ -193,21 +198,29 @@ c、解决上下相邻两个元素重叠
 <head>
 <meta charset="utf-8">
 <title>无标题文档</title>
-<style>
+  <style>
+   
+  html,body
+  {height:100%; }
+   
+  *{ padding:0; margin:0; color:#fff; text-decoration:none; list-style:none; font-family:"微软雅黑" }
+   
+  .rowone
+  {background:#f00;height:100px;margin-bottom:20px;overflow:hidden;}
+   
+  .rowtow
+  {background:#090;height:100px;margin-top:20px;position:relative}
+  </style>
+</head>
  
-html,body
-{height:100%; }
- 
-*{ padding:0; margin:0; color:#fff; text-decoration:none; list-style:none; font-family:"微软雅黑" }
- 
-.rowone
-{background:#f00;height:100px;margin-bottom:20px;overflow:hidden;}
- 
-.rowtow
-{background:#090;height:100px;margin-top:20px;position:relative}</style></head>
- 
-<body><div class="rowone"></div><div class="rowtow"></div></body></html>
+<body>
+  <div class="rowone"></div>
+  <div class="rowtow"></div>
+</body>
+</html>
 ```
+
+![](http://7tszky.com1.z0.glb.clouddn.com/FiKfTvfdtd75mfdlcR0kTpXAoLfa)
 
 根据 CSS 2.1 8.3.1 Collapsing margins 第一条，两个相邻的普通流中的块框在垂直位置的空白边会发生折叠现象。也就是处于同一个BFC中的两个垂直窗口的margin会重叠。
 
@@ -243,6 +256,8 @@ html, body
 </html>
 
 ```
+
+![](http://7tszky.com1.z0.glb.clouddn.com/FhExCZoe4f8cP9NybM3kl9TiwpqN)
 
 ### 四、什么是IE的haslayout
 

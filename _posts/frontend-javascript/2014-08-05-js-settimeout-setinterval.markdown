@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "javascript基础--setTimeout与setInterval区别"
-date: 2014-08-06
+date: 2014-08-05
 author: ouven
 tags: javascript基础 setTimeout与setInterval区别
 categories: frontend-javascript

@@ -252,6 +252,7 @@ for属性能让点击label标签的时候，同时focus到对应的 input 和 te
 <div id="topic" class="g-mod"
 ...
 <!-- /排行榜模块 -->
+
 ```
 
 #### 5.10 格式
@@ -426,12 +427,17 @@ __6.3.1 视觉封装__
 - CSS代码书写不分行
 - 不要以缩进的方式来体现层级关系
 
-```css
 不推荐：
+
+```css
 .g-box{ sRules; }
 　　　.g-box-hd .xx{ sRules; }
 　　　　　　.g-box-hd .xx .aa{ sRules; }
+```
+
 推荐：
+
+```css
 .g-box{ sRules; }
 .g-box-hd .xx{ sRules; }
 .g-box-hd .xx .aa{ sRules; }

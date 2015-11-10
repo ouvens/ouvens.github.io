@@ -469,6 +469,7 @@ body{margin:0;padding:0;}
 __6.3.4 0与小数__
 
 - 如果是0开始的小数，前面的0可以省略不写
+
 ```css
 不推荐：
 body{opacity:0.6;text-shadow:1px 1px 5px rgba(0,0,0,0.5);}
@@ -482,12 +483,14 @@ __6.3.5 去掉uri中引用资源的引号__
 - 不要在url()里对引用资源加引号
 
 不推荐：
+
 ```css
 body{background-image:url("sprites.png");}
 @import url("global.css");
 ```
 
 推荐：
+
 ```css
 body{background-image:url(sprites.png);}
 @import url(global.css);

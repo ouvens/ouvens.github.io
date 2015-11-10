@@ -41,7 +41,7 @@ cover:  "assets/category/type-client.png"
 #### 4.2 缩进
 
 - 使用tab（4个空格宽度）来进行缩进，可以在IDE里进行设置
-- 
+
 #### 4.3 编码
 
 - 以 UTF-8 无 BOM 编码作为页面格式；

@@ -40,3 +40,8 @@ cover:  "assets/category/type-client.png"
     4，NW.js
     5，cosjs
     6，pomelo
+
+- 博客转载列表
+
+#### html meta信息
+[http://segmentfault.com/a/1190000002407912]

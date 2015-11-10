@@ -34,6 +34,8 @@ ionic resources -s a.png #上传app 启动图片图片，默认icon放在resourc
 
 ---
 
+```javascript
+
 ionic命令行指令:
 start [options] <PATH> [template] .............  在制定的目录中创建一个项目
                                     [options] 命令行任意的标识
@@ -254,4 +256,4 @@ state <COMMAND> ...............................  保存或恢复当前app的状�
 docs <TOPIC> ..................................  打开Ionic文档
                                                  <TOPIC> 要浏览的文档内容，使用ls可以查看所有
 
-
+```

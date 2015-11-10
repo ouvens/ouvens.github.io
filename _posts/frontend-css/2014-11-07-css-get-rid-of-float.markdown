@@ -12,11 +12,11 @@ cover: "assets/category/type-css.png"
 
 理解float：元素float后，确实可以从文档流中消失，表现在他们外面的DIV的边框不能被他们撑起来。可是，文档中在他们下面的元素又确实不会和他们重叠。先理解下float做了什么。
 ​
-| 是否脱离文档流 | 参考物 | 描述 |
-|-----|-----|-----|
-| position:relative | 否 | 元素在文档流中位置,top,left,right,bottom指定了相对于参考物位置 |
-| postition:absolute | 是 | 最近外层relative元素，否则为body，top,left,right,bottom指定了相对于参考物位置 |
-| float | 是 | 元素在文档流中位置，相对于参考物，尽可能向left(向左)，top(向上)，right向右，both(向两侧)|
+|-| 是否脱离文档流 | 参考物 | 描述 |
+|---|---|---|---|
+| position:relative | 否 | 元素在文档流中位置 | top,left,right,bottom指定了相对于参考物位置 |
+| postition:absolute | 是 | 最近外层relative元素 | 否则为body，top,left,right,bottom指定了相对于参考物位置 |
+| float | 是 | 元素在文档流中位置，相对于参考物 | 尽可能向left(向左)，top(向上)，right向右，both(向两侧)|
 
 ### 二、清除浮动
 

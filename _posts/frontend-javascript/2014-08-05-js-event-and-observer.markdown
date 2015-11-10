@@ -1,10 +1,10 @@
 ---
 layout: post
 title:  "javascript基础--突变事件与观察者事件"
-date: 2014-08-16
+date: 2014-08-05
 author: ouven
 tags: javascript基础 突变事件 
-categories: frontend-javascript 观察者事件
+categories: frontend-javascript
 cover: "assets/category/type-javascript.png"
 ---
 
@@ -87,12 +87,19 @@ changeTitle(originalTitle);
 这样为什么能解决？简单的解释是IE9使用addEventListener代替了原来的attachEvent处理事件，并且支持新的DOMCharacterDataModified突变事件。而ie9以后不再使用propertychange。
 
 ### 二、突变事件
+
 #### 2.1、什么是突变事件？
 先看看普通的事件模型。下面这个图都见过，事件的机制、兼容性和实现，就不赘述了。
+
 #### 2.2、那突变事件有什么不同？
 突变事件是指在dom元素改变时会触发的事件。例如
+
 DOMAttrModified 突变事件报告对元素的属性列表的更改。此单一事件包括与插入、删除或更改属性相关的信息。
-DOMNodeInserted、DOMNodeRemoved 和 DOMSubtreeModified 突变事件监视元素子项的结构更改，例如向元素子项添加了元素或者删除了元素子项。
+
+DOMNodeInserted、DOMNodeRemoved 和 DOMSubtreeModified 
+
+突变事件监视元素子项的结构更改，例如向元素子项添加了元素或者删除了元素子项。
+
 注意  对于未反映在 HTML 属性中的属性（例如 input 元素上的 value），可以使用称为“defineProperty”的 ECMAScript 5 (JavaScript) 功能。本文档不介绍如何使用该对象迁移属性更改事件。defineProperty JavaScript API。例如json对象的属性改变等不属于突变事件。
 
 #### 突变事件观察者

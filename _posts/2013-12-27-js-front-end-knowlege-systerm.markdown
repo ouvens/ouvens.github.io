@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "前端基础--知识体系"
-date:   2014-10-14
+date:   2013-12-27
 author: ouven
 categories: frontend-javascript
 tags: javascript 前端知识

@@ -4,9 +4,9 @@ title:  "前端性能测试"
 date:   2015-03-16
 author: ouven
 tags: 前端性能 性能测试
+categories: frontend-weboptimize
 cover:  "assets/category/type-javascript.png"
 ---
-
 
 
 ### 一、performance timing API

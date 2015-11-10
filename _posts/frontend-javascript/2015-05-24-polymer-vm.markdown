@@ -4,6 +4,7 @@ title:  "polymer组件化与vm特性"
 date:   2015-05-24
 author: ouven
 tags:	polymer vm特性
+categories: frontend-javascript
 cover:  "assets/category/type-javascript.png"
 ---
 

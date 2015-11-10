@@ -4,6 +4,7 @@ title:  "javascript基础--js不同浏览器的差异性"
 date:   2015-01-19
 author: ouven
 tags: js兼容性
+categories: frontend-javascript
 cover:  "assets/category/type-javascript.png"
 ---
 

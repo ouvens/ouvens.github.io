@@ -3,7 +3,8 @@ layout: post
 title:  "Babel下的ES6兼容性与规范"
 date:   2015-10-16
 author: ouven
-tags:	es6 babel 规范 
+tags:	es6 babel 规范
+categories: frontend-javascript
 cover:  "assets/category/type-javascript.png"
 ---
 

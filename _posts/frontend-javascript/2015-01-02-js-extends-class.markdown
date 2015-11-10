@@ -4,6 +4,7 @@ title:  "javascript基础--继承与实现"
 date:   2015-01-02
 author: ouven
 tags: 前端 类 继承
+categories: frontend-javascript
 cover:  "assets/category/type-javascript.png"
 ---
 

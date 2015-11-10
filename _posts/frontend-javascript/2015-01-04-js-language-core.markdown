@@ -4,6 +4,7 @@ title:  "javascript基础--javascript语言精髓"
 date:   2015-01-04
 author: ouven
 tags: javascript 语言精髓
+categories: frontend-javascript
 cover: "assets/category/type-javascript.png"
 ---
 

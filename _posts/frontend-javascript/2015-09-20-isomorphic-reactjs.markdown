@@ -4,6 +4,7 @@ title:  "isomorphic reactjs"
 date:   2015-09-20
 author: ouven
 tags: isomorphic reactjs javascript
+categories: frontend-javascript
 cover:  "assets/category/type-javascript.png"
 ---
 

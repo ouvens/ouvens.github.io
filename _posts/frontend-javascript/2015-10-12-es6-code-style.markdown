@@ -4,6 +4,7 @@ title:  "es6 编码规范"
 date:   2015-10-12
 author: ouven
 tags:	es6 编码规范 
+categories: frontend-javascript
 cover:  "assets/category/type-javascript.png"
 ---
 

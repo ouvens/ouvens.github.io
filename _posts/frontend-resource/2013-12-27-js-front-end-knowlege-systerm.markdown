@@ -4,6 +4,7 @@ title:  "前端基础--知识体系"
 date:   2013-12-27
 author: ouven
 tags: javascript 前端知识
+categories: frontend-resource
 cover:  "assets/category/type-javascript.png"
 ---
 

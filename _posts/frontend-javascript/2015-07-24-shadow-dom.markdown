@@ -4,6 +4,7 @@ title:  "shadow dom解析"
 date:   2015-07-24
 author: ouven
 tags:	polymer vm特性
+categories: frontend-javascript
 cover:  "assets/category/type-javascript.png"
 ---
 

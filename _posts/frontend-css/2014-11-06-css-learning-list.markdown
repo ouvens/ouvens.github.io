@@ -4,6 +4,7 @@ title:  "css学习资源汇总"
 date:  2015-11-06
 author: ouven
 tags: css 资源汇总
+categories: frontend-css
 cover: "assets/category/type-css.png"
 ---
 

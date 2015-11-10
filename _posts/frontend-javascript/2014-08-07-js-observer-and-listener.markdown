@@ -4,6 +4,7 @@ title:  "javascript基础--监听与观察者模式"
 date: 2014-08-07
 author: ouven
 tags: javascript基础 编程模式
+categories: frontend-javascript
 cover: "assets/category/type-javascript.png"
 ---
 

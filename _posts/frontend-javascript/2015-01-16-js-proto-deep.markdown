@@ -4,6 +4,7 @@ title:  "javascript基础--深入理解proto与__proto__"
 date:  2014-05-16
 author: ouven
 tags: javascript proto __proto__
+categories: frontend-javascript
 cover: "assets/category/type-javascript.png"
 ---
 

@@ -4,6 +4,7 @@ title:  "javascript基础--设计模式概述"
 date:   2015-01-03
 author: ouven
 tags: javascript 设计模式
+categories: frontend-javascript
 cover:  "assets/category/type-javascript.png"
 ---
 

@@ -4,6 +4,7 @@ title:  "移动端mvvm框架qvm实现"
 date:   2015-08-20
 author: ouven
 tags:   mvvm qvm
+categories: frontend-javascript
 cover:  "assets/category/type-javascript.png"
 ---
 

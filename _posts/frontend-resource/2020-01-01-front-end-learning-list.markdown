@@ -4,6 +4,7 @@ title:  "前端学习资源汇总"
 date:   2014-01-01
 author: ouven
 tags: 前端 学习资源
+categories: frontend-resource
 cover:  "assets/category/type-client.png"
 ---
 

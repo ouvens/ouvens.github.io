@@ -4,6 +4,7 @@ title:  "sublime插件安装说明"
 date:   2013-12-24
 author: ouven
 tags: sublime 插件安装
+categories: frontend-tools
 cover:  "assets/category/type-tool.png"
 ---
 

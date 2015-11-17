@@ -28,7 +28,7 @@ cover: "assets/category/type-css.png"
 
 实现方式：
     
-__1，meta标签定义__
+**1，meta标签定义**
 使用 viewport标签在手机浏览器上控制布局控制不缩放。
     
 ```html
@@ -47,7 +47,7 @@ __1，meta标签定义__
 <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
 ```
 
-__2，使用media query适应对应布局__
+**2，使用media query适应对应布局**
        
 此外目前比较主流可用的栅格系统有
 
@@ -65,11 +65,11 @@ Simple Grid
 
 媒体大小自适应解决方案：
 
-__1，使用css背景图片 (依赖media query)__
+**1，使用css背景图片 (依赖media query)**
 
 将图片设计为背景图片，并在css通过media query来加载所需要的背景图片。这样就会根据访问设备的属性来加载形影的图片。但是无法定义页面图片图片属性。
    
-__2，picture element (依赖浏览器新特性+midea query)__
+**2，picture element (依赖浏览器新特性+midea query)**
 
 W3C已经有一个用于响应式图形的草案：新定义标签<picture>，但因为它还只是草案，目前还没有支持的浏览器，期待在不久的未来我们能用上。虽然目前不支持，但我们还是来了解下这个浏览器的新特性，也和我们一贯的研究方向一致。
 <picture>是一个图形元素，内容由多个源图组成，并由CSS Media Queries来适配出合理图形，代码规范如下
@@ -96,7 +96,7 @@ srcset: 图片链接，1x适应普通屏，2x适应高清屏；
 <picture>目前还不支持，但它的原理我们是可借鉴的，所以就诞生了一个用于图片响应式处理的类库picturefill
 ```
 
-__3，picturefill (依赖js+media query)__
+**3，picturefill (依赖js+media query)**
 
 https://github.com/scottjehl/picturefill
 http://scottjehl.github.io/picturefill/
@@ -106,7 +106,7 @@ http://scottjehl.github.io/picturefill/
     
 这个是picturefill实现的部分源码，大致看了一下，原理就是使用javascript来解析picture元素定义的标签，来在页面上强行使用picture类似元素。但是个人觉得性能方面值得去考虑。
 
-__4，adaptive-images__
+**4，adaptive-images**
 
 http://adaptive-images.com/
 
@@ -115,7 +115,7 @@ http://adaptive-images.com/
     但是，其缺点也是明显的：首先，其依赖Cookie和JS，浏览器信息需要通过js存放cookie，发送时放在头部发送，这导致一些禁用或不能使用Cookie和JS的浏览器不能使用。然后是其对所有图片都起作用，这不适用于那些需要加载大图片的情形；最后，不适用于CDN，因为图片都是针对特定设备即时生成的，我觉得可以修改后端代码做
 
 
-__5，responsive-images.js(依赖js)__
+**5，responsive-images.js(依赖js)**
 
    官网：https://github.com/kvendrik/responsive-images.js
    这个与picturefill类似，不过它不依赖media query，而是通过JS检测浏览器的可见视口宽度来决定选择合适的图片，因此其兼容性很广，所有的主流浏览器。同时也不需要额外的标签，而是需要额外的属性，但是它不支持JS添加的图片，至少目前还不支持。
@@ -145,7 +145,7 @@ button {
 
 #### 四、响应式javascript
 
-这里主要实现时通过环境判断来异步加载不同的javascript，这样就实现了安装浏览器环境来加载了，例如
+这里主要通过环境判断来异步加载不同的javascript，这样就实现了安装浏览器环境来加载了，例如
 
 ```javascript
 

@@ -143,7 +143,25 @@ button {
 }
 ```
 
-#### 四、响应式网站架构设计
+#### 四、响应式javascript
+
+这里主要实现时通过环境判断来异步加载不同的javascript，这样就实现了安装浏览器环境来加载了，例如
+
+```javascript
+
+if(isMobile){
+    require.async(['zepto', './mobileMain'], function($, main){
+        main.init();
+    });
+}else{
+    require.async(['jquery', './main'], function($, main){
+        main.init();
+    });
+}
+
+```
+
+#### 五、响应式网站架构设计
 
 (1) 简单网站的响应式结构
 

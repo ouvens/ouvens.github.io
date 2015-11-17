@@ -55,7 +55,6 @@ cover:  "assets/category/type-javascript.png"
 - **bpg**
 
 
-
 #### 二、前端的图片优化方案
 1. 使用base64编码代替图片
     

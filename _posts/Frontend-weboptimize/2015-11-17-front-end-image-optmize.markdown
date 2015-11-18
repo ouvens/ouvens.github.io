@@ -9,7 +9,6 @@ cover:  "assets/category/type-javascript.png"
 ---
 
 
-### 前端图片的极限优化
 
 60%的网站流量来自图片，图片优化可以大幅影响网站流量。
 
@@ -176,18 +175,19 @@ cover:  "assets/category/type-javascript.png"
     劣势：服务器和浏览器压力增大，而且服务器需要额外的服务支持，格式转换要考虑浏览器的兼容性
     
 #### 三、图片压缩
-压缩图片方式比较多，下面列部分成熟的压缩工具：
+压缩图片方式比较多，例如下面的部分工具平台：
 
 Kraken (Web)
 主页： https://kraken.io/
 
 智图
 主页： http://zhitu.tencent.com/
+支持原图png转为jpeg和webp0(目前不支持bpg)，并提供各种压缩比压缩，目前在tx内部广泛使用。
 
+目前bpg格式图片也有部分公司在试用。
 
 #### 四、小结
 
 上面提供了web图片的一些格式特点和图片优化的可行方案，具体的场景需要考虑选择不同的方式来进行优化。当然常见的优化思路为：页面静态资源图片使用css，canvas，svg，iconfont，sprite，base64来优化，后台返回的数据资源图片则通过响应式、图片压缩来优化，同时尽可能考虑使用新的更高压缩比的图片来做图片转化。例如webp、bpg
-
 
 [google image rearch 链接](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization?hl=zh-cn)

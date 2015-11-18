@@ -11,10 +11,10 @@
     <link rel="dns-prefetch" href="cdnjs.cloudflare.com" />
     <link rel="dns-prefetch" href="1.url.cn" />
 
-    <meta name="description" itemprop="description" content="{{ site.description }}">
+    <meta name="description" itemprop="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
     <meta itemprop="name" content="{{ site.title }}">
     <meta itemprop="image" content="{{ site.image }}">
-    <meta itemprop="keywords" name="keywords" content="{{ site.keywords }}">
+    <meta itemprop="keywords" name="keywords" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
     {% if site.name %}
     <meta name="author" content="{{ site.name }}">

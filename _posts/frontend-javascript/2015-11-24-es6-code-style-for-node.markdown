@@ -149,6 +149,7 @@ someStack[someStack.length] = 'abracadabra';
 // good
 someStack.push('abracadabra');
 ```
+
 > 使用 ... 来拷贝数组，不要使用 Array.from、Array.of等数组的新的内置API，Array新api用于适合的场景
 
 ```javascript
@@ -428,6 +429,8 @@ var fn= (v=>console.log(v));
 ```
 
 > 立即执行的匿名函数
+
+
 ```javascript
 // 函数表达式
 // immediately-invoked function expression (IIFE)

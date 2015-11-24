@@ -452,6 +452,7 @@ var item = new Object();
 // good
 var item = {};
 ```
+
 > 不要使用保留字（reserved words）作为键，否则在 IE8 下将出错
 
 ```javascript

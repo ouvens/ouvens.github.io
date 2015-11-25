@@ -15,6 +15,6 @@ cover:  "assets/category/type-product.png"
 
 **策划一个产品涉及较多的是文档，下面也总结了一些文档的通用规范**
 ![](http://7tszky.com1.z0.glb.clouddn.com/Fn1hANMme6STGs6znKsGvqAe7tJw)
-[查看大图](http://7tszky.com1.z0.glb.clouddn.com/Fvy7vhQTsh8PKin2Kfi19cHhEVIN)
+[查看大图](http://7tszky.com1.z0.glb.clouddn.com/Fn1hANMme6STGs6znKsGvqAe7tJw)
 
 此处整理出来已经有不少东西了，不喜欢多余的文字，此图已涵盖产品生命周期的始终。读者们慢慢品味。

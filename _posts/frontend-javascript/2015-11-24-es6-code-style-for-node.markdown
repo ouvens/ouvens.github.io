@@ -1015,6 +1015,7 @@ object['key'] === undefined //无法访问该属性，因为是私有的
 > 没有使用的必要性
 
 参考：
-tp://bubkoo.com/2015/04/05/javascript-style-guide/?utm_source=tuicool
+---
+http://bubkoo.com/2015/04/05/javascript-style-guide/?utm_source=tuicool
 https://github.com/gf-rd/es6-coding-style#%E5%A3%B0%E6%98%8E
 https://github.com/ES-CN/es6features/blob/master/README.md?utm_source=tuicool&utm_medium=referral

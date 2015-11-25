@@ -23,7 +23,7 @@ image: "http://ouvens.github.io/blog/assets/logo.png"
 
 # Build settings
 # markdown: kramdown
-highlighter: true
+# highlighter: true
 markdown: redcarpet
 redcarpet:
     extensions: [ "fenced_code_blocks", "hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "highlight", "prettify","no_intra_emphasis"]
@@ -55,11 +55,17 @@ descriptions:
   - cat: frontend-client
     desc: "关于前端的跨端技术，例如android、ios和桌面应用等." 
 
-  - cat: frontend-重构
+  - cat: frontend-css
     desc: "关于html与css知识、技术、规范等."
 
-  - cat: product-高效产品经理
-    desc: "关于产品经理的功效工作流程."
+  - cat: frontend-weboptimize
+    desc: "关于前端的各项极限优化技术"
+
+  - cat: product-product
+    desc: "关于产品经理的产品管理和工作流程."
+
+  - cat: frontend-resource
+    desc: "前端技术开发各项资源."
 
 
 # Social icons and sharing options

@@ -17,7 +17,6 @@ cover:  "assets/category/type-product.png"
 ![](http://7tszky.com1.z0.glb.clouddn.com/Fn1hANMme6STGs6znKsGvqAe7tJw)
 [查看大图](http://7tszky.com1.z0.glb.clouddn.com/Fn1hANMme6STGs6znKsGvqAe7tJw)
 
-
 此处整理出来已经有不少东西了，不喜欢多余的文字，此图已涵盖产品生命周期的始终。读者们慢慢品味。
 ***
 #### 产品经理学习网站：

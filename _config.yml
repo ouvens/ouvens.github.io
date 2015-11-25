@@ -67,6 +67,9 @@ descriptions:
   - cat: frontend-resource
     desc: "前端技术开发各项资源."
 
+  - cat: frontend-build
+    desc: "前端开发构建相关技术."
+
 
 # Social icons and sharing options
 #

@@ -11,5 +11,6 @@ cover:  "assets/category/type-product.png"
 **先来张阅读本书后的总结，关于一个互联网产品，无论大小，其生命周期最长路径如下**
 
 ![](http://7tszky.com1.z0.glb.clouddn.com/Fvy7vhQTsh8PKin2Kfi19cHhEVIN)
+[查看大图](http://7tszky.com1.z0.glb.clouddn.com/Fvy7vhQTsh8PKin2Kfi19cHhEVIN)
 
-下面来细化分析每个过程
+此处整理出来已经有不少东西了，不喜欢多余的文字，此图已涵盖产品生命周期的始终。

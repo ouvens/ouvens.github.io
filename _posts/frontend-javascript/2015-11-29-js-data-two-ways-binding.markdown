@@ -12,6 +12,8 @@ cover:  "assets/category/type-javascript.png"
 
 &emsp;&emsp;前端的视图层和数据层有时需要实现双向绑定(two-way-binding)，例如mvvm框架，数据驱动视图，视图状态机等，研究了几个目前主流的数据双向绑定框架，总结了下。目前实现数据双向绑定主要有以下三种。
 
+[github演示例子](https://github.com/ouvens/demo-file/tree/master/two-ways-binding)
+
 #### 1、手动绑定
 比较老的实现方式，有点像观察者编程模式，主要思路是通过在数据对象上定义get和set方法(当然还有其它方法)，调用时手动调用get或set数据，改变数据后出发UI层的渲染操作；以视图驱动数据变化的场景主要应用与input、select、textarea等元素，当UI层变化时，通过监听dom的change，keypress，keyup等事件来出发事件改变数据层的数据。整个过程均通过函数调用完成。
 
@@ -334,7 +336,7 @@ cover:  "assets/category/type-javascript.png"
 
 ```
 
-&emsp;&ensp;但值得注意的是defineProperty支持IE8以上的浏览器，这里可以使用____defineGetter____和____defineSetter____来做兼容但是浏览器兼容性的原因，直接用defineProperty就可以了。至于IE8浏览器仍需要使用其它方法来做hack。如下代码可以对IE8进行hack，defineProperty支持IE8。例如使用es5-shim.js就可以了。（IE8以下浏览器忽略）
+&emsp;&ensp;但值得注意的是defineProperty支持IE8以上的浏览器，这里可以使用____defineGetter____ 和 ____defineSetter____ 来做兼容但是浏览器兼容性的原因，直接用defineProperty就可以了。至于IE8浏览器仍需要使用其它方法来做hack。如下代码可以对IE8进行hack，defineProperty支持IE8。例如使用es5-shim.js就可以了。（IE8以下浏览器忽略）
 
 #### 4、小结
 &emsp;&emsp;首先这里的例子只是简单的实现，读者可以深入感受三种方式的异同点，复杂的框架也是通过这样的基本思路滚雪球滚大的。

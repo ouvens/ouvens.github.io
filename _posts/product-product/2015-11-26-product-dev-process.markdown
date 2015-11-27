@@ -8,7 +8,7 @@ categories: product-product
 cover:  "assets/category/type-product.png"
 ---
 
-**先来张图，将本书20万字的文字浓缩成一张图来总结。关于一个互联网产品，无论大小，其生命周期过程如下**
+**先来张图，将本书42.2万字的文字浓缩成一张图来作总结。关于一个互联网产品，无论大小，其生命周期过程如下**
 
 ![](http://7tszky.com1.z0.glb.clouddn.com/Fvy7vhQTsh8PKin2Kfi19cHhEVIN)
 [查看大图](http://7tszky.com1.z0.glb.clouddn.com/Fvy7vhQTsh8PKin2Kfi19cHhEVIN)

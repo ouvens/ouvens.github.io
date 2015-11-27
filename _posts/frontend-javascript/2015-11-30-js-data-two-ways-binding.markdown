@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "javascript实现数据双向绑定的三种方式"
-date:   2015-11-30
+date:   2015-11-29
 author: ouven
 tags: javascript 数据双向绑定 mvvm
 categories: frontend-javascript
@@ -10,7 +10,7 @@ cover:  "assets/category/type-javascript.png"
 
 ### 前端数据的双向绑定方法
 
-&emsp;&emsp;前端的视图层和数据层有时需要实现双向绑定(two-way-binding)，例如mvvm框架，数据驱动视图，视图状态机等，目前实现数据双向绑定主要有以下三种
+&emsp;&emsp;前端的视图层和数据层有时需要实现双向绑定(two-way-binding)，例如mvvm框架，数据驱动视图，视图状态机等，研究了几个目前主流的数据双向绑定框架，总结了下。目前实现数据双向绑定主要有以下三种。
 
 #### 1、手动绑定
 比较老的实现方式，有点像观察者编程模式，主要思路是通过在数据对象上定义get和set方法(当然还有其它方法)，调用时手动调用get或set数据，改变数据后出发UI层的渲染操作；以视图驱动数据变化的场景主要应用与input、select、textarea等元素，当UI层变化时，通过监听dom的change，keypress，keyup等事件来出发事件改变数据层的数据。整个过程均通过函数调用完成。
@@ -345,4 +345,3 @@ cover:  "assets/category/type-javascript.png"
 
 https://gist.github.com/brettz9/4093766#file_html5_dataset.js
 https://github.com/xufei/blog/issues/10
-

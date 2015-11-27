@@ -8,7 +8,7 @@ categories: product-product
 cover:  "assets/category/type-product.png"
 ---
 
-**先来张阅读本书后的总结，关于一个互联网产品，无论大小，其生命周期过程如下**
+**先来张图，将本书20万字的文字浓缩成一张图来总结。关于一个互联网产品，无论大小，其生命周期过程如下**
 
 ![](http://7tszky.com1.z0.glb.clouddn.com/Fvy7vhQTsh8PKin2Kfi19cHhEVIN)
 [查看大图](http://7tszky.com1.z0.glb.clouddn.com/Fvy7vhQTsh8PKin2Kfi19cHhEVIN)
@@ -17,6 +17,7 @@ cover:  "assets/category/type-product.png"
 ![](http://7tszky.com1.z0.glb.clouddn.com/Fn1hANMme6STGs6znKsGvqAe7tJw)
 [查看大图](http://7tszky.com1.z0.glb.clouddn.com/Fn1hANMme6STGs6znKsGvqAe7tJw)
 
+总结文档规范的原因很简单，可以帮助一个新的产品经理直接就能写出一份完善并且思路清晰的文档出来，至少第一眼看不出来是新手写的。
 此处整理出来已经有不少东西了，不喜欢多余的文字，此图已涵盖产品生命周期的始终。读者们慢慢品味。
 ***
 #### 产品经理学习网站：

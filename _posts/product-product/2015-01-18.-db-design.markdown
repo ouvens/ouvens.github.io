@@ -10,10 +10,10 @@ cover:  "assets/category/type-product.png"
 
 ### app数据库数据
 
-> user表结构设计
+#### user表结构设计
 
 | 字段 | 描述 | 类型 | 备注 |
-|------|----------------|--------------| ----------------|
+|-----|-----|-----|
 | userid | 用户id| Number| 用户唯一id, 并非_id |
 | appid | app对应的id| Number| 用户app的id |
 | name | 用户名 | String | 用户名，用于登陆 |
@@ -46,10 +46,10 @@ cover:  "assets/category/type-product.png"
 | distArea | 地区 | String | 用户所在城市的地区 |
 | createTime| 添加时间 | Time| 用户加入的时间 |
 
-> content表结构设计
+#### content表结构设计
 
 | 字段 | 描述 | 类型 | 备注 |
-|---|---|---|
+|-----|-----|-----|
 | id | 内容id | Number| 内容唯一id, 并非_id |
 | name | 内容名称或标题 | String | 内容标题或名称 |
 | description | 内容描述 | String | 内容描述或全文 |
@@ -63,10 +63,10 @@ cover:  "assets/category/type-product.png"
 | userid | 用户id| String | 内容对应的用户id|
 | createTime | 内容添加时间 | Time| 内容描述或全文 |
 
-> comment表结构设计
+#### comment表结构设计
 
 | 字段 | 描述 | 类型 | 备注 |
-|---|---|---|
+|-----|-----|-----|
 | id | 评论id | Number| 内容唯一id, 并非_id |
 | parentid | 评论父评论id | Number| 内容唯一id, 并非_id |
 | context| 评论内容 | String | 评论内容 |

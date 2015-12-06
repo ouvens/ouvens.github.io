@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "产品数据库设计"
-date:   2015-1-18
+date:   2015-01-18
 author: ouven
 tags: 产品
 categories: product-product

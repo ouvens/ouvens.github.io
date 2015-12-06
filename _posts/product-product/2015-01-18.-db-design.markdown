@@ -1,0 +1,76 @@
+---
+layout: post
+title:  "产品数据库设计"
+date:   2015-1-18
+author: ouven
+tags: 产品
+categories: product-product
+cover:  "assets/category/type-product.png"
+---
+
+### app数据库数据
+
+> user表结构设计
+
+| 字段 | 描述 | 类型 | 备注 |
+|------|----------------|--------------| ----------------|
+| userid | 用户id| Number| 用户唯一id, 并非_id |
+| appid | app对应的id| Number| 用户app的id |
+| name | 用户名 | String | 用户名，用于登陆 |
+| password| 密码 | String | 密码加密后密文 |
+| accessToken| 第三方token | String | 第三方密文 |
+| nick | 昵称| String | 用户显示的昵称，不用于登陆 |
+| userType | 用户类型| Number | 0为注册用户，1为qq, 2为微信，3为微博 |
+| gender | 性别 | Number | 1为男，0为女 |
+| realName| 姓名| String| 用户的真实姓名 |
+| age | 年龄 | Number | 用户年龄，可以由生日推算 |
+| birth | 生日 | Date | 用户生日，可以推算出年龄 |
+| sign | 签名 | String | 用户个性签名 |
+| avatar| 头像 | String | 用户头像 |
+| email | 邮箱 | String | 用户邮箱 |
+| mobile | 手机号| String | 用户手机 |
+| phone | 电话| String | 用户电话 |
+| qq | qq号 | String | 用户QQ号，可以注册后填写，注册后填写不可用于登陆 |
+| weixin| 微信| String| 用户微信登陆产生，也可以注册后填写，注册后填写不可用用于登陆 |
+| weibo | 微博 | String | 用户微博账号，也可以注册后填写，注册后填写不可用于登陆 |
+| link | 个人网页 | String | 包括博客，微博首页 |
+| linkType | 链接类型| Number | 1为qq空间，3为微博，4为博客 |
+| bankid | 银行卡号 | String | 银行卡号 |
+| active| 是否激活 | Boolean | 用户账号是否可用 |
+| isVip | 是否是会员 | Boolean| 用户是否为会员 |
+| vipLevel | 会员等级 | Number| 会员等级|
+| isAdmin | 是否为管理员 | Boolean | 用户是否为管理员 |
+| distCoutry | 国家 | String| 用户所在的国家 |
+| distProvince | 省份 | String| 用户所在的省份 |
+| distCity | 城市 | String | 用户所在的城市 |
+| distArea | 地区 | String | 用户所在城市的地区 |
+| createTime| 添加时间 | Time| 用户加入的时间 |
+
+> content表结构设计
+
+| 字段 | 描述 | 类型 | 备注 |
+|---|---|---|
+| id | 内容id | Number| 内容唯一id, 并非_id |
+| name | 内容名称或标题 | String | 内容标题或名称 |
+| description | 内容描述 | String | 内容描述或全文 |
+| pic | 内容相关图片| String| 内容涉及的图片 |
+| link | 内容详情链接| String| 内容涉及的内容链接 |
+| extendPic | 内容额外的相关图片| Array | 内容涉及的额外图片 |
+| time | 内容相关时间 | Time | 内容相关时间 |
+| category | 内容分类 | String | 内容对应的主分类 |
+| subCategory | 内容子分类 | String | 内容对应的子分类 |
+| thirCategory | 内容三级分类 | String | 内容对应的三级分类 |
+| userid | 用户id| String | 内容对应的用户id|
+| createTime | 内容添加时间 | Time| 内容描述或全文 |
+
+> comment表结构设计
+
+| 字段 | 描述 | 类型 | 备注 |
+|---|---|---|
+| id | 评论id | Number| 内容唯一id, 并非_id |
+| parentid | 评论父评论id | Number| 内容唯一id, 并非_id |
+| context| 评论内容 | String | 评论内容 |
+| userid | 用户id | String | 内容对应的用户id |
+| avatar | 用户头像 | String | 内容对应的用户头像 |
+| createTime | 内容添加时间 | Time| 内容描述或全文 |
+

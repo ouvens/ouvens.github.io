@@ -55,6 +55,7 @@ https://kangax.github.io/compat-table/es6/
 结果让我震惊了，使用let，const声明变量的速度竟然比var快了约65%左右。原因可能是使用var会去检查作用域上的同名变量，而使用let或const不用考虑。
 
 **2.2、class类使用**
+
 | 运行次数 | ES5运行时间 | ES6运行时间 |
 |------|------|------|
 | 10万 | 1179-1211ms | 1411-1442ms |
@@ -62,13 +63,15 @@ https://kangax.github.io/compat-table/es6/
 可见使用Nodejs的Class比ES的function构造方法慢约25%
 
 **2.3、Map，Set 和 WeakMap，WeakSet**
- | 运行次数 | ES5运行时间 | ES6运行时间 |
+
+| 运行次数 | ES5运行时间 | ES6运行时间 |
 |------|------|------|
 | 100万 | 11-13ms | 179-180ms |
 
 测试结果看，Map的效率相对普通的对象key-value的结果相比慢的多，但是Map的Key可以使负责类型，这里的参考性也就不是绝对准确。建议是不到必须情况，不要使用Map等复杂类型。Set、WeakMap、WeakSet均相对object结构执行效率慢得多。
 
 **2.4、字符串模板**
+
 | 运行次数 | ES5运行时间 | ES6运行时间 |
 |------|------|------|
 | 100万 | 8ms | 59-61ms |

@@ -48,13 +48,60 @@ https://kangax.github.io/compat-table/es6/
 
 **2.1、let, const, 块**
 
+```javascript
+
+'use strict'
+let i = 0;
+let t1 = +new Date(),
+    t2;
+
+while(i++ < 1000000){
+    const a = 1;
+    const b = '1';
+    const c = true;
+    const d = {};
+    const e = [];
+}
+
+t2 = +new Date() - t1;
+console.log(t2);
+
+```
+
 | 运行次数 | ES5运行时间 | ES6运行时间 |
 |------|------|------|
 | 100万 | 52-53ms | 33-34ms |
 
 结果让我震惊了，使用let，const声明变量的速度竟然比var快了约65%左右。原因可能是使用var会去检查作用域上的同名变量，而使用let或const不用考虑。
 
+
 **2.2、class类使用**
+
+```javascript
+
+'use strict'
+let i = 0;
+let t1 = +new Date(),
+    t2;
+
+while(i++ < 100000){
+    class A{
+        constructor() {
+           this.name = 'ouven';
+        }
+        getName(){
+            return this.name;
+        }
+    }
+
+    const a = new A();
+    a.getName();
+}
+
+t2 = +new Date() - t1;
+console.log(t2);
+
+```
 
 | 运行次数 | ES5运行时间 | ES6运行时间 |
 |------|------|------|
@@ -64,6 +111,25 @@ https://kangax.github.io/compat-table/es6/
 
 **2.3、Map，Set 和 WeakMap，WeakSet**
 
+```javascript
+
+'use strict'
+let i = 0;
+let t1 = +new Date(),
+    t2;
+
+while(i++ < 1000000){
+    
+    let map = new Map();
+    map.set('key','value');
+}
+
+t2 = +new Date() - t1;
+console.log(t2);
+
+
+```
+
 | 运行次数 | ES5运行时间 | ES6运行时间 |
 |------|------|------|
 | 100万 | 11-13ms | 179-180ms |
@@ -71,6 +137,30 @@ https://kangax.github.io/compat-table/es6/
 测试结果看，Map的效率相对普通的对象key-value的结果相比慢的多，但是Map的Key可以使负责类型，这里的参考性也就不是绝对准确。建议是不到必须情况，不要使用Map等复杂类型。Set、WeakMap、WeakSet均相对object结构执行效率慢得多。
 
 **2.4、字符串模板**
+
+```javascript
+
+'use strict'
+let i = 0;
+let t1 = +new Date(),
+    t2;
+
+let vars = {
+    name: 'ouven',
+    address: 'tencent'
+};
+
+while(i++ < 1000000){
+
+    let str = `string text ${vars.name} string ${vars.address}`;
+    
+}
+
+t2 = +new Date() - t1;
+console.log(t2);
+
+
+```
 
 | 运行次数 | ES5运行时间 | ES6运行时间 |
 |------|------|------|

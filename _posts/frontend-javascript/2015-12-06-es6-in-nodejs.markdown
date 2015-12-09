@@ -14,7 +14,7 @@ ES6标准发布后，前端人员也开发渐渐了解到了es6，但是由于�
 &emsp;&emsp;之前写了es6通过Babel编译后的在浏览器端的兼容性问题[《Babel下的ES6兼容性和规范》](http://ouvens.github.io/frontend-javascript/2015/10/16/es6-under-babel.html)，随着范围的扩展，ES6在Nodejs上兼容性也有必要重新梳理下。
 &emsp;&emsp;随着iojs的引入，新版的Nodejs开始原生支持部分ES6的特性，既然ES6在浏览器端使用需要使用babel等编译，在Nodejs总可以放心使用了吧。然而事实并非如此，为此在nodejs端，我也做了特性兼容性研究：
 
-### ES6新特性在Nodejs下的兼容性列表
+**ES6新特性在Nodejs下的兼容性列表**
 这里罗列下nodejs支持的新特性，没列出的新特性均为不支持。
 
 https://iojs.org/en/es6.html

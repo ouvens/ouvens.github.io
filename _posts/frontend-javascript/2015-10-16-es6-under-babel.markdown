@@ -10,7 +10,7 @@ cover:  "assets/category/type-javascript.png"
 
 ES6标准发布后，前端人员也开发渐渐了解到了es6，但是由于兼容性的问题，仍然没有得到广泛的推广，不过业界也用了一些折中性的方案来解决兼容性和开发体系问题，但大家仍很疑惑，使用ES6会有哪些兼容性问题。
 
-#### 一、兼容性问题现状
+### 一、兼容性问题现状
 &emsp;&emsp;针对ES6的新特性兼容性问题，目前解决的方案是使用语法解析转换工具将es6语法转化为大部分浏览器识别的es5语法，通用的转化方案有babel，traceur，jsx，typescript，es6-shim。当然es6在服务器端也存在兼容性问题，这里由于只考虑到浏览器端的开发，暂不讨论。下面有一些常用的解决方案和兼容es6的兼容性比较~
 
 > [https://github.com/babel/babel/issues/596](es6的兼容解决方案很多，这里只讨论最常用的几种)
@@ -26,7 +26,8 @@ ES6标准发布后，前端人员也开发渐渐了解到了es6，但是由于�
 &emsp;&emsp;综合四点，我们仍然考虑使用babel作为我们的兼容性解决方案。即使以后需要更换，只需要更换更换工具就可以了，原有代码的写法可以不动。
 &emsp;&emsp;除了后面三点，我们可能比较关注babel处理es6时的兼容性问题。因为es6里面增加了较多的内容，转换为es5没有对应语法与之对应，所以使用时要尤为注意。为此也没有很好的方法进行判断，只能对于es6里的新增内容进行编译，判断是否可以转为es5语法。
  
-### ES6新特性在Babel下的兼容性列表
+**ES6新特性在Babel下的兼容性列表**
+
 | ES6特性 | 兼容性 |
 |------|------|
 |箭头函数 | 支持 |
@@ -49,25 +50,28 @@ ES6标准发布后，前端人员也开发渐渐了解到了es6，但是由于�
 #### 1.1 箭头操作符
 箭头操作符可以简洁的描述一个函数
 
-<pre><code class="hljs javascript">// ES6
+```javascript
+// ES6
 var fn= (v=>console.log(v));
-</code></pre>
+```
 
 转换后
 
-<pre><code class="hljs javascript">
+```javascript
 // ES6
 "use strict";
 
 var fn = function fn(v) {
   return console.log(v);
 };
-</code></pre>
+```
+
 该用法可以放心使用。
 
 #### 1.2 类的声明和继承
 
-<pre><code class="hljs javascript">//类的定义
+```javascript
+//类的定义
 class Animal {
     //ES6中新型构造器
     constructor(name) {
@@ -93,10 +97,13 @@ var animal=new Animal('dummy'),
 wayou=new Programmer('wayou');
 animal.sayName();//输出 ‘My name is dummy’
 wayou.sayName();//输出 ‘My name is wayou’
-wayou.program();//输出 ‘I'm coding...’</code></pre>
+wayou.program();//输出 ‘I'm coding...’
+```
+
 转换后
 
-<pre><code class="hljs javascript">//类的定义
+```javascript
+
 'use strict';
  
 var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
@@ -156,13 +163,17 @@ var animal = new Animal('dummy'),
     wayou = new Programmer('wayou');
 animal.sayName(); //输出 ‘My name is dummy’
 wayou.sayName(); //输出 ‘My name is wayou’
-wayou.program(); //输出 ‘I'm coding...’</code></pre>
+wayou.program(); //输出 ‘I'm coding...’
+```
+
 转换过程使用了Object.defineProperty，在ie8下不兼容，除此外可以任意使用
 
 
 #### 1.3 增强的对象字面量
 
-<pre><code class="hljs javascript">//通过对象字面量创建对象
+```javascript
+
+//通过对象字面量创建对象
 var human = {
     breathe() {
         console.log('breathing...');
@@ -177,10 +188,14 @@ var worker = {
 };
 human.breathe();//输出 ‘breathing...’
 //调用继承来的breathe方法
-worker.breathe();//输出 ‘breathing...’</code></pre>
+worker.breathe();//输出 ‘breathing...’
+```
+
 转换后
 
-<pre><code class="hljs javascript">//通过对象字面量创建对象
+```javascript
+
+//通过对象字面量创建对象
 'use strict';
  
 var human = {
@@ -197,70 +212,92 @@ var worker = {
 };
 human.breathe(); //输出 ‘breathing...’
 //调用继承来的breathe方法
-worker.breathe(); //输出 ‘breathing...’</code></pre>
+worker.breathe(); //输出 ‘breathing...’
+```
+
 这个可以任意使用
 
 #### 1.4 字符串模板
 
-<pre><code class="hljs javascript">//产生一个随机数
+```javascript
+
+//产生一个随机数
 var num=Math.random();
-console.log(`your num is ${num}`);</code></pre>
+console.log(`your num is ${num}`);
+```
 
 转换后
 
-<pre><code class="hljs javascript">//产生一个随机数
+```javascript
+//产生一个随机数
 "use strict";
 
 var num = Math.random();
-console.log("your num is " + num);</code></pre>
+console.log("your num is " + num);
+```
 
 #### 1.5 解构
 
-<pre><code class="hljs javascript">var [name,gender,age]=['wayou','male','secrect'];//数组解构
-console.log('name:'+name+', age:'+age);//输出： name:wayou, age:secrect </code></pre>
+```javascript
+var [name,gender,age]=['wayou','male','secrect'];//数组解构
+console.log('name:'+name+', age:'+age);//输出： name:wayou, age:secrect 
+```
 
 转化后
 
-<pre><code class="hljs javascript">'use strict';
+```javascript
+'use strict';
  
 var name = 'wayou';
 var gender = 'male';
 var age = 'secrect';
 //数组解构
-console.log('name:' + name + ', age:' + age); //输出： name:wayou, age:secrect</code></pre>
+console.log('name:' + name + ', age:' + age); //输出： name:wayou, age:secrect
+```
 
 此方法可以使用。但是尽量不要使用 var [a, b] = getVal(); 的方式，尽管getVal返回一个数组。因为此时会用到isArray，IE8上不能支持。
 #### 1.6 参数默认值，不定参数，拓展参数
 
 - 参数默认值
 
-<pre><code class="hljs javascript">function sayHello(age, name='dude'){
+
+```javascript
+function sayHello(age, name='dude'){
     console.log(`Hello ${name}`);
 }
-sayHello(12);</code></pre>
+sayHello(12);
+```
+
 转换后
 
-<pre><code class="hljs javascript">'use strict';
+```javascript
+
+'use strict';
  
 function sayHello(age) {
     var name = arguments.length <= 1 || arguments[1] === undefined ? 'dude' : arguments[1];
  
     console.log('Hello ' + name);
 }
-sayHello(12);</code></pre>
+sayHello(12);
+```
+
 - 不定参数
 
-<pre><code class="hljs javascript">//将所有参数相加的函数
+```javascript
+//将所有参数相加的函数
 function add(...x){
     return x.reduce((m,n)=>m+n);
 }
 //传递任意个数的参数
 console.log(add(1,2,3));//输出：6
-console.log(add(1,2,3,4,5));//输出：15</code></pre>
+console.log(add(1,2,3,4,5));//输出：15
+```
 
 转换后
 
-<pre><code class="hljs javascript">//将所有参数相加的函数
+```javascript
+//将所有参数相加的函数
 "use strict";
  
 function add() {
@@ -274,11 +311,13 @@ function add() {
 }
 //传递任意个数的参数
 console.log(add(1, 2, 3)); //输出：6
-console.log(add(1, 2, 3, 4, 5)); //输出：15</code></pre>
+console.log(add(1, 2, 3, 4, 5)); //输出：15
+```
 
 - 扩展参数
 
-<pre><code class="hljs javascript">var people=['Wayou','John','Sherlock'];
+```javascript
+var people=['Wayou','John','Sherlock'];
 //sayHello函数本来接收三个单独的参数人妖，人二和人三
 function sayHello(people1,people2,people3){
     console.log(`Hello ${people1},${people2},${people3}`);
@@ -287,11 +326,13 @@ function sayHello(people1,people2,people3){
 sayHello(...people);//输出：Hello Wayou,John,Sherlock
  
 //而在以前，如果需要传递数组当参数，我们需要使用函数的apply方法
-sayHello.apply(null,people);//输出：Hello Wayou,John,Sherlock </code></pre>
+sayHello.apply(null,people);//输出：Hello Wayou,John,Sherlock
+```
 
 转换后
 
-<pre><code class="hljs javascript">'use strict';
+```javascript
+'use strict';
  
 var people = ['Wayou', 'John', 'Sherlock'];
 //sayHello函数本来接收三个单独的参数人妖，人二和人三
@@ -302,7 +343,8 @@ function sayHello(people1, people2, people3) {
 sayHello.apply(undefined, people); //输出：Hello Wayou,John,Sherlock
  
 //而在以前，如果需要传递数组当参数，我们需要使用函数的apply方法
-sayHello.apply(null, people); //输出：Hello Wayou,John,Sherlock</code></pre>
+sayHello.apply(null, people); //输出：Hello Wayou,John,Sherlock
+```
 
 参数默认值，不定参数，拓展参数都可以完全使用
 
@@ -310,14 +352,18 @@ sayHello.apply(null, people); //输出：Hello Wayou,John,Sherlock</code></pre>
 let和const完全支持，将都会被转为var，但是要理解let、var、const的区别。
 
 #### 1.8 for of
-<pre><code class="hljs javascript">var someArray = [ "a", "b", "c" ];
+```javascript
+var someArray = [ "a", "b", "c" ];
  
 for (v of someArray) {
     console.log(v);//输出 a,b,c
-}</code></pre>
+}
+```
+
 转换后
 
-<pre><code class="hljs javascript">"use strict";
+```javascript
+"use strict";
  
 var someArray = ["a", "b", "c"];
  
@@ -344,12 +390,15 @@ try {
       throw _iteratorError;
     }
   }
-}</code></pre>
+}
+```
+
 这里IE下面没有throw，所以无法支持
 
 #### 1.9 iterator, generator
 
-<pre><code class="hljs javascript">var ids = {
+```javascript
+var ids = {
   *[Symbol.iterator]: function () {
     var index = 0;
  
@@ -359,10 +408,13 @@ try {
       }
     };
   }
-};</code></pre>
+};```
+
 转换后
 
-<pre><code class="hljs javascript">'use strict';
+```javascript
+
+'use strict';
  
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
  
@@ -374,13 +426,16 @@ var ids = _defineProperty({}, Symbol.iterator, function () {
       return { value: 'id-' + index++, done: false };
     }
   };
-});</code></pre>
+});
+
+```
 
 不建议使用，转换后仍需要浏览器支持
 
 #### 1.10 模块 module、Proxies、Symbol
 
-<pre><code class="hljs javascript">// point.js
+```javascript
+// point.js
 module "point" {
     export class Point {
         constructor (x, y) {
@@ -388,7 +443,9 @@ module "point" {
             public y = y;
         }
     }
-}</code></pre>
+}
+```
+
 完全不支持，import也不支持，解析报错，所以建议不使用，使用原来的require
 
 #### 1.11 Map，Set 和 WeakMap，WeakSet
@@ -399,12 +456,15 @@ Map，Set 和 WeakMap，WeakSet在es5中都没有对应的类型与之对应，�
 
 #### 1.13 export & import
 
-<pre><code class="hljs javascript">export function myModule(someArg) {
+```javascript
+export function myModule(someArg) {
   return someArg;
-}</code></pre>
+}```
+
 转换后
 
-<pre><code class="hljs javascript">"use strict";
+```javascript
+"use strict";
  
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -413,28 +473,41 @@ exports.myModule = myModule;
  
 function myModule(someArg) {
   return someArg;
-}</code></pre>
+}
+```
 
-<pre><code class="hljs javascript">import * as baz from 'myModule';</code></pre>
+```javascript
+import * as baz from 'myModule';
+```
+
 转换后
 
-<pre><code class="hljs javascript">'use strict';
+```javascript
+'use strict';
  
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
  
 var _myModule = require('myModule');
  
-var baz = _interopRequireWildcard(_myModule);</code></pre>
+var baz = _interopRequireWildcard(_myModule);
+```
+
 所以可以使用export和import等方法来进行模块的加载处理依赖，同时export使用到了defineProperty，IE8兼容性存在问题。
 
 1.14 生成器函数
 
-<pre><code class="hljs javascript">function* foo() { };
+```javascript
+
+function* foo() { };
 var bar = foo();
-bar.next(); // Object {value: undefined, done: true}</code></pre>
+bar.next(); // Object {value: undefined, done: true}
+```
+
 转换后
 
-<pre><code class="hljs javascript">"use strict";
+```javascript
+
+"use strict";
  
 var marked0$0 = [foo].map(regeneratorRuntime.mark);
 function foo() {
@@ -447,20 +520,28 @@ function foo() {
   }, marked0$0[0], this);
 };
 var bar = foo();
-bar.next(); // Object {value: undefined, done: true}</code></pre>
+bar.next(); // Object {value: undefined, done: true}
+```
+
 regeneratorRuntime在IE下面不能支持，所以不建议使用。
 
 &emsp;&emsp;ES6新特性用到的就这些，其它的基本由浏览器本身决定。这部分代码Babel会像处理es5代码一样，不进行加工处理。对于部分ES6的语法，Babel会解析抛错，即使不抛错也不进行处理，建议不使用。
 1.15 数组拷贝
 
-<pre><code class="hljs javascript">const items = [1,2,3];
-const itemsCopy = [...items];</code></pre>
+```javascript
+const items = [1,2,3];
+const itemsCopy = [...items];
+```
+
 转换后
 
-<pre><code class="hljs javascript">"use strict";
+```javascript
+"use strict";
 
 var items = [1, 2, 3];
-var itemsCopy = [].concat(items);</code></pre>
+var itemsCopy = [].concat(items);
+```
+
 可以使用
 
 ## 二、ES6打包体系

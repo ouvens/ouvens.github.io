@@ -37,7 +37,7 @@ __输出__
 如何结束worker：
 主页面worker.terminate();或worker自销毁self.close();或者关闭页面
 
-#### sharedworker：
+**sharedworker：**
 除了webWorker，还有另一类sharedworker支持多个浏览器窗口共享同一个worker，单个页面关闭，worker并不结束，需关闭浏览器。但这里不做深入讨论
 
 importScripts:

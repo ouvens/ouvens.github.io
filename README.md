@@ -3,10 +3,17 @@
 
 http://ouvens.github.io/
 
-### 开发说明
+
+
+
+
+
+### 开发指导说明
 
 - 新建页面项目开发
-好了，现在把git命令行打开，输入下面几行代码。
+
+把git命令行打开，输入代码。
+
 ```javascript
 git clone https://github.com/ouvens/repository.git
 ```

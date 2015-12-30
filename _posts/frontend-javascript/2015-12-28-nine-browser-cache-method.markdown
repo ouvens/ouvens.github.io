@@ -24,6 +24,7 @@ cover:  "assets/category/type-javascript.png"
 
 ### 二、websql
 &emsp;&emsp; websql这种方式只有较新的chrome浏览器支持，并以一个独立规范形式出现，主要有以下特点
+
 - Web Sql 数据库API 实际上不是HTML5规范的组成部分；
 - 在HTML5之前就已经存在了，是单独的规范；
 - 它是将数据以数据库的形式存储在客户端，根据需求去读取；
@@ -33,6 +34,7 @@ cover:  "assets/category/type-javascript.png"
 - 这个数据库是集成在浏览器里面的，目前主流浏览器基本都已支持；
 
 &emsp;&emsp;websql API主要包含三个核心方法：
+
 - openDatabase : 这个方法使用现有数据库或创建新数据库创建数据库对象。
 - transaction : 这个方法允许我们根据情况控制事务提交或回滚。
 - executeSql : 这个方法用于执行真实的SQL查询。

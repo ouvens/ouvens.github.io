@@ -8,7 +8,7 @@ categories: frontend-javascript
 cover:  "assets/category/type-javascript.png"
 ---
 
-&emsp;&emsp;浏览器缓存（Browser Caching）是浏览器端保存数据用于快速读取或避免重复资源请求的优化机智，有效的缓存使用可以避免重复的网络请求和浏览器快速地读取本地数据，整体上加速网页展示给用户。浏览器端缓存的机制种类较多，总体归纳为九种，这里详细分析下这九种缓存机制的原理和使用场景。打开浏览器的调试模式->resources左侧就有浏览器的8中缓存机制。
+&emsp;&emsp;浏览器缓存（Browser Caching）是浏览器端保存数据用于快速读取或避免重复资源请求的优化机制，有效的缓存使用可以避免重复的网络请求和浏览器快速地读取本地数据，整体上加速网页展示给用户。浏览器端缓存的机制种类较多，总体归纳为九种，这里详细分析下这九种缓存机制的原理和使用场景。打开浏览器的调试模式->resources左侧就有浏览器的8中缓存机制。
 
 &emsp;&emsp;![](http://7tszky.com1.z0.glb.clouddn.com/Fh5DJkgam82rD_89kXdaxA3cWBC7)
 
@@ -122,7 +122,7 @@ var db = openDatabase('mydatabase', '2.0', my db', 2 * 1024);
 - IDBKeyRange 定义键的范围。
 - IDBObjectStore 表示一个对象存储空间。
 - IDBOpenDBRequest 表示一个打开数据库的请求。
--IDBRequest 提供了到数据库异步请求结果和数据库的访问。这也是在你调用一个异步方法时所得到的。
+- IDBRequest 提供了到数据库异步请求结果和数据库的访问。这也是在你调用一个异步方法时所得到的。
 - IDBTransaction 表示一个事务。你在数据库上创建一个事务，指定它的范围（例如你希望访问哪一个对象存储空间），并确定你希望的访问类型（只读或写入）。
 - IDBVersionChangeEvent 表明数据库的版本号已经改变。
 ```

@@ -8,7 +8,7 @@ categories: frontend-javascript
 cover:  "assets/category/type-javascript.png"
 ---
 
-&emsp;&emsp;浏览器缓存（Browser Caching）是浏览器端保存数据用于快速读取或避免重复资源请求的优化机制，有效的缓存使用可以避免重复的网络请求和浏览器快速地读取本地数据，整体上加速网页展示给用户。浏览器端缓存的机制种类较多，总体归纳为九种，这里详细分析下这九种缓存机制的原理和使用场景。打开浏览器的调试模式->resources左侧就有浏览器的8中缓存机制。
+&emsp;&emsp;浏览器缓存（Browser Caching）是浏览器端保存数据用于快速读取或避免重复资源请求的优化机制，有效的缓存使用可以避免重复的网络请求和浏览器快速地读取本地数据，整体上加速网页展示给用户。浏览器端缓存的机制种类较多，总体归纳为九种，这里详细分析下这九种缓存机制的原理和使用场景。打开浏览器的调试模式->resources左侧就有浏览器的8种缓存机制。
 
 &emsp;&emsp;![](http://7tszky.com1.z0.glb.clouddn.com/Fh5DJkgam82rD_89kXdaxA3cWBC7)
 

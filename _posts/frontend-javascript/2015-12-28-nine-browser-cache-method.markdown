@@ -14,6 +14,7 @@ cover:  "assets/category/type-javascript.png"
 
 ### 一、http缓存
 &emsp;&emsp;http缓存是基于HTTP协议的浏览器文件级缓存机制。即针对文件的重复请求情况下，浏览器可以根据协议头判断从服务器端请求文件还是从本地读取文件，chrome控制台下的Frames即展示的是浏览器的http文件级缓存。以下是浏览器缓存的整个机制流程。主要是针对重复的http请求，在有缓存的情况下判断过程主要分3步：
+
 - 判断expires，如果未过期，直接读取http缓存文件，不发http请求，否则进入下一步
 - 判断etag，判断文件是否修改，如果修改，则带上if-none-match发送请求，返回200或304，否则进入下一步
 - 判断last-modified，判断文件是否超过最大缓存时间，则带上if-modified-since发送请求，返回200或304，否则直接不带发送请求
@@ -45,6 +46,7 @@ __openDatabase方法可以打开已经存在的数据库，不存在则创建__
 ```javascript
 	var db = openDatabase('mydatabase', '2.0', my db', 2 * 1024);
 ```
+
 &emsp;&emsp;openDatabasek中五个参数分别为：数据库名、版本号、描述、数据库大小、创建回调。创建回调没有也可以创建数据库。
 
 __database.transaction() 函数用来查询，executeSql()用于执行sql语句__
@@ -57,6 +59,7 @@ __database.transaction() 函数用来查询，executeSql()用于执行sql语句_
       tx.executeSql('CREATE TABLE IF NOT EXISTS t1 (id unique, log)');  
    });
 ```
+
 &emsp;&emsp;插入操作
 
 ```javascript
@@ -163,6 +166,7 @@ localStorage.getItem(key)			//获取记录
 localStorage.removeItem(key)		//删除该域名下单条记录
 localStorage.clear()				//删除该域名下所有记录
 ```
+
 &emsp;&emsp;值得注意的是，localstorage大小有限制，不适合存放过多的数据，如果数据存放超过最大限制会报错，并移除最先保存的数据。
 
 https://github.com/machao/localStorage
@@ -171,9 +175,11 @@ https://github.com/machao/localStorage
 &emsp;&emsp;sessionStorage和localstorage类似，但是浏览器关闭则会全部删除，api和localstorage相同，实际项目中使用较少。
 
 ### 七、application cache
+
 &emsp;&emsp;application cahce是将大部分图片资源、js、css等静态资源放在manifest文件配置中。当页面打开时通过manifest文件来读取本地文件或是请求服务器文件。
 &emsp;&emsp;离线访问对基于网络的应用而言越来越重要。虽然所有浏览器都有缓存机制，但它们并不可靠，也不一定总能起到预期的作用。HTML5 使用ApplicationCache 接口可以解决由离线带来的部分难题。前提是你需要访问的web页面至少被在线访问过一次。
 &emsp;&emsp;使用缓存接口可为您的应用带来以下三个优势：
+
 - 离线浏览 – 用户可在离线时浏览您的完整网站
 - 速度 – 缓存资源为本地资源，因此加载速度较快。
 - 服务器负载更少 – 浏览器只会从发生了更改的服务器下载资源。
@@ -181,6 +187,7 @@ https://github.com/machao/localStorage
 &emsp;&emsp;一个简单的离线页面主要包含以下几个部分：
 
 __index.html__
+
 ```html
 <html manifest="clock.manifest">
   <head>
@@ -245,6 +252,7 @@ if (appCache.status == window.applicationCache.UPDATEREADY) {
   appCache.swapCache();  // The fetch was successful, swap in the new cache.
 }
 ```
+
 &emsp;&emsp;这里是通过更新menifest文件来控制其它文件更新的。
 
 ### 八、cacheStorage
@@ -302,7 +310,6 @@ then.addEventListener('activate', function(event) {
 });
 ```
 
-
 https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage
 
 
@@ -311,6 +318,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage
 
 
 #### 注释PS
+
 - Web Storage / Web SQL Database / Indexed Database 的数据都存储在浏览器对应的用户配置文件目录(user profile directory)下，以 Windows 7 为例，Chrome 的数据存储在”C:\Users\your-account-name\AppData\Local\Google\Chrome\User Data\Default\”下，而 Firefox 的数据存储在”C:\Users\your-account-name\AppData\Local\Mozilla\Firefox\Profiles\”目录下。
 - cookie文件存储于documents and settings\userName\cookie\文件夹下。通常的命名格式为：userName@domain.txt。 
 

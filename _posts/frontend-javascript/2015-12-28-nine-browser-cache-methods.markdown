@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "浏览器缓存机制"
+title:  "九种浏览器端缓存机制知多少"
 date:   2015-12-28
 author: ouven
-tags:   浏览器缓存 cache 缓存机制
+tags:   浏览器缓存 cache
 categories: frontend-javascript
 cover:  "assets/category/type-javascript.png"
 ---

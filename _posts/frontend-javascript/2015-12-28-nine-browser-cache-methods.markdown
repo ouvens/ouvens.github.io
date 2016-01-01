@@ -16,8 +16,8 @@ cover:  "assets/category/type-javascript.png"
 &emsp;&emsp;http缓存是基于HTTP协议的浏览器文件级缓存机制。即针对文件的重复请求情况下，浏览器可以根据协议头判断从服务器端请求文件还是从本地读取文件，chrome控制台下的Frames即展示的是浏览器的http文件级缓存。以下是浏览器缓存的整个机制流程。主要是针对重复的http请求，在有缓存的情况下判断过程主要分3步：
 
 - 判断expires，如果未过期，直接读取http缓存文件，不发http请求，否则进入下一步
-- 判断etag，判断文件是否修改，如果修改，则带上if-none-match发送请求，返回200或304，否则进入下一步
-- 判断last-modified，判断文件是否超过最大缓存时间，则带上if-modified-since发送请求，返回200或304，否则直接不带发送请求
+- 判断是否含有etag，有则带上if-none-match发送请求，未修改返回304，修改返回200，否则进入下一步
+- 判断是否含有last-modified，有则带上if-modified-since发送请求，无效返回200，有效返回304，否则直接向服务器请求
 
 &emsp;&emsp; ![](http://7tszky.com1.z0.glb.clouddn.com/Fg9HGSm1K7AlSY_67ZwhTbKWG7QA)
 

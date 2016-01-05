@@ -9,7 +9,6 @@ cover:  "assets/category/type-javascript.png"
 ---
 
 
-
 &emsp;&emsp;随着web的发展，网站资源的流量也变得越来越大。据统计，60%的网站流量均来自网站图片，可见对图片合理优化可以大幅影响网站流量，减小带宽消耗和服务器压力。
 
 #### 一、现有web图片格式
@@ -56,7 +55,8 @@ cover:  "assets/category/type-javascript.png"
 
 - **png**
     png文件分为png8(8位透明png)、png24(256色png)、png32(多阶透明png)，png的有点在于使用位图实现web上的透明图片，以实现比较好的体验。
-    ![](http://7tszky.com1.z0.glb.clouddn.com/FnRWuq6-ElyEqZIw0MrUiXaSL3e7)
+    
+    ![](http://7tszky.com1.z0.glb.clouddn.com/FllKVugS_RwLmFvDF7UyUPpmv-DL)
     
     优势：
     - 支持256色调色板技术以产生小体积文件

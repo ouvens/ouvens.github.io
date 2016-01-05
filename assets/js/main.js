@@ -89,5 +89,20 @@
      * 添加github信息
      */
     // $('.github-widget-user').github('ouvens');
+    // 
+    $.ajax({
+        url: 'https://api.github.com/users/ouvens/',
+        cache: false,
+        data: {},
+        dataType: 'jsonp',
+        success: function(data){
+            if(data & data.data && data.data.id){
+                $('#github-info a').html('<img src="'+ data.user_avatar +'" width="20" height="20">' + user.name);
+            }
+        },
+        error: function(msg){
+            console.log(msg);
+        }
+    });
 
 })();

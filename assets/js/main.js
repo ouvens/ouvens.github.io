@@ -85,5 +85,9 @@
         }
     })
     
+    /**
+     * 添加github信息
+     */
+    // $('.github-widget-user').github('ouvens');
 
 })();

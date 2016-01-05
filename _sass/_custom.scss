@@ -52,6 +52,7 @@ pre code.language-text{
         top: 10px;
         left: 50px;
         right: 50px;
+        width: 250px;
         @include media ($tablet) {
             right: 360px;
             left: 80px;
@@ -66,5 +67,20 @@ pre code.language-text{
                 color: #777;
             }
         }
+    }
+}
+
+#github-info{
+    position: relative;
+    padding-left: 35px;
+    .github-info{
+
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30px;
+            height: 30px;
+        }   
     }
 }

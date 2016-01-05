@@ -96,6 +96,7 @@
         data: {},
         dataType: 'jsonp',
         success: function(data){
+            $('#github-info a').html('<img src="https://avatars.githubusercontent.com/u/922219?v=3">ouvens' );
             if(data & data.data && data.data.id){
                 $('#github-info a').html('<img src="'+ data.user_avatar +'" width="20" height="20">' + user.name);
             }

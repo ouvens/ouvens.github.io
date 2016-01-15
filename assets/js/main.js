@@ -106,16 +106,4 @@
             console.log(msg);
         }
     });
-
-    /**
-     * 添加访问量统计
-     */
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "//hm.baidu.com/hm.js?041efd2cb345ca1b9dbdbb2383cb716d";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-
 })();

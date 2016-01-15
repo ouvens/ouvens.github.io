@@ -1,6 +1,7 @@
-;(function() {
-    var device = navigator.userAgent.match(/iPhone|iPod|Android|iPad/i)? 
-        'ios' : navigator.userAgent.match(/Android/i)? 'android' : 'pc';
+;
+(function() {
+    var device = navigator.userAgent.match(/iPhone|iPod|Android|iPad/i) ?
+        'ios' : navigator.userAgent.match(/Android/i) ? 'android' : 'pc';
 
     function getParam(par) {
         var search = document.location.href;
@@ -49,11 +50,11 @@
      * 头部banner自适应改变
      */
     var $coverBanner = $('.site-header-container.has-cover');
-    if(device === 'pc'){
+    if (device === 'pc') {
         $coverBanner.css({
             'background-image': 'url(/assets/header_image.png)'
         })
-    }else{
+    } else {
         $coverBanner.css({
             'background-image': 'url(/assets/header_image_m.png)'
         })
@@ -62,7 +63,7 @@
     window.hljs && window.hljs.initHighlightingOnLoad();
     var menuToggle = $('#js-mobile-menu').unbind();
     $('#js-navigation-menu').removeClass("show");
-    
+
     menuToggle.on('click', function(e) {
         e.preventDefault();
         $('#js-navigation-menu').slideToggle(function() {
@@ -74,17 +75,17 @@
     /**
      * 搜索框输入功能,支持回车和点击搜索
      */
-    $('#search-input').on('keypress', '.search-text', function(e){
-        if(e.keyCode === 13 && this.value.length > 0){
+    $('#search-input').on('keypress', '.search-text', function(e) {
+        if (e.keyCode === 13 && this.value.length > 0) {
             location.replace("/tags/?tag=" + this.value);
         }
-    }).on('click', '.search-btn', function(){
+    }).on('click', '.search-btn', function() {
         var value = $('#search-input').find('.search-text').val();
-        if(value.length > 0){
+        if (value.length > 0) {
             location.replace("/tags/?tag=" + value);
         }
     })
-    
+
     /**
      * 添加github信息
      */
@@ -95,15 +96,26 @@
         cache: false,
         data: {},
         dataType: 'jsonp',
-        success: function(data){
-            $('#github-info a').html('<img src="https://avatars.githubusercontent.com/u/922219?v=3">ouvens' );
-            if(data & data.data && data.data.id){
-                $('#github-info a').html('<img src="'+ data.user_avatar +'" width="20" height="20">' + user.name);
+        success: function(data) {
+            $('#github-info a').html('<img src="https://avatars.githubusercontent.com/u/922219?v=3">ouvens');
+            if (data & data.data && data.data.id) {
+                $('#github-info a').html('<img src="' + data.user_avatar + '" width="20" height="20">' + user.name);
             }
         },
-        error: function(msg){
+        error: function(msg) {
             console.log(msg);
         }
     });
+
+    /**
+     * 添加访问量统计
+     */
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?041efd2cb345ca1b9dbdbb2383cb716d";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
 
 })();

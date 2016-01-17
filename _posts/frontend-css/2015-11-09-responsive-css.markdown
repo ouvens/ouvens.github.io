@@ -93,7 +93,9 @@ Simple Grid
   
 &emsp;&emsp;这两个结合起来介绍是因为这两个比较强相关。由于移动端页面的html可能相对简单，但是扩展到PC会增加额外的html结构，例如下面截图中的框中部分，在移动端时不显示或显示另一种样式，例如下面两图对比。那我们如何做到两个平台两种不同展示呢？
 
-&emsp;&emsp;![](http://7tszky.com1.z0.glb.clouddn.com/FqfAw_-6LxpvIv-5YWznCc9udE2g)&emsp;&emsp;![](http://7tszky.com1.z0.glb.clouddn.com/FlBh3mTTLl5pYJrrS0U1xynqjY0x)
+![](http://7tszky.com1.z0.glb.clouddn.com/FkKIUveEN5Jq3a752ICPxQU4-Gmy)
+
+![](http://7tszky.com1.z0.glb.clouddn.com/Fpveyyy5IDVxFLcUHrIWoZ18fY3H)
 
 &emsp;&emsp;方法思路一：使用相同html结构，对于要在移动端要隐藏的dom元素，可以通过display:  none来控制html是否显示；对于展示样式不同的，需要在PC端额外引入css覆盖移动端的原有样式（之前说过了，PC端资源相对移动端比较充裕，PC端可以接受额外增减少量的css文件来实现响应式）。
 

@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "响应式架构设计"
-date:  2014-11-09
+title:  "腾讯课堂web前端响应式设计总结"
+date:  2016-01-15
 author: ouven
 tags: web前端 响应式 腾讯课堂
 categories: frontend-css

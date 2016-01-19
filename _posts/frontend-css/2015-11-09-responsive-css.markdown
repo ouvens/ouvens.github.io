@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "腾讯课堂web前端响应式设计总结"
+title:  "web前端响应式设计总结"
 date:  2016-01-15
 author: ouven
 tags: web前端 响应式 腾讯课堂
@@ -8,7 +8,7 @@ categories: frontend-css
 cover: "assets/category/type-css.png"
 ---
 
-## 腾讯课堂web前端响应式设计总结
+## web前端响应式设计总结
 
 #### 一、响应式概述
 

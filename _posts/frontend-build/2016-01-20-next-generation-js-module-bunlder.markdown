@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "下一代打包工具rollup与tree-shaking"
+title:  "下一代前端打包工具与tree-shaking"
 date:   2016-01-20
 author: ouven
 categories: frontend-build

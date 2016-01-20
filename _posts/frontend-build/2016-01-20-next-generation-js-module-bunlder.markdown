@@ -217,9 +217,9 @@ require.async(['zepto', 'frozen', './main'], function($, frozen, main) {
 - 依赖fis3环境，支持commonjs规范
 - 不需要书写任务配置，这点是很方便的
 
-## 三、rollup
-&emsp;&emsp;再来看看下一代模块打包工具rollup ( http://rollupjs.org/guide/ )。
-&emsp;&emsp;rollup 是一个 模块打包工具 ：它可以将多个 ES6 模块转化为一个独立的 打包文件 ，打包后的模块可以是 ES6、CommonJS、ES5…… 中的任一种格式。Rollup打包JavaScript 模块具有两个新的优势：
+## 三、下一代前端打包工具
+&emsp;&emsp;再来看看下一代模块打包工具rollup ( http://rollupjs.org/guide/ )和webpack2(这里原理相同，不赘述了)。
+&emsp;&emsp;rollup是一个模块打包工具：它可以将多个ES6模块转化为一个独立的打包文件，打包后的模块可以是 ES6、CommonJS、ES5……中的任一种格式。Rollup打包JavaScript模块具有两个新的优势：
 
 &emsp;&emsp;**1、ES6到处的模块依然是可用的独立模块**
 &emsp;&emsp;现在不少前端团队开始使用ES6 + babel + webpack的方式开发了，但是我们依然只能这样写代码，因为babel无法为我们解析模块加载的问题：

@@ -4,7 +4,7 @@ title:  "下一代前端打包工具与tree-shaking"
 date:   2016-01-20
 author: ouven
 categories: frontend-build
-tags:  打包工具 rollup webpack2  tree-shaking
+tags:  打包工具 rollup webpack2 tree-shaking
 cover:  "assets/category/type-javascript.png"
 ---
 

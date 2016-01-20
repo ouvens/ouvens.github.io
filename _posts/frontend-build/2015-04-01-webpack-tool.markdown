@@ -88,7 +88,7 @@ module.exports = {
 ```
 
 ## 图片及css的引用
-css跟 less，还有图片，被直接引用了。实际上 CSS 被转化为 <style> 标签，而图片可能被转化成 base64 格式的dataUrl，但是要主要在 webpack.config.js 文件写好对应的 loader：
+css跟 less，还有图片，被直接引用了。实际上 CSS 被转化为style标签，而图片可能被转化成 base64 格式的dataUrl，但是要主要在 webpack.config.js 文件写好对应的 loader：
 
 ```javascript
 require('./bootstrap.css');

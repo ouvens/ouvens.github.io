@@ -13,7 +13,7 @@ cover:  "assets/category/type-client.png"
 
 ![](http://7tszky.com1.z0.glb.clouddn.com/FsPayu9dzc8ecy1M16qQl5zmQe01)
 
-[去水印原图获取方式](https://github.com/ouvens/frontend-system-map)
+[去水印原图获取方式](http://github.com/ouvens/frontend-system-map)
 
 ## 一、框架与组件
 

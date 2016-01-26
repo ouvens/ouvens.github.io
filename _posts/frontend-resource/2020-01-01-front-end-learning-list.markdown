@@ -13,6 +13,8 @@ cover:  "assets/category/type-client.png"
 
 ![](http://7tszky.com1.z0.glb.clouddn.com/FvUpuJC4ta8ij37qZm9L9Q2DacNm)
 
+[原图](http://7tszky.com1.z0.glb.clouddn.com/FvUpuJC4ta8ij37qZm9L9Q2DacNm)
+
 ## 一、框架与组件
 
 ####&emsp;bootstrap等UI框架设计与实现

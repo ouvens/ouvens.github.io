@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "前端知识体系"
+title:  "2015-2016前端知识体系"
 date:   2016-01-26
 author: ouven
 tags: 前端 知识体系
@@ -315,7 +315,7 @@ cover:  "assets/category/type-client.png"
 ####&emsp;npm、jspm、bower包管理工具
 
 
-####&emsp;r.js、browserify、webpack、Rollup打包工具使用
+####&emsp;r.js、browserify、webpack、webpack 2、Rollup打包工具使用
 
 
  - 原理：根据依赖配置文件对文件进行依赖打包

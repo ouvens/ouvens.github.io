@@ -733,7 +733,7 @@ cover:  "assets/category/type-client.png"
 ####&emsp;node.js直出
 
 
-####&emsp;实时web开发，meteo/express.io
+####&emsp;实时web开发，meteor/express.io
 
 
 ####&emsp;MEAN(mongodb/express/angular/nodejs)

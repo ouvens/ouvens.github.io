@@ -11,9 +11,9 @@ cover:  "assets/category/type-client.png"
 
 #前端体系知识图谱
 
-![](http://7tszky.com1.z0.glb.clouddn.com/FvUpuJC4ta8ij37qZm9L9Q2DacNm)
+![](http://7tszky.com1.z0.glb.clouddn.com/FsPayu9dzc8ecy1M16qQl5zmQe01)
 
-[原图](https://github.com/ouvens/frontend-system-map)
+[去水印原图获取方式](https://github.com/ouvens/frontend-system-map)
 
 ## 一、框架与组件
 

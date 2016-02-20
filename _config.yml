@@ -24,10 +24,7 @@ image: "http://ouvens.github.io/blog/assets/logo.png"
 # Build settings
 kramdown:
   input: GFM
-  extensions:
-    - autolink
-    - footnotes
-    - smart
+  extensions: [ "fenced_code_blocks", "hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "highlight", "prettify","no_intra_emphasis"]
   enable_coderay: true
   syntax_highlighter: rouge
   coderay:

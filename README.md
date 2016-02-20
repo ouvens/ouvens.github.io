@@ -46,3 +46,7 @@ git status .
 git commit -a -m "site"
 git push origin gh-pages
 ```
+
+本地开发：
+安装jekyll
+jekyll server

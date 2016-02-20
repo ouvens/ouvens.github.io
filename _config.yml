@@ -22,11 +22,20 @@ keywords: "极限前端, ouenzhang, 博客, github, 前端技术, javascript, cs
 image: "http://ouvens.github.io/blog/assets/logo.png"
 
 # Build settings
-# markdown: kramdown
+kramdown:
+  input: GFM
+  extensions:
+    - autolink
+    - footnotes
+    - smart
+  enable_coderay: true
+  syntax_highlighter: rouge
+  coderay:
+    coderay_line_numbers:  nil
 # highlighter: true
-markdown: redcarpet
-redcarpet:
-    extensions: [ "fenced_code_blocks", "hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "highlight", "prettify","no_intra_emphasis"]
+#markdown: redcarpet
+#redcarpet:
+#    extensions: [ "fenced_code_blocks", "hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "highlight", "prettify","no_intra_emphasis"]
 
 paginate: 10
 paginate_path: "/page:num/"

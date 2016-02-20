@@ -119,6 +119,7 @@ Simple Grid
 <picture>是一个图形元素，内容由多个源图组成，并由CSS Media Queries来适配出合理图形，代码规范如下
  
 ```html
+
 <picture width="500" height="500">
    <source media="(min-width: 640px)" srcset="large-1.jpg 1x, large-2.jpg 2x">
    <source media="(min-width: 320px)" srcset="med-1.jpg 1x, med-2.jpg 2x">

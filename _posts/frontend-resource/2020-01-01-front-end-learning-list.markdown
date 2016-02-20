@@ -20,7 +20,7 @@ cover:  "assets/category/type-client.png"
 
 ## 一、框架与组件
 
-####&emsp;bootstrap等UI框架设计与实现
+####bootstrap等UI框架设计与实现
 
 
  - 伸缩布局：grid网格布局
@@ -38,7 +38,7 @@ cover:  "assets/category/type-client.png"
  - 第三方插件：插件管理
 
 
-####&emsp;jQuery、zepto使用原理以及插件开发
+####jQuery、zepto使用原理以及插件开发
 
 
  - 支持amd、cmd、全局变量的模块化封装
@@ -47,7 +47,7 @@ cover:  "assets/category/type-client.png"
  - $.fn.method = function(){}
 
 
-####&emsp;mvc/mvvm框架原理设计，vue/angular/avalon等
+####mvc/mvvm框架原理设计，vue/angular/avalon等
 
 
  - directive设计：html、text、class、html、attr、repeat、ref，可扩展
@@ -65,7 +65,7 @@ cover:  "assets/category/type-client.png"
  - 数据更变检测：函数触发，脏数据检测、对象hijacking
 
 
-####&emsp;polymer/angular2思想与设计思路
+####polymer/angular2思想与设计思路
 
 
  - import技术
@@ -80,7 +80,7 @@ cover:  "assets/category/type-client.png"
  - 简单复用第三方库
 
 
-####&emsp;reactjs原理与使用
+####reactjs原理与使用
 
 
  - virtual dom单向数据绑定
@@ -92,7 +92,7 @@ cover:  "assets/category/type-client.png"
  - UI由状态控制
 
 
-####&emsp;commonJS/AMD/CMD
+####commonJS/AMD/CMD
 
 
  - 模块引入
@@ -110,7 +110,7 @@ cover:  "assets/category/type-client.png"
  - 模块懒执行(CMD)与与预执行(AMD)
 
 
-####&emsp;loadJs模块化加载原理与实现
+####loadJs模块化加载原理与实现
 
 
  - 创建script标签，需要id映射到资源url
@@ -128,7 +128,7 @@ cover:  "assets/category/type-client.png"
  - requirejs、modjs、seajs
 
 
-####&emsp;polyfill、shim原理与实现
+####polyfill、shim原理与实现
 
 
  - polyfill提供了开发者们希望浏览器原生提供支持的功能特性
@@ -137,7 +137,7 @@ cover:  "assets/category/type-client.png"
  - shim将新的API引入到旧的环境中,且仅靠旧环境中已有的手段实现
 
 
-####&emsp;virtual Dom、Incremental DOM
+####virtual Dom、Incremental DOM
 
 
  - 1.用js对象树表示dom树结构，根据该对象树构建dom树
@@ -155,7 +155,7 @@ cover:  "assets/category/type-client.png"
  - incremental dom在状态改变时扫描旧对象树将差异直接应用到dom中
 
 
-####&emsp;shadow dom
+####shadow dom
 
 
  - 隔离外部环境用于封装组件：结构、样式、行为
@@ -164,7 +164,7 @@ cover:  "assets/category/type-client.png"
  - 实现形式：新标签、class类属性 + 构建编译
 
 
-####&emsp;webwork与service Worker
+####webwork与service Worker
 
 
  - webwork与主线程机制，on/post
@@ -176,7 +176,7 @@ cover:  "assets/category/type-client.png"
  - 应用场景
 
 
-####&emsp;ES6转ES5、Babel与ES6开发规范体系
+####ES6转ES5、Babel与ES6开发规范体系
 
 
  - ES6编码规范全
@@ -194,7 +194,7 @@ cover:  "assets/category/type-client.png"
  - aurelia ES6前端框架
 
 
-####&emsp;Isomorphic JavaScript
+####Isomorphic JavaScript
 
 
  - 同构原理
@@ -221,7 +221,7 @@ cover:  "assets/category/type-client.png"
  - reactjs同构:React + Flux + Koa
 
 
-####&emsp;双向数据绑定
+####双向数据绑定
 
 
  - 函数触发:vuejs
@@ -233,7 +233,7 @@ cover:  "assets/category/type-client.png"
  - 对象hijacking:avalon
 
 
-####&emsp;browserify运行原理
+####browserify运行原理
 
 
  - 1.从入口模块开始分析require函数调用
@@ -251,7 +251,7 @@ cover:  "assets/category/type-client.png"
  - 5.包装每个模块（传入依赖字典以及export和require函数），生成执行的js
 
 
-####&emsp;performance timing
+####performance timing
 
 
  - performance timing api
@@ -266,7 +266,7 @@ cover:  "assets/category/type-client.png"
  - performanceTrace库
 
 
-####&emsp;组件UI与js组件规范化
+####组件UI与js组件规范化
 
 
  - 组件编码规范
@@ -287,16 +287,16 @@ cover:  "assets/category/type-client.png"
  - 第三方组件接入成本
 
 
-####&emsp;immutable JavaScript
+####immutable JavaScript
 
 
-####&emsp;generator与promise原理与使用
+####generator与promise原理与使用
 
 
 ## 二、构建生态
 
 
-####&emsp;grunt/gulp开发环境任务编写
+####grunt/gulp开发环境任务编写
 
 
  - 文件处理插件：html、scss、js、image、font、其它
@@ -317,10 +317,10 @@ cover:  "assets/category/type-client.png"
  - 自定义插件编写
 
 
-####&emsp;npm、jspm、bower包管理工具
+####npm、jspm、bower包管理工具
 
 
-####&emsp;r.js、browserify、webpack、webpack 2、Rollup打包工具使用
+####r.js、browserify、webpack、webpack 2、Rollup打包工具使用
 
 
  - 原理：根据依赖配置文件对文件进行依赖打包
@@ -332,19 +332,19 @@ cover:  "assets/category/type-client.png"
  - webpack+babel/reactjs+reflux
 
 
-####&emsp;fis3构建与插件开发、构建环境、fis3构建离线包
+####fis3构建与插件开发、构建环境、fis3构建离线包
 
 
-####&emsp;web Component：rosetta-org、x-view、Q、riot、nova
+####web Component：rosetta-org、x-view、Q、riot、nova
 
 
-####&emsp;brunch构建工具
+####brunch构建工具
 
 
 ## 三、开发技巧与调试
 
 
-####&emsp;fiddler加willow基础组合调试
+####fiddler加willow基础组合调试
 
 
  - 常见配置与分析
@@ -353,37 +353,37 @@ cover:  "assets/category/type-client.png"
  - 结合浏览器调试
 
 
-####&emsp;werien、vorlonjs远程调试，chrome inspect
+####werien、vorlonjs远程调试，chrome inspect
 
 
-####&emsp;mockjs，F.M.S(Front Mock Server)模拟调试使用与cgi自动调试
+####mockjs，F.M.S(Front Mock Server)模拟调试使用与cgi自动调试
 
 
-####&emsp;macha/phantomjs/casperjs/karma测试自动化任务使用
+####macha/phantomjs/casperjs/karma测试自动化任务使用
 
 
-####&emsp;自动化UI测试，海豚
+####自动化UI测试，海豚
 
 
-####&emsp;node-supervior、node-inspector、karma
+####node-supervior、node-inspector、karma
 
 
-####&emsp;开发发布系统流程
+####开发发布系统流程
 
 
-####&emsp;sublime高效插件
+####sublime高效插件
 
 
  - emmet工具使用、  sublimelinter、 babel snippets、 sublimeLint、 SassBeautify 、 emmet 快速编辑、 jsxlint、 SideBarEnhancements、 SnippetsMaker、 SublimeCodeIntel、 css snippets、 ColorPicker、 html/css/js Pretty、 SpinnetMacker、 DocBlockr、 MultiEditUtils、 javascript & node spinnet、 JavaScript & NodeJS Snippets、 jsLint、cssLint
 
 
-####&emsp;代码自动化检查fecs
+####代码自动化检查fecs
 
 
 ## 四、html、css与重构
 
 
-####&emsp;jpeg、webp、apng、bpg图片
+####jpeg、webp、apng、bpg图片
 
 
  - 编码原理
@@ -395,7 +395,7 @@ cover:  "assets/category/type-client.png"
  - 适用场景
 
 
-####&emsp;iconfont使用与实现原理
+####iconfont使用与实现原理
 
 
  - 自动打包构建方法
@@ -407,7 +407,7 @@ cover:  "assets/category/type-client.png"
  - fonthello、fontawesome、icomoon.io、iconfont.cn线上工具
 
 
-####&emsp;页面响应式设计
+####页面响应式设计
 
 
  - layout布局响应式
@@ -428,7 +428,7 @@ cover:  "assets/category/type-client.png"
  - media query与平台判断
 
 
-####&emsp;css重置
+####css重置
 
 
  - reset
@@ -440,7 +440,7 @@ cover:  "assets/category/type-client.png"
  - neat
 
 
-####&emsp;sass/compass/less/postcss常用语法与使用
+####sass/compass/less/postcss常用语法与使用
 
 
  - 常用语法功能
@@ -458,7 +458,7 @@ cover:  "assets/category/type-client.png"
  - iconfont自动接入等等
 
 
-####&emsp;media query与常见页面尺寸了解
+####media query与常见页面尺寸了解
 
 
  - 媒体类型引入和媒体特性引入
@@ -470,7 +470,7 @@ cover:  "assets/category/type-client.png"
  - retina屏幕适应
 
 
-####&emsp;em,rem原理与实现
+####em,rem原理与实现
 
 
  - rem计算：width*retina/10，相当于屏幕宽度为10rem
@@ -479,7 +479,7 @@ cover:  "assets/category/type-client.png"
  - 字体在rem情况下仍然使用px
 
 
-####&emsp;code4ui、code4app、初页、maka等
+####code4ui、code4app、初页、maka等
 
 
  - 前端dom操作即使刷新前端页面
@@ -494,7 +494,7 @@ cover:  "assets/category/type-client.png"
  - 发布打包后输出文件
 
 
-####&emsp;css3动画
+####css3动画
 
 
  - transform
@@ -521,7 +521,7 @@ cover:  "assets/category/type-client.png"
  - cubic-bezier：http://cubic-bezier.com/
 
 
-####&emsp;css网格布局
+####css网格布局
 
 
  - susy
@@ -536,7 +536,7 @@ cover:  "assets/category/type-client.png"
  - Simple Grid
 
 
-####&emsp;搜索引擎与前端SEO
+####搜索引擎与前端SEO
 
 
  - tdk优化
@@ -584,13 +584,13 @@ cover:  "assets/category/type-client.png"
  - 各种站长工具等
 
 
-####&emsp;浏览器缓存种类，resources,webSQL,indexDB, localstorage,cookie,app cache,cache storage
+####浏览器缓存种类，resources,webSQL,indexDB, localstorage,cookie,app cache,cache storage
 
 
  - store.js、cookie.js
 
 
-####&emsp;UI框架
+####UI框架
 
 
  - bootstrap、jqwidgets、semantic ui、amaze ui
@@ -605,7 +605,7 @@ cover:  "assets/category/type-client.png"
 ## 五、native/hybrid/桌面开发
 
 
-####&emsp;ionic移动开发方案
+####ionic移动开发方案
 
 
  - 运行架构
@@ -623,10 +623,10 @@ cover:  "assets/category/type-client.png"
  - 性能瓶颈
 
 
-####&emsp;nativescript移动开发方案
+####nativescript移动开发方案
 
 
-####&emsp;react Native移动开发方案
+####react Native移动开发方案
 
 
  - 运行架构：js引擎
@@ -641,7 +641,7 @@ cover:  "assets/category/type-client.png"
  - 使用场景
 
 
-####&emsp;android/ios原生开发与框架
+####android/ios原生开发与框架
 
 
  - java
@@ -677,7 +677,7 @@ cover:  "assets/category/type-client.png"
  - 开启硬件加速
 
 
-####&emsp;桌面应用开发
+####桌面应用开发
 
 
  - nodewebkit
@@ -701,10 +701,10 @@ cover:  "assets/category/type-client.png"
 ## 六、前端/H5优化(另一个图已给出)
 
 
-####&emsp;yslow、pagespeed
+####yslow、pagespeed
 
 
-####&emsp;移动web性能优化
+####移动web性能优化
 
 
  - 手机浏览器"省流量"原理
@@ -730,25 +730,25 @@ cover:  "assets/category/type-client.png"
 ## 七、全栈/全端开发
 
 
-####&emsp;express/node club + mongodb、thinkjs等框架
+####express/node club + mongodb、thinkjs等框架
 
 
-####&emsp;node.js直出
+####node.js直出
 
 
-####&emsp;实时web开发，meteor/express.io
+####实时web开发，meteor/express.io
 
 
-####&emsp;MEAN(mongodb/express/angular/nodejs)
+####MEAN(mongodb/express/angular/nodejs)
 
 
-####&emsp;http与http2协议、bigpipe、pipeline
+####http与http2协议、bigpipe、pipeline
 
 
-####&emsp;离线缓存，cookie、localstorage、indexdb
+####离线缓存，cookie、localstorage、indexdb
 
 
-####&emsp;cdn与dns
+####cdn与dns
 
 
  - 动态域名加速
@@ -760,16 +760,16 @@ cover:  "assets/category/type-client.png"
 ## 八、研究实验
 
 
-####&emsp;WebAssembly、webTRC、typescript
+####WebAssembly、webTRC、typescript
 
 
-####&emsp;Material design规范的前端框架
+####Material design规范的前端框架
 
 
  - 交互动效库
 
 
-####&emsp;AMP-HTML规范
+####AMP-HTML规范
 
 
  - 使用受限HTML以及缓存技术来提高移动网络中静态内容的性能
@@ -781,7 +781,7 @@ cover:  "assets/category/type-client.png"
 ## 九、数据分析与监控
 
 
-####&emsp;badjs数据上报
+####badjs数据上报
 
 
  - 捕获错误两种方法：onerror、try-catch。抽样上报，先onerror统计语法错误，如果是script error，再使用tryjs。
@@ -796,10 +796,10 @@ cover:  "assets/category/type-client.png"
  - try-catch:无法捕捉语法错误，只能捕捉运行时错误；可以拿到出错的信息，堆栈，出错文件、行号、列号；需要借助工具把function块以及文件块加入try,catch，可以在这个阶段打入更多的静态信息。
 
 
-####&emsp;点击热力图clickHeat、heatMap
+####点击热力图clickHeat、heatMap
 
 
-####&emsp;js加载失败优化方案
+####js加载失败优化方案
 
 
  - 失败重发机制
@@ -811,34 +811,34 @@ cover:  "assets/category/type-client.png"
  - https反劫持
 
 
-####&emsp;百度alog数据上报
+####百度alog数据上报
 
 
 ## 十、其它软技能
 
 
-####&emsp;axure 原型图设计
+####axure 原型图设计
 
 
-####&emsp;xmind脑图管理
+####xmind脑图管理
 
 
-####&emsp;效率管理
+####效率管理
 
 
-####&emsp;can i use、github
+####can i use、github
 
 
-####&emsp;知识管理/总结分享
+####知识管理/总结分享
 
 
-####&emsp;产品思维与技能
+####产品思维与技能
 
 
 ## 十一、前端技术网站
 
 
-####&emsp;技术社区
+####技术社区
 
 
  - w3c tech、w3c plus、w3 help
@@ -856,7 +856,7 @@ cover:  "assets/category/type-client.png"
  - W3 help
 
 
-####&emsp;行业会议
+####行业会议
 
 
  - segmentfault会议

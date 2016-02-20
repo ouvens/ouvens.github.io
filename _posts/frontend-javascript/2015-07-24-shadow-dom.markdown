@@ -19,6 +19,7 @@ cover:  "assets/category/type-javascript.png"
     <source id="mp4" src="http://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4">
 </video>
 ```
+
 &emsp;&emsp;这样一个标签可以在浏览器产生几个界面你相对较复杂的播放器，怎么做到的?
 &emsp;&emsp;为了理解问题，可以选择chrome设置里面的show userAgent shawdow，就可以看到shadow dom里的内容。
 
@@ -46,14 +47,18 @@ cover:  "assets/category/type-javascript.png"
 </video>
 
 ```
+
 &emsp;&emsp;shadow-root里面的内容就是所有视频播放器控制组件的所在之处，css也可以看到，可见video标签内部也是很多个div和input形成的。
 &emsp;&emsp;另外浏览器之所以将其置灰，是为了表明这部分是在 shadow DOM 里，对于页面的其他部分来说它是 不可用的 。这里的 不可用 意味着你写的 CSS 选择器和 JavaScript 代码都不会影响到这部分内容。实际上，就是让video 标签的逻辑和样式都被浏览器封装了。
+
 #### 1.2 小结
-######小结下，Shadow DOM 是一个 HTML 的规范，其允许开发者封装自己的 HTML 标签、CSS 样式和 JavaScript 代码。也使得开发人员可以创建诸如 video这样自定义的一级标签。总的来说，这些新标签和相关的 API 被称为 Web Components。
+
+&emsp;&emsp;小结下，Shadow DOM 是一个 HTML 的规范，其允许开发者封装自己的 HTML 标签、CSS 样式和 JavaScript 代码。也使得开发人员可以创建诸如 video这样自定义的一级标签。总的来说，这些新标签和相关的 API 被称为 Web Components。
 
 &emsp;&emsp;关于shadow 都没有些概念可以理解下，上面shadow root是shadow dom的根节点；shadow tree为这个show dom包含的节点树，div和input等；shadow host称为shadow dom的容器元素，即video
 
 # 2.如何创建shadow dom
+
 &emsp;&emsp;指定一个元素可以使用createShadowRoot方法创建一个shadow root，shadow root上可以任意通过dom操作添加shadow tree，同时制定样式和处理的逻辑，并将自己的api暴露出去。
 完成创建后需要通过registerElement来注册元素。
 （不过需要注意的是，目前支持chrome31、android4.4以上版本）

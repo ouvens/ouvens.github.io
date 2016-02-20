@@ -23,11 +23,17 @@ fis3 init
 
 类似Gruntfile.js或Gulpfile.js，新建fis-config.js文件
 配置api介绍如下：
-#### fis.set(key, value)
+
+####  fis.set(key, value)
+
 设置一些配置，如系统内置属性 project、namespace、modules、settings。 fis.set 设置的值通过fis.get()获取
-#### fis.get(key)
+
+####  fis.get(key)
+
 获取已经配置的属性，和 fis.set() 成对使用
-#### fis.match(selector, props, [, important])
+
+####  fis.match(selector, props, [, important])
+
 给匹配到的文件分配属性，文件属性决定了这个文件进行怎么样的操作；fis.match 模拟一个类似 css 的覆盖规则，负责给文件分配规则属性，这些规则属性决定了这个文件将会被如何处理；另外，后面分配到的规则会覆盖前面的；
 
 ```javascript
@@ -41,7 +47,9 @@ fis.match('b.js', {
 ```
 
 这里b.js的输出为 /static/new/$0，如果important为true则规则不能被覆盖
-#### fis.media(mode)
+
+####  fis.media(mode)
+
 fis.media 是模仿自 css 的 @media，表示不同的状态。这是 fis3 中的一个重要概念，其意味着有多份配置，每一份配置都可以让 fis3 进行不同的编译；
 
 ```javascript
@@ -58,7 +66,8 @@ fis.media('rd').match('*.js', {
 
 http://fis.baidu.com/fis3/docs/api/config-api.html#%E5%85%A8%E5%B1%80%E5%B1%9E%E6%80%A7
 
-####--几种重要属性设置
+#### 几种重要属性设置
+
 1. 全局属性介绍：
 
 ```javascript
@@ -207,7 +216,9 @@ fis.match('*.png', {
     optimizer: fis.plugin('png-compressor')
 });
 ```
+
 如果开发阶段有时不需要那么多处理流程可以禁用某些功能：
+
 ```javascript
 fis.media('debug').match('*.{js,css,png}', {
     useHash: false,
@@ -217,7 +228,9 @@ fis.media('debug').match('*.{js,css,png}', {
 ```
 
 ### 三、调试与发布
+
 FIS3 构建后，默认情况下会对资源的 URL 进行修改，改成绝对路径。同样FIS3 内置一个简易 Web Server，可以方便调试构建结果。
+
 - 1、开启server到内置server调试目录
 
 ```javascript
@@ -250,7 +263,9 @@ fis.match('*', {
 ```
 
 ### 四、内置功能
+
 - 4.1 嵌入资源
+
 html和css中内嵌只需要在引用加载的文件后面加上__inline就可实现:
 
 ```html
@@ -273,6 +288,7 @@ var css = __inline('a.css');
 ```
 
 - 4.2 资源定位
+
 其实官方文档讲了很多，但很简单，主要是在没有inline的条件下将内嵌的资源处理后加上后缀，放入到相对应的发布目录中自动定位。
 
 
@@ -283,6 +299,7 @@ var img = '/static/pic/logo_74e5229.gif';
 ```
 
 - 4.3 声明依赖
+
 html中声明依赖。用户可以在html的注释中声明依赖关系，这些依赖关系最终会被记录下来，当某个文件中包含字符 __RESOURCE_MAP__ 那么这个记录会被字符串化后替换 __RESOURCE_MAP__。
 例如index.html中含有并且设置了useMap：
 
@@ -318,7 +335,7 @@ fis.match('*.html', {
 
 ### 五、工作原理
 
-#### 1. 构建流程
+####  1. 构建流程
 
 FIS3 是基于文件对象进行构建的，每个进入 FIS3 的文件都会实例化成一个 File 对象，整个构建过程都对这个对象进行操作完成构建任务。一个文件的构建流程分为三个阶段：
 
@@ -334,6 +351,7 @@ standard 标准化插件，处理内置语法
 postprocessor 标准化后处理插件
 
 ### 2. File对象
+
 当一个文件被实例化为一个 File 对象后，包括一些文件基本属性，如 filename、realpath 等等，当这个文件被处理时，FIS3 还会把用户自定义的属性 merge 到文件对象上。例如
 
 ```javascript
@@ -345,7 +363,9 @@ fis.match('a.js', {
 fis将给这个a.js加上myPorp属性，有点类似与gulp的pipe处理。
 
 ### 六、用fis3进行项目开发
-#### 1. 插件使用
+
+####  1. 插件使用
+
 npm install -g 插件名 可以用来安装fis插件，插件列表见 http://npmsearch.com/?q=fis-parser%20fis3-parser
 配置调试使用见上文的配置，fis3内置的插件如下，有这些觉得基本可以用来开发一个正式项目了。
 fis-optimizer-clean-css
@@ -359,9 +379,10 @@ fis3-packager-map
 
 http://fis.baidu.com/fis3/docs/api/config-system-plugin.html
 
-#### 2. 插件编写
+####  2. 插件编写
+
 不到万不得已不要去扩展插件，用到的时候再说吧，fis3扩展了些插件，99%能满足开发需要。
-#### 3. 模块化开发
+####  3. 模块化开发
 进行模块化开发首先安装npm install -g fis3-hook-module
 
 ```javascript
@@ -377,7 +398,7 @@ fis.match('/module/*.js', {
 });
 ```
 
-#### 2. 项目开发基本规范
+####  2. 项目开发基本规范
 
 ```javascript
 // 开发目录规范

@@ -116,10 +116,9 @@ Simple Grid
 **2，picture element (依赖浏览器新特性+midea query)**
 
 &emsp;&emsp;W3C已经有一个用于响应式图形的草案：新定义标签<picture>，但因为它还只是草案，目前还没有支持的浏览器，期待在不久的未来我们能用上。虽然目前不支持，但我们还是来了解下这个浏览器的新特性，也和我们一贯的研究方向一致。
-<picture>是一个图形元素，内容由多个源图组成，并由CSS Media Queries来适配出合理图形，代码规范如下
+picture是一个图形元素，内容由多个源图组成，并由CSS Media Queries来适配出合理图形，代码规范如下
  
 ```html
-
 <picture width="500" height="500">
    <source media="(min-width: 640px)" srcset="large-1.jpg 1x, large-2.jpg 2x">
    <source media="(min-width: 320px)" srcset="med-1.jpg 1x, med-2.jpg 2x">

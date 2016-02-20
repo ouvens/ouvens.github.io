@@ -9,16 +9,24 @@ cover:  "assets/category/type-javascript.png"
 ---
 
 ---
+
 [gitHub地址](https://github.com/ouvens/qvm)
 
 ### 1，移动端minimvvm框架qvm实现
+
 qvm概念，一个适用于移动端的mini mvvm(什么是mvvm？没了解的同学自己去了解)框架。参考了angular和vuejs的设计实现思路，并进行简化封装，目前使用的zepto基本依赖库，使用最少的代码实现了基础功能版。
+
 ### 2，为什么要做它
+
 PC浏览器时代，实现mvvm有着麻烦的兼容性问题。而在移动浏览器时代，浏览器原生的支持可以让我们用最少的代码来实现一个mvvm框架库，来最大程度的减少移动端业务代码的开发工作。预计对于中大型的移动前端应用项目，使用mvvm能减少至少30%的业务量，让项目更容易维护。
    (不过目前仍有很多不完善的地方后面需要持续改进)
+
 ### 3，及其简单的API介绍
+
 directive: 以q-开始的属性为我们定义的元素动作指令
-###### vm模型结构介绍：
+
+#### vm模型结构介绍：
+
 ``` javascript
     {
     $id: 823832887973495, //qvm对象的全局id,每个qvm对象对应一个
@@ -39,7 +47,9 @@ directive: 以q-开始的属性为我们定义的元素动作指令
         }
     }
 ```
-###### 3.1 q-text 改变节点innerHTML
+
+#### 3.1 q-text 改变节点innerHTML
+
 ```javascript
     <div id="demo" q-text='text'></div>
     <script type="text/javascript" src="js/zepto.js"></script>
@@ -56,7 +66,9 @@ directive: 以q-开始的属性为我们定义的元素动作指令
     },4000)
     </script>
 ```
-###### 3.2 q-class 改变节点class属性
+
+#### 3.2 q-class 改变节点class属性
+
 ```javascript
     <style>
     .red{
@@ -83,7 +95,9 @@ directive: 以q-开始的属性为我们定义的元素动作指令
     },4000)
     </script>
 ```
-###### 3.3 q-attr数据属性赋值
+
+#### 3.3 q-attr数据属性赋值
+
 ```javascript
     <div><a><img id="demo" q-attr-src="img" width="50" height="30"></a></div>
     <script type="text/javascript" src="js/zepto.js"></script>
@@ -100,9 +114,12 @@ directive: 以q-开始的属性为我们定义的元素动作指令
     },4000);
     </script>
 ```
+
 vm.class.accessor = 'green'; 改变元素的class类，从red改为green。
 这里注意一下使用attr- 和data-指令使用attr_src和data_src来读取访问器，后面需要统一接口。
-###### 3.4 q-data数据属性赋值
+
+#### 3.4 q-data数据属性赋值
+
 ```javascript
     <div id="demo" q-data-title="text"><a><img q-attr-src="img" width="50" height="30"></a></div>
     <script type="text/javascript" src="js/zepto.js"></script>
@@ -120,8 +137,11 @@ vm.class.accessor = 'green'; 改变元素的class类，从red改为green。
     },4000);
     </script>
 ```
+
 此方法用于改变data属性。
-###### 3.5 q-repeat 嵌套使用
+
+#### 3.5 q-repeat 嵌套使用
+
 ```javascript
     <style>
     .red{
@@ -170,7 +190,9 @@ list[0].title='music change the world';
 list[1].title='PS master learning';
 改变repeat渲染数组的内容，只对数组进行修改和删除长度。
 ```
-###### 3.6 q-对象内部渲染
+
+#### 3.6 q-对象内部渲染
+
 ```javascript
     <style>
     .red{
@@ -212,10 +234,15 @@ list[1].title='PS master learning';
     },4000);
     </script>
 ```
+
 qvm支持嵌套渲染，但是viewModel以定义的最外层数据为准。
-###### 3.7 q-on简单事件绑定
+
+#### 3.7 q-on简单事件绑定
+
 定义的动作和事件名，目前子节点上的on代理在根元素上，避免了重复绑定，如果根节点和根节点同时含有on方法，则按照冒泡的原则进行事件处理。实现时使用了根节点循环向下传递的方式。
-###### 示例
+
+#### 示例
+
 ```javascript
     <style>
     .red{
@@ -254,8 +281,11 @@ qvm支持嵌套渲染，但是viewModel以定义的最外层数据为准。
     });
     </script>
 ```
+
 目前实现了节点事件代理到最外层的qmv对象元素上。不对内部元素做绑定。
-###### 3.8 q-*自定义directive
+
+#### 3.8 q-*自定义directive
+
 ```javascript
     <style>
     .red{
@@ -298,6 +328,7 @@ qvm支持嵌套渲染，但是viewModel以定义的最外层数据为准。
     });
     </script>
 ```
+
 子定义的指令需要遵守一定的规则，例如下面q-self对应的指令为selfProcess的函数，则节点扫描时会自动执行self指令的selfProcess函数。
 
 TODO：

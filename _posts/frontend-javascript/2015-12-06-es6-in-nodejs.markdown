@@ -19,6 +19,7 @@ ES6标准发布后，前端人员也开发渐渐了解到了es6，但是由于�
 这里罗列下nodejs支持的新特性，没列出的新特性均为不支持。
 
 https://iojs.org/en/es6.html
+
 https://kangax.github.io/compat-table/es6/
 
 | ES6特性 | Nodejs兼容性 |
@@ -183,4 +184,4 @@ ES6的字符串模板看起来很好，但是由于执行时必须扫描这个�
 
 &emsp;&emsp;这里选择了ES6中的少数特性和ES5的实现的执行效率做了对比，整体上说，ES6的新特性相对ES5的实现效率慢些，而有些特性当然是ES5无法实现的。所以在了解使用ES6的同时，除了了解它的新特性和优点，对于ES6本身的一些问题也要做到心中有数。当然，随着ES6的完善和Node的更新，相信这些也不会是大的问题，而且这些也不会影响ES6的发展。
 
-&emsp;&emsp;https://github.com/ouvens/ecmaScript-2015-babel-rules
+&emsp;&emsp;https://github.com/ouvens/es6-code-style-guide

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Promise与异步js"
+title:  "Promise与异步"
 date:   2016-03-04
 author: ouven
 tags:   Promise 异步编程
@@ -8,7 +8,6 @@ categories: frontend-javascript
 cover:  "assets/category/type-javascript.png"
 ---
 
-## promise技术与异步方案
 
 &emsp;&emsp;接触过promise的的都知道它的应用场景和用途，Promise可以用来避免异步操作函数里的嵌套回调（callback hell）问题，因为解决异步最直接的方法是回调嵌套，将后一个的操作放在前一个操作的异步回调里，但如果操作多了，就会有很多层的嵌套。
 &emsp;&emsp;Promise的实现方式也比较多，有较多的第三方库，ES6已经原生支持了Promise，而之前用的jquery中也有$.Deferred()等可以解决异步嵌套问题。
@@ -255,18 +254,27 @@ var co = function(flow) {
 
 
 **简单的Promise实现样例：**
+
 https://github.com/ouvens/promise
 
 **generator异步实现：**
+
 https://github.com/tj/co
 
 **参考文章：**
+
 http://www.infoq.com/cn/articles/generator-and-asynchronous-programming/
+
 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
 http://www.shaynegui.com/promise-aplus-implementation/
+
 http://www.html5rocks.com/zh/tutorials/es6/promises/
+
 https://blog.domenic.me/youre-missing-the-point-of-promises/#toc_1
+
 https://github.com/nodejs/node-v0.x-archive/wiki/modules#async-flow
+
 http://www.html-js.com/article/JavaScript-tips-on-how-to-implement-a-ECMAScript-6-promise-patch
 
 

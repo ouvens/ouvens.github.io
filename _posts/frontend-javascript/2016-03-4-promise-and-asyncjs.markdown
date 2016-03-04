@@ -11,7 +11,8 @@ cover:  "assets/category/type-javascript.png"
 
 
 &emsp;&emsp;接触过promise的的都知道它的应用场景和用途，Promise可以用来避免异步操作函数里的嵌套回调（callback hell）问题，因为解决异步最直接的方法是回调嵌套，将后一个的操作放在前一个操作的异步回调里，但如果操作多了，就会有很多层的嵌套。
-&emsp;&emsp;Promise的实现方式也比较多，有较多的第三方库，ES6已经原生支持了Promise，而之前用的jquery中也有$.Deferred()等可以解决异步嵌套问题。
+
+&emsp;&emsp;Promise的实现方式比较多，有丰富的第三方库，ES6也已经原生支持了Promise，jquery中也有$.Deferred()等可以解决异步嵌套问题。
 
 **先给下Promise学术点的[描述](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)：**
 

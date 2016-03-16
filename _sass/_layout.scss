@@ -54,7 +54,11 @@ pre code.hljs {
     padding: 15px;
     line-height: 1.5;
 }
-
+blockquote{
+    background-color: $light-gray;
+    padding: 0 15px;
+    border-left: 5px solid $blue;
+}
 .page-divider {
     $divider-color: $light-gray;
     display: block;

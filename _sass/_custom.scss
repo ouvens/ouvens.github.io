@@ -1,4 +1,11 @@
-
+.wrapper{
+    h1,h2,h3,h4,h5,h6{
+        color: $blue;
+    }
+    .footer-heading{
+        color: $white;
+    }
+}
 .post-excerpt p{
     overflow: hidden;
     white-space: normal;
@@ -7,6 +14,12 @@
     -webkit-box-orient: vertical;
     display: -webkit-box;
     height: 90px;
+}
+
+code{
+    color: $red;
+    padding: 3px;
+    background-color: #eee;
 }
 
 pre code.language-text{

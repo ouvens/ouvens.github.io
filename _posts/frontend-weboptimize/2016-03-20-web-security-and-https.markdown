@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "web安全机制问题全解析"
+title:  "web前端安全机制问题全解析"
 date:  2016-03-20
 author: ouven
 tags: web安全 https xss csrf
@@ -9,7 +9,7 @@ cover: "assets/category/type-javascript.png"
 ---
 
 
-&emsp;&emsp;web安全方面技术含有的东西较多，这里就来理一理web安全方面所涉及的一些问题。
+&emsp;&emsp;web前端安全方面技术含有的东西较多，这里就来理一理web安全方面所涉及的一些问题。
 
 ### 一、xss与sql攻击
 

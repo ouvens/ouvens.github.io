@@ -220,5 +220,6 @@ https://raymii.org/s/articles/HTTP_Public_Key_Pinning_Extension_HPKP.html
 
 https://www.veracode.com/blog/2014/03/guidelines-for-setting-security-headers/
 
-http://baike.baidu.com/link?url=OvUAVwOrPUGV8evCRgV4pynfzPTC5162ra4IGm_O-_KFQ3-gWqhvWhaD5hfXO2-vVobpMY_0KuW-O0flokSZz_
+[百度百科](http://baike.baidu.com/link?url=OvUAVwOrPUGV8evCRgV4pynfzPTC5162ra4IGm_O-_KFQ3-gWqhvWhaD5hfXO2-vVobpMY_0KuW-O0flokSZz_)
+
 

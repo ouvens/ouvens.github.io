@@ -130,6 +130,7 @@ text/jscript
 text/x-javascript  
 text/vbs  
 text/vbscript`
+
 对于chrome，则支持下面的MIME 类型：
 
 `text/javascript  

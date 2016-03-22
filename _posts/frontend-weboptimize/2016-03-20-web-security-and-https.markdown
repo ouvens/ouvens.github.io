@@ -13,7 +13,7 @@ cover: "assets/category/type-javascript.png"
 
 ### 一、xss与sql攻击
 
-> 入门级的安全知识，攻击手段和防范方法这里略过
+> 入门级的安全知识，攻击手段和防范方法这里略过，不过注意的是xss分存储型xss、反射型xss、mxss，主要防范思路是检查验证要输入到页面上的内容是否安全。
     
 ### 二、csrf
 
@@ -214,7 +214,10 @@ https://www.veracode.com/blog/2014/03/guidelines-for-setting-security-headers/
 &emsp;&emsp;总结下web的安全策略，主要介绍了websql注入防范、xss防范、csrf防范、劫持与https、Content-Security-Policy、Strict-Transport-Security、Access-Control-Allow-Origin、X-Frame-Options等。
     
 参考文章
+
 https://raymii.org/s/articles/HTTP_Public_Key_Pinning_Extension_HPKP.html
+
 https://www.veracode.com/blog/2014/03/guidelines-for-setting-security-headers/
+
 http://baike.baidu.com/link?url=OvUAVwOrPUGV8evCRgV4pynfzPTC5162ra4IGm_O-_KFQ3-gWqhvWhaD5hfXO2-vVobpMY_0KuW-O0flokSZz_
 

@@ -13,7 +13,7 @@ cover: "assets/category/type-javascript.png"
 
 ### 一、xss与sql攻击
 
-> 入门级的安全知识，攻击手段和防范方法这里略过，不过注意的是xss分存储型xss、反射型xss、mxss，主要防范思路是检查验证要输入到页面上的内容是否安全。
+> 入门级的安全知识，攻击手段和防范方法这里略过，不过注意的是xss分存储型xss、反射型xss、mxss(dom xss)，主要防范思路是检查验证要输入到页面上的内容是否安全。
     
 ### 二、csrf
 

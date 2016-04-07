@@ -505,5 +505,7 @@ export class InpAlerter {
 
 
 [Comparison of Angular 2 and React](http://www.ociweb.com/resources/publications/sett/comparison-of-angular-2-and-react/)
+
 [State Management in Angular 2 and React](https://www.linkedin.com/pulse/state-management-angular-2-react-michel-herszak)
+
 [Choosing between React vs. Angular 2](http://react-etc.net/entry/choosing-between-react-vs-angular-2)

@@ -11,7 +11,7 @@ cover: "assets/category/type-javascript.png"
 
 ## React vs Angular 2: 战争继续
 
-原译：https://tech.evojam.com/2016/03/31/react-vs-angular2-the-fight-rages-on/
+【原译】：https://tech.evojam.com/2016/03/31/react-vs-angular2-the-fight-rages-on/
 
 &emsp;&emsp;google的Angular和Facebook的React是现在最流行（但不是只有两个）的浏览器端应用开发工具，它们都是很优秀的解决方案。然而angular 2仍然在beta版中，Google的一部分工程师已经对它进行测试了。使用react开发的应用也很多，像instagram，netlfix，paypal等。
 

@@ -494,10 +494,13 @@ export class InpAlerter {
 
 &emsp;&emsp;显然，React和Angular 2有很多共同点，他们在处理应用框架和数据上使用了相似的原理。另一方面，每个功能的实现都使用了不同的方式（好吧，组件调用的生命周期还是完全一致的）。这些不同点并不意味着应用开发时的难度，每种方案都提供了足够完善的工具来开发一个大型、严谨、灵活的应用核心。
 
- &emsp;&emsp;当然React更小并且只涵盖view/component的操作--这是我这里要对比的。缺少向html的扩展机制无疑是React唯一不足的地方。
+&emsp;&emsp;当然React更小并且只涵盖view/component的操作--这是我这里要对比的。缺少向html的扩展机制无疑是React唯一不足的地方。
  
- &emsp;&emsp;Angular2则更加稳定、可扩展和更加完善。但是它仍然在beta阶段--并且相对对手具有优势因为无论相比angular1还是React的经历来看它具有更加优秀的合并思想。
- 
+&emsp;&emsp;Angular2则更加稳定、可扩展和更加完善。但是它仍然在beta阶段--并且相对对手具有优势因为无论相比angular1还是React的经历来看它具有更加优秀的合并思想。
+
+译者：ouven
+原文作者：JAKUB STROJEWSKI
+
 参考文章：
 
 

@@ -497,6 +497,11 @@ export class InpAlerter {
  &emsp;&emsp;当然React更小并且只涵盖view/component的操作--这是我这里要对比的。缺少向html的扩展机制无疑是React唯一不足的地方。
  
  &emsp;&emsp;Angular2则更加稳定、可扩展和更加完善。但是它仍然在beta阶段--并且相对对手具有优势因为无论相比angular1还是React的经历来看它具有更加优秀的合并思想。
+
+
+译文：ouven
+原文作者：JAKUB STROJEWSKI
+
  
 参考文章：
 

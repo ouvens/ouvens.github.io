@@ -49,6 +49,7 @@ cover:  "assets/category/type-javascript.png"
 &emsp;&emsp;这样的话开发的代码就必须是使用mvvm的模板来写了。当然根据mvc框架来实现的原理类似，不过可以灵活些。之前我们做过类似的事情，实现了vuejs的一些基础的directive和filter解析，但是我们业务前端都没有很多人使用vuejs，做同构很像后端上的一厢情愿。最后放弃了。
 
 - **核心的问题**
+
 &emsp;&emsp;无论是react还是mvvm来实现，其实我们要弄清楚同构需要做的最核心的一件事情是保证一个数据渲染机制（react是virtual to html、mvvm是view模板）在前后端都能正确解析。所以保证这件事情实现了问题是不是就简单了。使用react或mvvm只是说我们可以更好的做前端模块化管理。
 
 &emsp;&emsp;![](http://7tszky.com1.z0.glb.clouddn.com/FtVnSjcS-uqAY33J7WuViyV-NoJN)
@@ -155,6 +156,7 @@ cover:  "assets/category/type-javascript.png"
 ##### 4.4 渲染和直出区分
 
 &emsp;&emsp;受平时项目经验的启发，在koa + swig + fis3 + fis3-parser-swig的条件下，我们配置url地址中的一个特定r参数来判断使用前端渲染还是后台支持，例如：`http://localhost:3000/index.html?r=1` 使用前端渲染，不带`r=1`则使用后台支持。服务端判断带有`r=1`则转到前端的html服务器上，前端判断`r=1`则调用数据render方法；否则后台直接渲染模板，前端不做数据render，只做事件绑定。这样简单可靠的解决了这个问题。
+
 
 ```
 var getUrlParam = function(name) {

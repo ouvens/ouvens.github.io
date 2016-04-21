@@ -9,7 +9,7 @@ cover:  "assets/category/type-javascript.png"
 ---
 
 
-### 基于koa + fis3 + swig前后端isomorphic类同构实现
+### 基于koa+fis3+swig前后端isomorphic类同构实现
 
 &emsp;&emsp;（认真把这篇文章看完，保证你会学到很多，如果没学到请联系作者或直接报警）
 

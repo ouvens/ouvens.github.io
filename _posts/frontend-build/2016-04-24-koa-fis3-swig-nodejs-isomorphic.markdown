@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "基于koa + fis3 + swig前后端isomorphic类同构实现"
+title:  "基于koa+fis3+swig前后端isomorphic同构实现"
 date:   2016-04-21
 author: ouven
 tags: koa fis3 swig isomorphic 同构实现

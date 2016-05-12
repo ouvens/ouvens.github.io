@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "React vs Angular 2: 战争继续"
+title:  "【原译】React vs Angular 2: 战争继续"
 date: 2016-04-07
 author: ouven
 tags: React  Angular 2

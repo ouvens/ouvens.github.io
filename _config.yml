@@ -79,6 +79,9 @@ descriptions:
   - cat: article-translation
     desc: "优秀技术外文原版翻译."
 
+  - cat: modern-frontend
+    desc: "现代前端体系，帮助初、中级前端工程师快速成长."
+
 # Social icons and sharing options
 #
 # Social settings are used in two places:

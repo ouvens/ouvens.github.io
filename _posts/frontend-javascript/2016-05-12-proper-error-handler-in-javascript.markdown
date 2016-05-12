@@ -252,6 +252,8 @@ setTimeout(function () {
 
 
 原文作者：Camilo Reyes
+
 原译：ouven
+
 原文地址： http://www.sitepoint.com/proper-error-handling-javascript/
 

@@ -3,7 +3,7 @@ layout: post
 title:  "【原译】javascript中的错误处理"
 date: 2016-05-12
 author: ouven
-tags: 错误处理
+tags: 错误
 categories: article-translation
 cover: "assets/category/type-javascript.png"
 ---

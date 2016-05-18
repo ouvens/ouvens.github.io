@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "现代前端体系-第一章 前端简史"
+date:   2016-07-18
+author: ouven
+tags: 现代前端体系 第一章 前端简史
+categories: modern-frontend
+cover:  "assets/category/type-javaScript.png"
+---
+
+### 第一章 前端简史
+
+&emsp;&emsp;其实我不想讲太多离现在太远关于前端发展历史方面的东西，相信大家至少已经知道了前端的三个基本构成：结构层HTML，表现层CSS，行为层JavaScript。就HTML来讲，最早从XML衍生而来，目前已经进入HTML5成熟阶段，这里我们需要了解的是HTML5不是基于SGML的，而HTML4.01是基于SGML形成的标准，使用时需要对DTD(Document Type Definition)进行引用；对于CSS，我们从CSS 2开始了解就好了，目前CSS3已经成熟，CSS4的草案也已发布；表现层上JavaScript已惊人的速度在框架和版本上做出了飞跃和突破，2009年EcmaScript 5发布后，EcmaScript 6于2015年6月17日发布，目前EcmaScript 7也已经完成发布。
+
+&emsp;&emsp;自前端诞生以来，一直以保持着快速地发展和进化，同时，前端的快速发展对前端工程师的要求也越来越高。同时前端工程师的职业也越来越受到重视，那么这一章内容将会给大家讲述一下前端的发展和前端工程师的困境。
+

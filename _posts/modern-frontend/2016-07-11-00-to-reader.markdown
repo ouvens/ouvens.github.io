@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "现代前端体系-致读者"
-date:   2016-07-01
+date:   2016-07-11
 author: ouven
-tags: 现代前端体系
+tags: 现代前端体系 致读者
 categories: modern-frontend
 cover:  "assets/category/type-javaScript.png"
 ---

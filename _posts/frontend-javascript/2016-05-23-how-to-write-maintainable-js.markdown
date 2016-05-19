@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "【原译】解开面条代码: 怎样书写可维护JavaScript"
-date: 2016-05-19
+date: 2016-05-23
 author: ouven
 tags: 可维护代码
 categories: article-translation
@@ -18,7 +18,7 @@ cover: "assets/category/type-javascript.png"
 
 &emsp;&emsp;最开始的一步是看一下到底怎么回事。如果是个网站，点击网站所有的功能：打开对话框、发送表单等等。做这些的同时，打开开发者工具，看下是否报错或输出日志。如果是个nodejs项目，打开命令行接口过一下api，最好的情况是项目有一个入口(例如main.js，index.js，app.js)，通过入口能将所有的模块初始化；或者最坏的情况，找到整个业务逻辑的位置。
 
-&emsp;&emsp;
+&emsp;&emsp;找出使用的工具。jquery?React?Express?列出需要了解一些一切重要的东西。如果所项目使用angular2写的，而你还没有使用过，直接去看文档有个基本的了解。总之需要下最好的实现方式。
 
 
 原文作者：Moritz Kröger

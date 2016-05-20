@@ -3,12 +3,10 @@ layout: post
 title:  "【原译】解开面条代码: 怎样书写可维护JavaScript"
 date: 2016-05-20
 author: ouven
-tags: 可维护代码
+tags: javascript
 categories: article-translation
 cover: "assets/category/type-javascript.png"
 ---
-
-### 【原译】怎样书写可维护JavaScript
 
 &emsp;&emsp;**[译者注]**：这篇文章结合作者自己的经历确实写的很到位，大部分内容感同身受。同时作者很有条理的告诉我们应该怎样去思考解决问题。推荐给大家~
 

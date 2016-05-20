@@ -250,6 +250,7 @@ setTimeout(function () {
 
 &emsp;&emsp;译者注：文章浅显的分析了错误处理的方式和一些正反案例，其实处理错误的最终目的还是提供前端代码的质量，关于错误处理上报可以参考下 [badjs](https://github.com/BetterJS/badjs-report) 的思路，基于现代前端开发模块化的基础，使用全局 `onerror` 和  `try-catch` 相结合的方式更能有效进行错误定位。
 
+---
 
 原文作者：Camilo Reyes
 

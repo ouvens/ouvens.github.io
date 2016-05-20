@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "【原译】解开面条代码: 怎样书写可维护JavaScript"
-date: 2016-05-23
+date: 2016-05-20
 author: ouven
 tags: 可维护代码
 categories: article-translation

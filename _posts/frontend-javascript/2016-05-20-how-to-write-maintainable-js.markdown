@@ -316,9 +316,12 @@ function getArrayOfProperties(propertyName, obj = {}) {
 
 &emsp;&emsp;真心希望这篇文章能帮助你，或者大家觉得有什么没提到的地方或好的建议也可以告诉我。
 
+
+---
+
 原文作者：Moritz Kröger
 
 原译：ouven
 
-原文地址： https://www.sitepoint.com/write-maintainable-javascript/
+原文地址： [https://www.sitepoint.com/write-maintainable-javascript/](https://www.sitepoint.com/write-maintainable-javascript/)
 

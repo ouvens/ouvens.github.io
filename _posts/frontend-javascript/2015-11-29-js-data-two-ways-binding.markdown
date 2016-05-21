@@ -91,7 +91,9 @@ cover:  "assets/category/type-javascript.png"
 </html>
 
 ```
+
 #### 2、脏检查机制
+
 &emsp;&emsp;以典型的mvvm框架angularjs为代表，angular通过检查脏数据来进行UI层的操作更新。关于angular的脏检测，有几点需要了解些：
 - 脏检测机制并不是使用定时检测。
 - 脏检测的时机是在数据发生变化时进行。

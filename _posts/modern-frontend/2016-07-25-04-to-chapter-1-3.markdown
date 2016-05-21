@@ -1,0 +1,69 @@
+---
+layout: post
+title:  "现代前端体系-第一章 2-JavaScript发展"
+date:   2016-07-18
+author: ouven
+tags: 现代前端体系 第一章 2-JavaScript发展
+categories: modern-frontend
+cover:  "assets/category/type-javaScript.png"
+---
+
+#### 1.3、JavaScript发展
+
+&emsp;&emsp;JavaScript的诞生和早期发展史有兴趣的读者可以去查阅下，这里从EcmaScript 5开始说起。2009年12月，ECMAScript 5.0版正式发布。Harmony项目(Harmony项目是未发布的Ecmascript 4.0，由于草案发生分歧，最后被命名Harmony代号搁置)则一分为二，一些较为可行的设想定名为JavaScript.next继续开发，后来演变成ECMAScript 6；一些不是很成熟的设想，则被视为JavaScript.next.next，在更远的将来再考虑推出。2015年6月17日，ECMAScript 6发布正式版本，即ECMAScript 2015，支持EcmaScript特性上进行了最大的修改合完善。2016年EcmaScript7确定发布。
+
+###### 1.3.1 、EcmaScript
+
+&emsp;&emsp;具体先来看下EcmaScript 5,主要包括严格模式、JSON对象、新增Object接口、新增Array接口、Function.prototype.bind。
+
+**严格模式**
+
+Ecmascript 5的严格模式为开发者提供了更加安全规范的编程范围，通俗的说就是让一些之前不合理的语法直接报错，来提高代码的质量，例如：
+
+- 未声明的变量赋值抛出一个ReferenceError, 而不是创建一个全局变量。
+- 不止一次对对象字面量分配相同的属性会抛出SyntaxError.
+- 使用with语句抛出SyntaxError.
+
+**JSON**
+
+&emsp;&emsp;对于JSON大家需要了解JSON.parse和JSON.stringify就好了，问题是要知道的JSON对象解析不是伴随着EcmaScript就有的，例如IE8下面，就不能直接使用JSON的解析方法。不过你可以在你的浏览器中添加es5-shim来添加es5的功能。
+
+```
+<script src="//xxx.domain.com/es5-shim.js"></script>
+```
+
+&emsp;&emsp;es5-shim的功能主要是在不兼容es5的浏览器上晚上es5新添加的功能，对于JSON对象来说，JSON.parse实现的思路是eval字符串，反之则是遍历对象进行字符串拼接。例如：
+
+```
+eval('(' + jsonstr + ')');
+
+```
+
+**新增Object接口**
+
+根据文档Ecmascript 5规范，es5中Object新增的方法包含
+
+|---|---|---|
+|---|---|---|
+|---|---|---|
+|---|---|---|
+|---|---|---|
+
+Object	getPrototypeOf	返回对象的原型
+Object	getOwnPropertyDescriptor	返回对象自有属性的属性描述符
+Object	getOwnPropertyNames	返回一个数组，包括对象所有自有属性名称集合（包括不可枚举的属性）
+Object	create	创建一个拥有置顶原型和若干个指定属性的对象
+Object	defineProperty	给对象定义一个新属性，或者修改已有的属性，并返回
+Object	defineProperties	在一个对象上添加或修改一个或者多个自有属性，并返回该对象
+Object	seal	锁定对象。阻止修改现有属性的特性，并阻止添加新属性。但是可以修改已有属性的值。
+Object	freeze	冻结对象，阻止对对象的一切操作。冻结对象将永远不可变。
+Object	preventExtensions	让一个对象变的不可扩展，也就是永远不能再添加新的属性。
+Object	isSealed	判断对象是否被锁定
+Object	isFrozen	判断对象是否被冻结
+Object	isExtensible	判断对象是否可以被扩展
+Object	keys	返回一个由给定对象的所有可枚举自身属性的属性名组成的数组
+
+
+**新增Array接口**
+
+**Function.protptype.bind**

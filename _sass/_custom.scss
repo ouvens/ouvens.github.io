@@ -83,3 +83,32 @@ pre code.language-text{
     }
 }
 
+.qr-code{
+    position: fixed;
+    bottom: 150px;
+    right: 20px;
+    background-color: #ececec;
+    border: solid 1px #30c2d3;
+    z-index: 99;
+    overflow: hidden;
+    p{
+        text-align: center;
+        color: #2980b9;
+        font-size: 14px;
+        vertical-align: baseline;
+        strong{
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+    &.qr-code-pay{
+        bottom: 400px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .qr-code{
+        display: none;
+    }
+}
+

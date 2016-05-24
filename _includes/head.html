@@ -40,25 +40,24 @@
 
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
     <script>
-
-
-    // 访问统计
-    if(location.host === 'jixianqianduan.com'){
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "//hm.baidu.com/hm.js?b536b128dc21c3d18fdc028f0609e3f0";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-    }else{    
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "//hm.baidu.com/hm.js?041efd2cb345ca1b9dbdbb2383cb716d";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-    }
-</script>
+        // 访问统计
+        if(location.host === 'jixianqianduan.com'){
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "//hm.baidu.com/hm.js?b536b128dc21c3d18fdc028f0609e3f0";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();
+        }else{
+            window.location.href = 'http://jixianqianduan.com'
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "//hm.baidu.com/hm.js?041efd2cb345ca1b9dbdbb2383cb716d";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();
+        }
+    </script>
 </head>

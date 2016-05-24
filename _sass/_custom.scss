@@ -85,7 +85,7 @@ pre code.language-text{
 
 .qr-code{
     position: fixed;
-    bottom: 150px;
+    bottom: 100px;
     right: 20px;
     background-color: #ececec;
     border: solid 1px #2980b9;
@@ -102,7 +102,7 @@ pre code.language-text{
         }
     }
     &.qr-code-pay{
-        bottom: 400px;
+        bottom: 350px;
     }
 }
 

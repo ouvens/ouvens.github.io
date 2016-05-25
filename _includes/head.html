@@ -42,7 +42,8 @@
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
     <script>
         // 访问统计
-        if(location.host === 'jixianqianduan.com'){
+        var domain = 'jixianqianduan.com';
+        if(location.host === domain){
             var _hmt = _hmt || [];
             (function() {
               var hm = document.createElement("script");
@@ -51,7 +52,7 @@
               s.parentNode.insertBefore(hm, s);
             })();
         }else{
-            window.location.href = 'http://jixianqianduan.com'
+            window.location.href = location.href.replace('ouvens.github.io', domain);
             var _hmt = _hmt || [];
             (function() {
               var hm = document.createElement("script");

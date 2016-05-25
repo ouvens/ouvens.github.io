@@ -107,9 +107,14 @@ pre code.language-text{
     }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 460px) {
     .qr-code{
-        display: none;
+        position: static;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 20px;
+        background-color: #fff;
+        border: none;
     }
 }
 

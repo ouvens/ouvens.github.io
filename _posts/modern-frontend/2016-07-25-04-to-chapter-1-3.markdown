@@ -107,6 +107,10 @@ EcmaScrtipt 6于2015年6年17日正式发布，也被命名为EcmaScript 2015。
 * 十五、进制数支持
 * 十六、不建议使用reflect对象和tail calls尾调用
 
-###### 1.3.3、
+###### 1.3.3、**TypeScript**
 
-**TypeScript**
+&emsp;&emsp;TypeScript差不多和EcmaScript 6发布的同时被大家认识的，简单理解是TypeScript是EcmaScript 6的一个超集，基本遵循es6的语法，但包含了强类型和部分其它特性。但基本语法还是按照es6来设计的。
+
+
+
+

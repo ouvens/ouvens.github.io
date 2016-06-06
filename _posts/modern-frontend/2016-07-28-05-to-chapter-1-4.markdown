@@ -1,17 +1,38 @@
 ---
 layout: post
-title:  "现代前端体系-第一章 3-css发展"
+title:  "现代前端体系-第一章 4-css发展"
 date:   2016-07-18
 author: ouven
-tags: 现代前端体系 第一章 3-css发展
+tags: 现代前端体系 第一章 4-css发展
 categories: modern-frontend
 cover:  "assets/category/type-javaScript.png"
 ---
 
-#### 1.3、css发展
+#### 1.4、css发展
 
+&emsp;&emsp;提到css，大家肯定对css3听说比较多。这里从css2.0的规范开始讲，继css1.0后，w3c在1998年发布了css2规范，css2的出现主要是为了解决早期网页开发过程中排版表现分离的目的，随着页面表现的内容越来越复杂，浏览器厂商推动w3c组织对于css规范进行了跟完整的改进和完善，添加了例如border-radius、text-shadow、transform、animation等更灵活的表现层能力，逐渐形成了一套全新无w3c标准规范。css3可以认为是在css2上的补充和增强，让css体系更能适应现代浏览器的需要，拥有更强的表现能力，尤其对于移动端浏览器，这里主要以google的Android chrome和safari浏览器的webkit内核为主，由于浏览器内核版本相对较高，可以使用css3更容易的做更多、更复杂的事情。当然目前css4的草案也在指定中，css4中更强大的选择器、伪类和伪元素之前已早被一些曝光出来。
 
+&emsp;&emsp;那么我们来看下css具体分哪些内容。比如我们给css所有的属性分类的话，一般理解分成几类。
 
+&emsp;&emsp;**选择器**
 
+&emsp;&emsp;有哪些选择器我这里列下，基本入门时也都应该了解。id选择器、类选择器、元素选择器、组合选择器、伪类、伪元素(还分不清伪类和伪元素的去查下，简单的说伪元素会在html中添加before或after这类东西，而想visited、hover、first-child、nth-child这些伪类不会)。一般认为优先级内联样式(权重1000) > id选择器(权重100) > 类选择器(权重10) > 元素选择器(权重1)，多种组合情况按照权重相加的原则来计算。
 
+&emsp;&emsp;**布局类属性**
+
+布局类css属性，例如定位position类、弹性fex、浮动float、对齐align等
+
+&emsp;&emsp;**几何类属性**
+
+几何类属性，例如盒子模型相关(margin、padding、width、heigh、border)、color类、渐变gradient、backgroud类、transform类。这里可以了解下transform四个属性和变换举证对应的值。这个后面章节会展开去讲
+
+&emsp;&emsp;**文本类属性**
+
+布局类文字相关属性，例如font类、line-heigh、text类(text-decoration、text-indent、textoverflow)、white-space、user-select等
+
+&emsp;&emsp;**动态类属性**
+
+动态类css主要指css3为主的transition、animation为主。
+
+&emsp;&emsp;尽管我们觉得css的属性很多，但是分类以后发现，就这些。更加复杂的其实并不是这些属性对应的值，更多时候在实际问题是如何处理在工程中css开发模块的管理复用问题。例如抽离基础类复用、模块分离，但是如果页面更加复杂，如何对已有存在的面条式css里面分离出模块化的管理，这些将是我们要讨论的问题。
 

@@ -12,8 +12,11 @@
     - 前端困境- 高速发展的前端技术需求与落后的技术支持平台的矛盾
 
 - 前端与协议 8
-    - 前端与http(https、http2、mtu、websocket)的协议
-    - 前后台协议
+    - http 1.x与http 2
+    - https协议与安全
+    - websocket协议
+    - 交互协议规范restful
+    - js客户端交互协议
 
 - 前端高效工具 5
     - 文档工具

@@ -3,8 +3,8 @@ layout: post
 title:  "现代前端体系-第二章 2-https协议与安全"
 date:  2016-08-01
 author: ouven
-tags: web安全 2-https协议与安全
-categories: frontend-weboptimize
+tags: 现代前端体系 2-https协议与安全
+categories: modern-frontend
 cover: "assets/category/type-javascript.png"
 ---
 

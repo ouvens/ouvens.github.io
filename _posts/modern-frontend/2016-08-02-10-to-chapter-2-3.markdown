@@ -1,0 +1,81 @@
+---
+layout: post
+title:  "现代前端体系-第二章 3-前端实时协议"
+date:  2016-08-01
+author: ouven
+tags: 现代前端体系 3-前端实时协议
+categories: modern-frontend
+cover: "assets/category/type-javascript.png"
+---
+
+### 第二章 3-前端实时协议
+
+&emsp;&emsp;在各种各样的前端项目开发中，我们处理用到HTTP(S)协议进行资源文件的下载使用，有时也需要建立客户端(这里主要指浏览器)与服务端的高校通信，例如电商网站的网页服务聊天、企业客服等，优越HTTP(S)是基于超文本传输的，是一种客户端发起的应答式通信协议，这种情况就并不很适用了，虽然可以通过XMLHTTPRequest定时向服务端轮询的方式来持续获取服务端消息，但是这种效率极低，目前一般用作兼容方案处理低端浏览器的场景。
+
+### 2.3.1、websocket
+
+&emsp;&emsp;第二章第一节中我们有讲过，HTTP 1.1的协议支持Upgrade头域设置协议扩展切换，这样我们就可以做到使用从HTTP1.1协议切换到其它的通信协议进行另一种方式的client-server通信了。幸运的是现在浏览器大部分基本都支持HTTP1.1协议，但不幸的是，并非所有这些浏览器都支持其它的扩展协议。我们先来看看websocket的思路。
+
+&emsp;&emsp;此时websocket发起建立了一个连接
+
+```
+GET / HTTP/1.1
+Connection:Upgrade
+Host:127.0.0.1:8080
+Origin:null
+Sec-WebSocket-Extensions:x-webkit-deflate-frame
+Sec-WebSocket-Key:puVOuWb7rel6z2AVZBKnfw==
+Sec-WebSocket-Version:10
+Upgrade:websocket
+```
+
+服务端返回的内容为：
+
+```
+HTTP/1.1 101 Switching Protocols
+Connection:Upgrade
+Server:beetle websocket server
+Upgrade:WebSocket
+Date:Mon, 22 May 2016 23:42:44 GMT
+Access-Control-Allow-Credentials:true
+Access-Control-Allow-Headers:content-type
+Sec-WebSocket-Accept:FCKgUr8c7OsDsLFeJTWrJw6WO8Q= 
+```
+
+&emsp;&emsp;什么东西呢?直接理解就是浏览器使用HTTP1.1协议与服务端建立连接，同时使用Upgrade头域内容告诉服务端连接成功后使用webcocket进行通信，后面的通讯则是浏览器通过socket协议与服务器端进行数据传输。socket协议相对于HTTP1.1就用方便双向数据通信的优势。
+
+FIN：1位
+表示这是消息的最后一帧（结束帧），一个消息由一个或多个数据帧构成。若消息由一帧构成，起始帧即结束帧。
+ 
+RSV1，RSV2，RSV3：各1位
+MUST be 0 unless an extension is negotiated that defines meanings for non-zero values. If a nonzero value is received and none of the negotiated extensions defines the meaning of such a nonzero value, the receiving endpoint MUST _Fail the WebSocket Connection_.
+这里我翻译不好，大致意思是如果未定义扩展，各位是0；如果定义了扩展，即为非0值。如果接收的帧此处非0，扩展中却没有该值的定义，那么关闭连接。
+ 
+OPCODE：4位
+解释PayloadData，如果接收到未知的opcode，接收端必须关闭连接。
+0x0表示附加数据帧
+0x1表示文本数据帧
+0x2表示二进制数据帧
+0x3-7暂时无定义，为以后的非控制帧保留
+0x8表示连接关闭
+0x9表示ping
+0xA表示pong
+0xB-F暂时无定义，为以后的控制帧保留
+ 
+MASK：1位
+用于标识PayloadData是否经过掩码处理。如果是1，Masking-key域的数据即是掩码密钥，用于解码PayloadData。客户端发出的数据帧需要进行掩码处理，所以此位是1。
+ 
+http://datatracker.ietf.org/doc/rfc6455/?include_text=1
+
+### 2.3.1、ddp协议
+
+&emsp;&emsp;DDP是 分布式数据协议 (Distributed Data Protocol)的简称，它定义了一种客户端与服务端一种json格式的通信协议，所以对于前端来说使用非常方便。有名的meteorweb框架的双向实时更新机制的底层依赖的就是DDP协议。
+
+http://phdtree.org/pdf/25378601-distributed-protocols-for-data-privacy/(翻译)
+
+### 2.3.3、小结
+
+&emsp;&emsp;小结下web的安全协议问题，主要包括了websql注入防范、xss防范、csrf防范、劫持与https、Content-Security-Policy、Strict-Transport-Security、Access-Control-Allow-Origin、X-Frame-Options等。
+    
+
+

@@ -98,5 +98,22 @@ function log(msg){
 
 js的log()方法做的事就是在控制台输出msg。
 
-http://www.cnblogs.com/zhanganju/p/5459008.html
+
+### 2.5.3 JSBridge
+
+&emsp;&emsp;似乎已经没有问题了，但了解Android的人应该知道(笔者以前做过一段时间Android开发，又来专门也去查了下)，使用addJavaScriptInterface载Android4.2以下有安全漏洞，即通过JavaScript，可以访问当前设备的SD卡上面的任何东西，甚至是联系人信息，短信等。这就不大合理了。我们的预期是js仅仅用来实现H5与native的交互通信的。那我们尽量的采用另一个方案来处理，另外关于通讯协议本身也需要更加规范。
+
+通常我们这样定义H5与native之间的协议串(这里我们一Android系统为例)`jsbridge://className:callbackMethod/methodName?jsonObj`，至于为什么这样定义，当然也可以使用其它的方式，这里只是一种方法。这里jsbridge是native向低筒注册的协议头，className对应的native的类，methodName指调用native类的具体哪个方法，jsonObj则是H5调用Native方法传过去的参数，callbackMethod带有的是H5的回调方法，目的是在H5调用native的方法成功后异步通过`loadUrl('javascript: callbackMethod()')`来让H5继续做成功后的操作。
+
+假设我们需要调用native层的Logger类的log方法，当然这个类以及方法肯定是遵循某种规范的，不是所有的java类都可以调用，不然就跟文章开头的WebView漏洞一样了，参数是msg，执行完成后js层要有一个回调，那么地址就如下。
+
+例如下面则表示H5调用native的Util类中的toStirng方法，传入的参数是`{"msg":"this is string"}`，调用成功后执行callback函数。
+
+```
+jsbridge://Util:callback/toString?{"msg":"this is string"}
+```
+
+&emsp;&emsp;通常为了方便管理，较多的类花费方法，通常使用一个通用注册方法来注册我们可能需要使用到类和方法，`JSBridge.register("jsName",javaClass.class)`，执行时可以使用`JSBridge.call(className,methodName,params,callback)`，执行call将参数组装成`jsbridge://className:callbackMethod/methodName?jsonObj`的形式，然后调用iframe(io一般用iframe，Android有人用window.promot，但统一起见使用iframe即可)的方法将uri传递过去`window.promot(uri, '')`，这时候java层就会收到这个uri，再进一步解析即可。
+
+&emsp;&emsp;OK，实现的原理就这么多。IOS的原理基本类似，只是形式不同。例如ios Native调用Javascript语言，是通过UIWebView组件的stringByEvaluatingJavaScriptFromString方法来实现的，该方法返回js脚本的执行结果，Android使用的是loadUrl。
 

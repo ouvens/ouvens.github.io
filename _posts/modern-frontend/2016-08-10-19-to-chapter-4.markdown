@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "现代前端体系-第四章 现代前端技术"
+date:  2016-08-10
+author: ouven
+tags: 现代前端体系 第四章 现代前端技术
+categories: modern-frontend
+cover: "assets/category/type-javascript.png"
+---
+
+### 第四章 现代前端技术
+
+&emsp;&emsp;说到前端技术，不就是html、js、css吗？结构层、行为层、表现层啊。如果还这么想就不大好了，三层构成是基础。现代的前端web应用早已经不是是简单的三层结构能够轻松解决的时代了。

@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "现代前端体系-第八章 3-做一名优秀的前端工程师"
+date:  2016-08-14
+author: ouven
+tags: 现代前端体系 第八章 3-做一名优秀的前端工程师
+categories: modern-frontend
+cover: "assets/category/type-javascript.png"
+---
+
+### 第八章 3-做一名优秀的前端工程师
+
+

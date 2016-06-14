@@ -32,5 +32,8 @@ cover:  "assets/category/type-javaScript.png"
 &emsp;&emsp;最后衷心希望这本书能真正帮助哪些需要知识引导的同学，也希望大家多多支持这本书。谢谢大家！
 
 
+&emsp;&emsp;【版权声明】：文章所涉及内容均在作者理解之上原创输出，如果雷同，实属巧合。
+
+
 
 

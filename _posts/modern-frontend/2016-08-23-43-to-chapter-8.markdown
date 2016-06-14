@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "现代前端体系-第八章 未来前端时代"
+date:  2016-08-14
+author: ouven
+tags: 现代前端体系 第八章 未来前端时代
+categories: modern-frontend
+cover: "assets/category/type-javascript.png"
+---
+
+### 第八章 未来前端时代
+
+

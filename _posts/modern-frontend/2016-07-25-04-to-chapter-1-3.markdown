@@ -14,7 +14,7 @@ cover:  "assets/category/type-javaScript.png"
 
 ###### 1.3.1、EcmaScript
 
-&emsp;&emsp;具体先来看下EcmaScript 5,主要包括严格模式、JSON对象、新增Object接口、新增Array接口、Function.prototype.bind。
+&emsp;&emsp;2009年12月发布, 具体先来看下EcmaScript 5,主要包括严格模式、JSON对象、新增Object接口、新增Array接口、Function.prototype.bind。
 
 **严格模式**
 

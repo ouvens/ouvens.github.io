@@ -40,7 +40,7 @@
         - sass
         - media query
         - css4
-    - 前端结构标签进化
+    - 前端结构演进
         - html4
         - html5
         - 自定义标签。webcomponent
@@ -49,21 +49,19 @@
         - 浏览器渲染
         - 浏览器缓存
 
-- 前端dom与交互框架时代 12
+- 前端dom与交互框架 12
     - 静态dom时代
-    - dom时代
-    - mvc时代
-    - mvvm时代
-    - virtual dom
-    - virtual enviroment
+    - dom交互时代
+    - mv*时代
+    - virtual dom时代
+    - virtual enviroment时代
 
 - 前端工业化时代 24
-    - 构建
     - 开发规范
-    - 组件化与模块化规范
+    - 构建自动化
+    - 组件化规范
     - 前端性能优化
     - 前端质量与数据
-    - 自动ci
     - 前端协作 - 后台、产品
     - 前端SEO
     - 前端安全
@@ -75,14 +73,13 @@
         - restful规范
         - 同构
         - 无界面浏览器
-    - native发展
-        - 移动设备webview技术
     - hybrid技术
         - 前后端分离
         - 资源更新技术(离线包与localstorag更新)
-    - 前端与大数据分析
+    - native发展
+        - 移动设备webview技术
     
-- 前端前端时代 10
+- 未来前端时代 10
 
     - 未来前端特点
         - 发展变化更快

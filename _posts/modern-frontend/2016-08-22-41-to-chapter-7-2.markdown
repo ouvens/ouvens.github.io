@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "现代前端体系-第七章 2-hybrid开发技术"
+date:  2016-08-21
+author: ouven
+tags: 现代前端体系 2-hybrid开发技术
+categories: modern-frontend
+cover: "assets/category/type-javascript.png"
+---
+
+### 第七章 2-hybrid开发技术
+
+- 前后端分离
+- bybrid离线技术
+- bybrid更新技术(离线包与localstorag更新)

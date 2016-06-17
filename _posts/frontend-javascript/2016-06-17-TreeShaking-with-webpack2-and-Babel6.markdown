@@ -8,7 +8,7 @@ categories: article-translation
 cover: "assets/category/type-javascript.png"
 ---
 
-&emsp;&emsp;Rich Harris’扥模块打包机[Rollup](https://github.com/rollup/rollup)提出了JavaScript世界的一个新特性：Tree-Shaking，为打包文件去掉不必要的导出。Rollup依赖[ES6模块的静态结构](http://exploringjs.com/es6/ch_modules.html#static-module-structure)(imports内容和exports内容在JavaScript执行时是不变的)检测来决定哪个导出是不必要的。
+&emsp;&emsp;Rich Harris的模块打包机[Rollup](https://github.com/rollup/rollup)提出了JavaScript世界的一个新特性：Tree-Shaking，为打包文件去掉不必要的导出内容。Rollup依赖[ES6模块的静态结构](http://exploringjs.com/es6/ch_modules.html#static-module-structure)(讲解了imports内容和exports内容在JavaScript执行时是不变的)检测来决定哪个导出是不必要的。
 
 &emsp;&emsp;webpack 2的Tree-Shaking还在beta阶段。这篇文章讲解了它是如何工作的。也可以先看个demo：[tree-shaking-demo](https://github.com/rauschma/tree-shaking-demo)
 
@@ -19,7 +19,7 @@ cover: "assets/category/type-javascript.png"
 - 首先，所有的ES6模块文件都合并成一个打包后的文件。在这个文件中，没有被import过的exports是不会被合并进来的。
 - 其次，打包后的文件被合并minified时移除了不用的代码。所以，哪些没有被导出或没有被使用的入口就不会出现在minified压缩后的包里了。没有第一步的操作，不用的代码就不会被移除掉(而是作为一个export被注册进来)。
 
-&emsp;&emsp;如果模块系统有静态结构，无用的导出将在打包的时候被检测出来。所以，webpack 2可以分析理解所有的ES6代码并且只在检测到是ES6模块时才使用tree-shaking。然而，只有import导入和export导出的模块才会被编译为ES5。如果你希望所有的打包文件都编译为ES5，你需要使用一个转译器来处理剩下来的文件。这篇文章中，我们将使用babel 6。
+&emsp;&emsp;如果模块系统有静态结构，无用的导出将在打包的时候被检测出来。所以，webpack 2可以分析理解所有的ES6代码并且只在检测到是ES6模块时才使用tree-shaking。然而，只有import导入和export导出的模块才会被编译为ES5，如果你希望所有的打包文件都编译为ES5，你需要使用一个转译器来处理剩下来的文件。这篇文章中，我们将使用babel 6。
 
 #### 2、ES6 代码
 
@@ -55,7 +55,7 @@ elem.innerHTML = `Output: ${foo()}`;
 }
 ```
 
-&emsp;&emsp;然而这种方式使用的`transform-es2015-modules-commonjs`插件意味着Babel会commonJs模块转换输出然后webpack 2就不能进行tree-shaking分析了。
+&emsp;&emsp;然而这种方式使用的`transform-es2015-modules-commonjs`插件意味着Babel会将ES 6模块通过commonJs模块转换输出，然后webpack 2就不能进行tree-shaking分析了。
 
 ```
 function(module, exports) {
@@ -76,11 +76,11 @@ function(module, exports) {
 }
 ```
 
-&emsp;&emsp;你会看到`bar`成了导出的一部分，这样就成为了不用到代码存在于打包后文件中，并不能被辨认出来。
+&emsp;&emsp;你会看到`bar`成了导出的一部分，这样就成为无用代码存在于打包后文件中，而且不能被辨认出来。
 
 #### 4、 使用tree-shaking输出
 
-&emsp;&emsp;我们想要的是Babel编译ES6，但不是使用`transform-es2015-modules-commonjs`。这时，唯一个可行的方法是在我们的配置文件中列出所有要处理的文件，当然除去哪些我们不需要处理的，所以我们的做法是这样的：([demo](https://github.com/babel/babel/blob/472ad1e6a6d4d0dd199078fdb08c5bc16c75b5a9/packages/babel-preset-es2015/index.js))
+&emsp;&emsp;我们想要的是用Babel编译ES6，但不是使用`transform-es2015-modules-commonjs`。这时，唯一个可行的方法是在我们的配置文件中列出所有要处理的文件，当然除去那些我们不需要处理的，所以我们的做法是这样的：([demo](https://github.com/babel/babel/blob/472ad1e6a6d4d0dd199078fdb08c5bc16c75b5a9/packages/babel-preset-es2015/index.js))
 
 ```
 {
@@ -138,8 +138,7 @@ function (t, n, r) {
 ```
 
 
-&emsp;&emsp;OK，再也没有多余的东西了。这里一个值的注意的地方时，webpack 2的tree-shaking只分析含有导入导出的模块，而且其它使用其它的编译插件时一定需要注意下。
-
+&emsp;&emsp;OK，再也没有多余的东西了。这里一个值的注意的地方是，webpack 2的tree-shaking只分析含有导入导出的ES6模块，而且使用其它的编译插件时一定需要注意下。
 
 
 原文作者：Dr. Axel Rauschmayer

@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "mnv*框架开发时代"
+date:   2016-06-24
+author: ouven
+tags:   mnv*框架开发时代
+categories: frontend-javascript
+cover:  "assets/category/type-javascript.png"
+---
+
+#### mnv*框架开发时代
+
+&emsp;&emsp;现在前端开发框架显然已经在mvvm模型时代有发展了一步，
+

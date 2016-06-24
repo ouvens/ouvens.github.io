@@ -1,0 +1,137 @@
+---
+layout: post
+title:  "mnv*框架开发时代"
+date:   2016-06-24
+author: ouven
+tags:   mnv*框架开发时代
+categories: frontend-javascript
+cover:  "assets/category/type-javascript.png"
+---
+
+#### mnv*框架开发时代
+
+&emsp;&emsp;现在前端开发框架显然已经在mvvm模型时代有发展了一步，`virtual dom` 提出不久，使用前端代码来调用native的思路就开始被实践。相信大家也知道是什么东西。到了今天，我们不得不承认，`mnv*` 框架开发时代正在到来。
+
+&emsp;&emsp;mnv*是什么，具体可以这么理解，`model-Native-View-*`，而后面的*则可以认为是 `virtual dom` 或 `mvvm` 中的 `ViewModel`，或者我们也可以自己使用controller来调用Native View。想想这样定义是非常合适的。
+
+&emsp;&emsp;那么我们再看看下从`mv*` 走向 `mnv*`，我们为什么会看到这样的变化。 
+
+#### 一、直接do
+
+&emsp;&emsp;在此之前不得不提下之间的dom交互框架，就是选择dom进行操作，思路十分直接也很实用，通过dom交互框架，相比JavaScript原生API，我们可以比较高效的处理dom交互和事件绑定了，这种高效的方式给我们到来了效率上的提高，但是页面大了就不好处理了。
+
+&emsp;&emsp;随着ajax技术的盛行，SPA应用开始被广泛运用。SPA的引入将整个应用的内容都在一个页面中进行异步交互。这样，原有的dom交互方式开发就显得不好管理，例如某SPA页面上交互和异步加载的内容很多，我们的做法是每一次请求渲染后做事件绑定，异步请求后再做另一部分事件绑定，后面以此类推，当所有异步页面全部调用完成，页面上的绑定将变得十分混乱，各种元素绑定，渲染后的视图内容逻辑不清，又不得不声明各种变量保存每次异步加载时返回的数据，因为页面交互需要对这些数据做操作，最后写完，项目代码就成了一锅粥。
+
+#### 一、前端mvc
+
+&emsp;&emsp;为了更方便的统一管理页面上的事件、数据和视图内容，就有了早期mvc的框架设计。mvc可以认为是一种设计模式，其基本思路是将dom交互的过程分为调用事件，获取数据，管理视图。即将之前所有的事件、数据、视图分别统一管理。用model来存放数据请求和数据操作，视图来存放对视图的操作和改变，controller用来管理各种事件绑定。
+
+&emsp;&emsp;例如，SPA中的每个页面可以看成是一个组件，之前的做法是每个组件独立完成自己的数据请求操作、渲染和数据绑定，但是组件多了，每个组件自己去做就比较混乱，逻辑比较混乱。到了MVC里面，所有的组件数据请求、渲染、数据绑定都到一个统一的model、view、controller注册。后面的操作我们就不在管你有多少个组件了，你要调用必须要通过mvc来调。通俗来说就像是组件交出了自己控制权到一个统一的地方注册调用。
+
+&emsp;&emsp;我们看一个mvp的示范，来了解mvp是如何区别于原有dom交互开发方式的：
+
+backbone例子和解释
+
+#### 5.2.2 前端mvp
+
+&emsp;&emsp;MVP可以跟MVC对照起来看。和MVC一样，MVP的M就是 Model, V就是View，而P，则代表Presenter，它与Controller有点相似。不同的是，在MVC中V会直接展现M，而在MVP中V会把所有的任务都委托给P。V和P会互相持有reference，因此可以互相调用。。
+
+例如我们可以吧MVC代码上做一点改变，写成这样，这样
+
+```
+<div controller="Controller.vp" id="text">html</div>
+```
+
+```
+var Controller = new Controller();
+Controller['vp']= new VP({
+    $el: $('text'),
+    click: fn(e){
+        console.log(self.$el.html());
+    },
+    mouseenter: function(e){
+        console.debug(self.$el.html());
+    },
+    mouseleave: function(e){
+        console.info(self.$el.html());
+    }
+});
+```
+
+&emsp;&emsp;这样将view和Controller的引用关联了起来，而mvc一般是通过事件监听或观察者的异步方式来实现的，我们可以在任意地方定义注册监听事件都不会有问题，这样监听的事件和触发这个事件的html元素脱离了引用，当应用复杂起来后要维护dom的交互逻辑就比较麻烦了。而mvp提供了一个简单的引用，将元素对应的操作于对应的presenter关联起来。我们要查询元素对应的controller时只要通过Controller.vp就可以直接调用了，再想想我们的mvc，我们还是得用选择器。
+
+#### 三、前端mvvm 
+
+&emsp;&emsp;mvvm概念可以认为是一个自动化的presenter，也这个时候进一步弱化了C层，任何操作都通过viewmodel来驱动。Controller最终在页面上一directives的形式体现，通过对directive的识别来注册事件，这样管理起来就更清晰了。那么什么是directive？这个我们后面统一来讲。
+
+先来看看现在的mvvm模式下，我们的页面组件是如何运作的：
+
+```
+<form action="" id="form">
+    <label for="text" q-html="label"></label>
+    <input type="text" q-value="value" q-model="value" q-mydo="number | getValue">
+    <button q-on="click: submit"></button>
+</form>
+```
+
+```
+let viewModel = new VM({
+    $el: '#form',
+    data:{
+        label: '用户名',
+        value: '输入初始值',
+        number: 0
+    },
+    method:{
+        submit(){
+            // doSubmit
+        }
+    },
+    directive:{
+        mydo(value){
+            console.log(value);
+        }
+    },
+
+    filter:{
+        getValue(){
+            reutrn value ++;
+        }
+    }
+})
+```
+&emsp;&emsp;mvvm设计一个很大的好处是将mvc中controller中的controller注册到相对应的元素中，让我们后期维护时很快定位，免去了查看controller中event列表的工作，而且初始化后自动做数据绑定，能将页面中所有同类操作复用，大大节省了我们自己写代码做绑定的代码量。这段代码中初始化时自动帮我们就做了数值填充、数据双向绑定、事件绑定的事情。那么框架怎样帮我做的呢。我们来看下new VM做了哪些事情：这里传入了元素、数据、方法列表、自定义directive列表，首先程序找到这个元素，开始对这个元素的属性节点进行遍历，一旦遍历到属性名称含有q-开头的属性是，认为是mvvm框架自定义的属性，然后会对属性的指进行特殊处理；例如遍历到`q-html="label"`时，将data中的label值赋给这个元素的innerHTML；如果遍历到`q-on="click: submit"`时，将这这个元素上绑定click事件，事件回调函数为submit；也可以自定义`q-mydo`的指令，遍历到该节点属性是，调用directive中的mydo方法，输入参数为data中的getValue方法返回的值，getValue输入参数为number值，这里的getValue被称为过滤器。
+
+&emsp;&emsp;这里要知道的是`q-`开头的指令是框架约定的，不同的框架约定的不一样，例如`ng-`、`v-`、`ms-`相信也都见过或用过。这里viewModel创建进行绑定的原理就这么简单，按照这个思路去扩充，就可以自己写一个mvvm框架。当然完整的框架涉及东西多的多，含有丰富的directive、filter、表达式、vm完善的api和甚至一些兼容性处理等。
+
+&emsp;&emsp;再来看下看是的问题，directive、filter这些东西具体是啥？下面我们来看看mvvm设计所涉及的东西：
+
+- directive。翻译过来叫指令，简单地说就是自定义的函数，例如q-html、q-class、q-on、q-show、q-attr等封装了dom的一些基本重复性的操作。
+
+- filter。bool、upperCase、lowwerCase等，指用户希望对数据进行处理一下，然后在交个directive或下一个filter。
+
+- 表达式设计。if-else等，类似页面模板，其左右也是控制页面内容
+
+- viewModel设计。说白了就是说你的数据如何放在内存里，怎么方便的进行读取、修改等操作。
+
+- 数据变更检测。我们知道mvvm通常是可以做双向绑定的，通过view的改变来改变model一般是通过元素各种onchange事件来触发修改javascript的viewModel的，这点做到比较浅显。另一方便是viewModel修改了，如何触发view的自动更新或重渲染呢。通常我们有三种解决思路。
+
+具体数据更变检测实现可以看我的另一篇文章《[javascript实现数据双向绑定的三种方式](http://jixianqianduan.com/frontend-javascript/2015/11/29/js-data-two-ways-binding.html)》。
+
+&emsp;&emsp;关于mvvm讲的比较多，这里相信大家也对mvvm有了更深的了解，自己也可以去实现一个类似的框架，只是是否必要的问题。总结来说从mvc到mvp，然后到mvvm，前端设计模式的原则仍然是向着易实现、易维护、易扩展的基本方向发展的。但目前位置前端各类框架也已经成熟并开始向上迭代。但是，这还没有结束，我们依然没有脱离dom编程的基本套路，一次次框架的改进只是提高了我们的开发效率，但是dom元素的效率仍没有得到本质的提升。
+
+#### 四、前端virtual dom
+
+&emsp;&emsp;为了改进dom交互的效率，或者说是尽量减少dom交互的次数，virtual dom的概念当下十分盛行，目前圈内各种大小团队纷纷投入项目使用。因为viewModel的改变最终还是要实时操作dom来刷新view层，而dom对象的操作相对于JavaScript对象的操作要慢些，原因很简单，dom节点对象的内置属性多了，就创建一个dom对象而言，dom的创建需要处理各种内置属性的初始化，而如果使用JavaScript对象来描述就简单了。
+
+&emsp;&emsp;
+
+#### 五、前端 mnv*
+
+&emsp;&emsp;如果说vitual dom减少了dom的交互，那么mnv*想要做的一件事情就是完全抛弃使用dom，那样就只能在view层做改进了，使用nativeView来代替目前html的view，而交互逻辑依然可以使用ViewModel、virtual Dom或者controller来实现，具体就看实现的方式了。
+
+&emsp;&emsp;要做到NativeView的操作，这里与之前不同之处就是调用时通过衍生HTML语法通过解释器执行nativeView的渲染，这是就需要在native和衍生HTML语法之间添加一层解释器。
+
+
+
+&emsp;&emsp;总结下来，前端框架一次次进化，先从效率的方向上提升，然后再性能上完善。目前mnv的开发模式开始进入视线，也在快速地形成和建立生态。但尽管如此，我们如果需要选择的技术栈方案，当然还是以最适合我们的作为最高原则。切忌过度设计。

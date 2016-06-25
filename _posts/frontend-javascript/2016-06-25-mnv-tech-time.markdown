@@ -3,7 +3,7 @@ layout: post
 title:  "mnv*框架时代"
 date:   2016-06-25
 author: ouven
-tags:   mnv*框架时代 mnv mnv*
+tags:   mnv*框架时代 mnv mnv* mvvm
 categories: frontend-javascript
 cover:  "assets/category/type-javascript.png"
 ---

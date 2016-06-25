@@ -18,13 +18,13 @@ cover:  "assets/category/type-javascript.png"
 
 &emsp;&emsp;随着ajax技术的盛行，SPA应用开始被广泛运用。SPA的引入将整个应用的内容都在一个页面中进行异步交互。这样，原有的dom交互方式开发就显得不好管理，例如某SPA页面上交互和异步加载的内容很多，我们的做法是每一次请求渲染后做事件绑定，异步请求后再做另一部分事件绑定，后面以此类推。当所有异步页面全部调用完成，页面上的绑定将变得十分混乱，各种元素绑定，渲染后的视图内容逻辑不清，又不得不声明各种变量保存每次异步加载时返回的数据，因为页面交互需要对这些数据做操作，最后写完，项目代码就成了一锅粥。
 
-#### 一、前端mvc
+#### 二、前端mvc
 
 &emsp;&emsp;为了更方便的统一管理页面上的事件、数据和视图内容，就有了早期mvc的框架设计。mvc可以认为是一种设计模式，其基本思路是将dom交互的过程分为调用事件、获取数据、管理视图。即将之前所有的事件、数据、视图分别统一管理。用model来存放数据请求和数据操作，视图来存放对视图的操作和改变，controller用来管理各种事件绑定。
 
 &emsp;&emsp;例如，SPA中的每个异步页面可以看成是一个组件，之前的做法是每个组件独立完成自己的数据请求操作、渲染和数据绑定，但是组件多了，每个组件自己去做就比较混乱，逻辑比较混乱。到了mvc里面，所有的组件数据请求、渲染、数据绑定都到一个统一的model、view、controller注册管理。后面的操作我们就不在管你有多少个组件了，你要调用必须要通过统一的model、view、controller来调。通俗来说就像是组件交出了自己控制权到一个统一的地方注册调用，这样就方便了很多，相信大家都已经了解过，这里就省篇幅不举例了。
 
-#### 二、 前端mvp
+#### 三、 前端mvp
 
 &emsp;&emsp;mvp可以跟mvp对照起来看，而且我们也很少专门去关注它。和mvc一样，mvc的M就是 Model, V就是View，而P，则代表Presenter，它与Controller有点相似。不同的是，在mvc中V会直接展现M，而在mvp中V会把所有的任务都委托给P。V和P会互相持有reference，因此可以互相调用。
 
@@ -53,7 +53,7 @@ Controller['vp']= new VP({
 
 &emsp;&emsp;几个好处，这样将view和Controller的引用关联了起来，而MVC一般是通过事件监听或观察者的异步方式来实现的，我们可以在任意地方定义注册监听事件都不会有问题，这样监听的事件和触发这个事件的html元素脱离了引用，当应用复杂起来后要维护dom的交互逻辑就比较麻烦了。而mvp提供了一个简单的引用，将元素对应的操作于对应的presenter关联起来。我们要查询元素对应的controller时只要通过Controller.vp就可以直接调用了，其实这个时候就和mvvm的定义方式有点类似了，不是吗？
 
-#### 三、前端mvvm 
+#### 四、前端mvvm 
 
 &emsp;&emsp;mvvm概念可以认为是一个自动化的presenter，也这个时候进一步弱化了C层，任何操作都通过viewModel来驱动。Controller最终在页面上的行为通过directives的形式体现，通过对directives的识别来注册事件，这样管理起来就更清晰了。看一个mvvm框架定义的例子。
 
@@ -99,7 +99,7 @@ let viewModel = new VM({
 
 &emsp;&emsp;总结来说从mvc到mvp，然后到mvvm，前端设计模式仍然是向着易实现、易维护、易扩展的基本方向发展的。但目前前端各类框架也已经成熟并开始版本迭代。但是，这还没有结束，我们依然没有脱离dom编程的基本套路，一次次框架的改进只是提高了我们的开发效率，但是dom元素的效率仍没有得到本质的提升。
 
-#### 四、前端virtual dom
+#### 五、前端virtual dom
 
 &emsp;&emsp;为了改进dom交互的效率，或者说是尽量减少dom交互的次数，virtual dom的概念当下十分盛行，目前圈内各种大小团队纷纷投入项目使用。因为viewModel的改变最终还是要实时操作dom来刷新view层，而dom对象的操作相对于JavaScript对象的操作仍然是要慢些。原因很简单，dom节点对象的内置属性很多，就创建一个dom对象而言，dom的创建需要处理各种内置属性的初始化，而如果使用JavaScript对象来描述就简单了。
 
@@ -145,7 +145,7 @@ var element = {
 &emsp;&emsp;这里的javascript对象就相当于virtual dom，用户的某个交互操作可能导致dom的多个地方，如果没有vitual dom，那可能就要进行多次dom操作，virtual dom则可以将多个用户交互操作反映在virtual dom上，最后做的virtual dom DIFF算法然后再dispatch到页面view层上。相对于mvvm，在页面初始化渲染阶段，也避免了扫面节点，解析directives，要知道这些操作都是dom操作，使用virtual dom显然能将页面渲染速度提高不少。
 
 
-#### 五、前端 mnv*
+#### 六、前端 mnv*
 
 &emsp;&emsp;如果说vitual dom减少了dom的交互次数，那么mnv*想要做的一件事情就是完全抛弃使用dom，那样就只能在view层做改进了，使用nativeView来代替目前html的view，而交互逻辑依然可以使用viewModel、virtual Dom或者controller来实现，具体就看实现的方式了。
 
@@ -178,6 +178,6 @@ class App extends Component {
 
 &emsp;&emsp;这里和vitual dom框架类似的地方都是都使用衍生的html描述语法来表示view层，而不同的是mnv模式是调用的nativeView来实现的衍生html的view展示。其实这里和上节中的实现唯一不同的地方是这里的view是native view。当然这只是一种实现，目前mnv的实现方案已经不止一种了，有人已经实践了通过mvvm的编程方式来将viewModel渲染转化为native view的方案。
 
-####  六、总结
+####  七、总结
 
 &emsp;&emsp;总结下来，前端框架一次次进化，先从效率的方向上提升，然后再性能上完善，这里只是想提出mnv*的一个概念来描述前端native开发的这个阶段。目前mnv的开发模式开始进入视线，也在快速地形成和建立生态。但尽管如此，我们如果需要选择的技术栈方案，当然还是以最适合我们的作为最高原则。切忌过度设计。

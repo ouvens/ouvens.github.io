@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "mnv*框架时代"
+title:  "mnv*框架开发时代"
 date:   2016-06-25
 author: ouven
-tags:   mnv*框架时代 mnv mnv* mvvm
+tags:   mnv*框架开发时代 mnv mnv* mvvm
 categories: frontend-javascript
 cover:  "assets/category/type-javascript.png"
 ---

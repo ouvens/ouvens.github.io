@@ -30,6 +30,7 @@ cover:  "assets/category/type-javascript.png"
 
 例如我们可以在MVC代码上做一点改变，写成这样：
 
+
 ```
 <div controller="Controller.vp" id="text">html</div>
 ```
@@ -55,6 +56,7 @@ Controller['vp']= new VP({
 #### 三、前端mvvm 
 
 &emsp;&emsp;mvvm概念可以认为是一个自动化的presenter，也这个时候进一步弱化了C层，任何操作都通过viewModel来驱动。Controller最终在页面上的行为通过directives的形式体现，通过对directives的识别来注册事件，这样管理起来就更清晰了。看一个mvvm框架定义的例子。
+
 
 ```
 <form action="" id="form">
@@ -114,6 +116,7 @@ let viewModel = new VM({
 ```
 
 &emsp;&emsp;可以使用如下javascript来表示
+
 ```
 var element = {
   tagName: 'ul',
@@ -130,6 +133,7 @@ var element = {
 ```
 
 &emsp;&emsp;如果javascript对象children属性第三个元素要被移除，同时，添加一个class为ui-list-item2的li节点，则首先需要对javascript对象进行修改记录所有的操作，最后将修改的vitual dom变化反映到页面上：
+
 ```
 <ul id="ui-list">
   <li class="ui-list=item">1</li>
@@ -146,6 +150,7 @@ var element = {
 &emsp;&emsp;如果说vitual dom减少了dom的交互次数，那么mnv*想要做的一件事情就是完全抛弃使用dom，那样就只能在view层做改进了，使用nativeView来代替目前html的view，而交互逻辑依然可以使用viewModel、virtual Dom或者controller来实现，具体就看实现的方式了。
 
 &emsp;&emsp;要做到NativeView的操作，这里与之前不同之处就是调用时通过衍生HTML语法通过解释器执行nativeView的渲染，这是就需要在native和衍生HTML语法之间添加一层解释器来解析现有的view描述语法了。比如我们看一个渲染Native的例子：
+
 
 ```
 // iOS

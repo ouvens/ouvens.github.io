@@ -44,7 +44,7 @@ cover:  "assets/category/type-javascript.png"
 __openDatabase方法可以打开已经存在的数据库，不存在则创建__
 
 ```javascript
-	var db = openDatabase('mydatabase', '2.0', my db', 2 * 1024);
+	var db = openDatabase('mydatabase', '2.0', 'my db', 2 * 1024);
 ```
 
 &emsp;&emsp;openDatabasek中五个参数分别为：数据库名、版本号、描述、数据库大小、创建回调。创建回调没有也可以创建数据库。
@@ -63,7 +63,7 @@ __database.transaction() 函数用来查询，executeSql()用于执行sql语句_
 &emsp;&emsp;插入操作
 
 ```javascript
-var db = openDatabase('mydatabase', '2.0', my db', 2 * 1024);
+var db = openDatabase('mydatabase', '2.0', 'my db', 2 * 1024);
 
    db.transaction(function (tx) { 
       tx.executeSql('CREATE TABLE IF NOT EXISTS t1 (id unique, log)');  

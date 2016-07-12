@@ -101,7 +101,7 @@ let viewModel = new VM({
 
 #### 五、前端virtual dom
 
-&emsp;&emsp;为了改进dom交互的效率，或者说是尽量减少dom交互的次数，virtual dom的概念当下十分盛行，目前圈内各种大小团队纷纷投入项目使用。因为viewModel的改变最终还是要实时操作dom来刷新view层，而dom对象的操作相对于JavaScript对象的操作仍然是要慢些。原因很简单，dom节点对象的内置属性很多，就创建一个dom对象而言，dom的创建需要处理各种内置属性的初始化，而如果使用JavaScript对象来描述就简单了。
+&emsp;&emsp;为了改进dom交互的效率，或者说是尽量减少dom交互的次数，virtual dom的概念当下十分盛行，目前圈内各种大小团队纷纷投入项目使用。因为viewModel的改变最终还是要实时操作dom来刷新view层，而dom对象的操作相对于JavaScript对象的操作仍然是要慢些。原因很简单，dom节点对象的内置属性很多，就创建一个dom对象而言，dom的创建需要处理各种内置属性的初始化，而且javascript调用dom需要时间。所以如果使用JavaScript对象来描述就简单了。
 
 &emsp;&emsp;使用virtual dom，页面的渲染过程不再是数据直接通过前端模板渲染到页面，也不是初始化viewModel进行页面模板填充和事件绑定，而是通过dom衍生描述语法（这为什么称为DOM衍生描述语法，通常我们通过html来描述，但是目前一些框架是通过非标准的html的方式描述的，定义的一套迎合自己框架的方式，其实使用html也是可以的）解析生成virtual dom，页面交互变成了是修改virtual dom，然后将virtual dom的改变反映到htmlView层上。
 

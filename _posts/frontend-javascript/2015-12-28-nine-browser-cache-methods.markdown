@@ -184,6 +184,9 @@ https://github.com/machao/localStorage
 - 速度 – 缓存资源为本地资源，因此加载速度较快。
 - 服务器负载更少 – 浏览器只会从发生了更改的服务器下载资源。
 
+
+在线的情况下，浏览器发现html头部有manifest属性，它会请求manifest文件，如果是第一次访问app，那么浏览器就会根据manifest文件的内容下载相应的资源并且进行离线存储。如果已经访问过app并且资源已经离线存储了，那么浏览器就会使用离线的资源加载页面，然后浏览器会对比新的manifest文件与旧的manifest文件，如果文件没有发生改变，就不做任何操作，如果文件改变了，那么就会重新下载文件中的资源并进行离线存储。并在下一次生效。离线的情况下，浏览器就直接使用离线存储的资源。
+
 &emsp;&emsp;一个简单的离线页面主要包含以下几个部分：
 
 __index.html__
@@ -280,6 +283,7 @@ caches.has('v1').then(function() {
 ```
 
 ```javascript
+
 var response;
 var cachedResponse = caches.match(event.request).catch(function() {
   return fetch(event.request);
@@ -292,6 +296,7 @@ var cachedResponse = caches.match(event.request).catch(function() {
 }).catch(function() {
   return caches.match('/sw-test/gallery/myLittleVader.jpg');
 });
+
 ```
 
 ```javascript
@@ -308,6 +313,7 @@ then.addEventListener('activate', function(event) {
     })
   );
 });
+
 ```
 
 https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage

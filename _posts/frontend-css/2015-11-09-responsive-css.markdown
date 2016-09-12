@@ -24,11 +24,6 @@ cover: "assets/category/type-css.png"
 
 &emsp;&emsp;我们理解的是完整的响应式页面的设计不仅仅是通过屏幕尺寸来动态改变页面容器的宽度等，其实大部分人通常理解的都停留在这个方面。完整的响应式网站的实现其实需要考虑到以下这些问题：**响应式布局**、**响应式html和css**、**响应式媒体**、**响应式javascript**。
 
-先看几个线上的样例：
-
-http://ke.qq.com/huodong/shengkao/index.html
-http://ke.qq.com/huodong/yikao2016/index.html
-http://ke.qq.com/huodong/nianzhongppt/index.html
 
 &emsp;&emsp;这些页面在移动端和PC端使用同一个页面(大家可以用chrome浏览器一下)，这样就避免了多余的302跳转，另外页面布局、逻辑、图片等内容都通过不同浏览器来适应。下面具体讲下各个部分的实现所涉及的内容。
 

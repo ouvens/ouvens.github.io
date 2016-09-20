@@ -87,7 +87,7 @@ export class MainCmp {
 
 &emsp;&emsp;templates/tabs.html的内容如下。
 
-```
+```html
 <ion-content ng-controller="MainCtrl">
     <ion-item>
     {{data.text}}
@@ -97,7 +97,7 @@ export class MainCmp {
 
 &emsp;&emsp;ionic2里面里可以这样来适应原来的版本：
 
-```
+```html
 <ion-content ng-controller="MainCtrl as main">
     <ion-item>
     {{main.data.text}}

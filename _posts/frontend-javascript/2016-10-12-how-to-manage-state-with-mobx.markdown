@@ -311,7 +311,7 @@ mobx.autorun(function(){
 
 ```
 
-&emsp;&emsp;或许你会说，你这里有重新渲染了啊。是的，你这看到的就是为什么很多人选择使用React的原因。React允许你将输出内容拆分小的组件进行个别的渲染。这里有个完整的例子：[a jQuery example that I’ve optimized](http://codepen.io/SitePoint/pen/EgwkwB?editors=1010)
+&emsp;&emsp;或许你会说，你这里有重新渲染了啊。是的，你这看到的就是为什么很多人选择使用React的原因。React允许你将输出内容拆分小的组件进行个别的渲染。这里有个完整的例子：[a jQuery example that I have optimized](http://codepen.io/SitePoint/pen/EgwkwB?editors=1010)
 
 &emsp;&emsp;MobX可能在实际项目中使用吗？不一定，如果我需要这种细粒度的操作使用React就可以了。当我在实际项目中使用MobX和jQuery时，我使用autorun()就可以解决很多问题了。[the same example built with React and MobX](http://codepen.io/SitePoint/pen/NRadwy?editors=1010)
 

@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "使用MobX怎样管理JavaScript应用状态"
+title:  "【原译】使用MobX怎样管理JavaScript应用状态"
 date:   2016-10-12
 author: ouven
 tags:   react mobx
-categories: frontend-javascript
+categories: article-translation
 cover:  "assets/category/type-javascript.png"
 ---
 

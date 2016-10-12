@@ -13,12 +13,12 @@ title: "极限前端"
 subtitle: "极限前端, 讲述前端高效技术与前沿"
 email: ouvenzhang@tencent.com
 name: ouvenzhang
-description: "极限前端, 极限前端社区, ouvenzhang的博客, www.jixianqianduan.com, github地址, 前端技术, 讲述前端高效技术与前沿。"
+description: "极限前端, 极限前端社区, ouven的博客, ouvenzhang的博客, www.jixianqianduan.com, github地址, 前端技术, 讲述前端高效技术与前沿。"
 baseurl: "/"  # the subpath of your site, e.g. /blog/
 url: "http://ouvens.github.io" # the base hostname & protocol for your site
 cover: "assets/header_image.png"
 logo: "assets/logo.png"
-keywords: "极限前端, ouenzhang, 博客, github, 前端技术, javascript, css, html"
+keywords: "极限前端, ouenzhang, ouven, 博客, github, 前端技术, javascript, css, html"
 image: "http://ouvens.github.io/blog/assets/logo.png"
 
 # Build settings

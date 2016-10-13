@@ -102,7 +102,7 @@ blockquote{
         background-repeat: no-repeat;
         background-position: top center;
         .title {
-            font-size: modular-scale(6);
+            font-size: modular-scale(4);
         }
         .subtitle,
         .info {
@@ -271,7 +271,7 @@ blockquote{
         background-color: $header-banner-color;
         .site-header {
             .title {
-                font-size: modular-scale(5);
+                font-size: modular-scale(6);
             }
             .subtitle {
                 font-size: modular-scale(1);

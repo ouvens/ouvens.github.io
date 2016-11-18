@@ -43,9 +43,9 @@
 </footer>
 
 <!-- Scripts -->
-<script src="//1.url.cn/jslib/jquery/1.9.1/jquery.min.js"></script>
+<script src="//1.url.cn/jslib/jquery/1.9.1/jquery.min.js" defer></script>
 {% if page.author != null %}
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js" defer></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" defer></script>
 {% endif %}
-<script src="{{ "assets/js/main.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "assets/js/main.js" | prepend: site.baseurl }}" defer></script>

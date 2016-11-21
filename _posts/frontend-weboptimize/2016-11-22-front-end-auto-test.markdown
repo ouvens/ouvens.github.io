@@ -338,5 +338,7 @@ test.open('http://adomain.com')
 参考资料：
 
 [http://joshldavis.com/2013/05/27/difference-between-tdd-and-bdd/](http://joshldavis.com/2013/05/27/difference-between-tdd-and-bdd/)
+
 [https://pythonhosted.org/behave/philosophy.html](https://pythonhosted.org/behave/philosophy.html)
+
 [http://wiki.c2.com/?TestDrivenDevelopment](http://wiki.c2.com/?TestDrivenDevelopment)

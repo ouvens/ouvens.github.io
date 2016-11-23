@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "歇歇前端团队管理"
+title:  "写写前端团队管理"
 date:   2015-11-24
 author: ouven
 tags:   前端 团队管理

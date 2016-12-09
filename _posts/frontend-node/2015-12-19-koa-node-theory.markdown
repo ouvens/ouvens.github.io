@@ -42,7 +42,9 @@ app.use(function *(){
 app.listen(3000);
 ```
 
-&emsp;&emsp;上面的执行顺序就是：请求 ==> response-time中间件 ==> logger中间件 ==> 响应中间件 ==> logger中间件 ==> response-time中间件 ==> 响应。更详细描述就是：请求进来，先进到response-time中间件，执行 var start = new Date; 然后遇到yield next，则暂停response-time中间件的执行，跳转进logger中间件，同理，最后进入响应中间件，响应中间件中没有yield next代码，则开始逆序执行，也就是再先是回到logger中间件，执行yield next之后的代码，执行完后再回到response-time中间件执行yield next之后的代码。
+&emsp;&emsp;上面的执行顺序就是：请求 ==> response-time中间件 ==> logger中间件 ==> 响应中间件 ==> logger中间件 ==> response-time中间件 ==> 响应。
+
+&emsp;&emsp;更详细描述就是：请求进来，先进到response-time中间件，执行 var start = new Date; 然后遇到yield next，则暂停response-time中间件的执行，跳转进logger中间件，同理，最后进入响应中间件，响应中间件中没有yield next代码，则开始逆序执行，也就是再先是回到logger中间件，执行yield next之后的代码，执行完后再回到response-time中间件执行yield next之后的代码。
 
 &emsp;&emsp;至此，整个Koa的中间件执行完毕 ，整个中间件执行过程相当有意思。而Koa的中间件是运行在 co 函数下的，而tj大神的co函数能够把异步变同步，也就说，编写Koa的中间件的时候可以这样写，就拿上面那个demo最后的响应中间件来说可以改成这样：
 
@@ -78,6 +80,7 @@ app.use(function *(){
 &emsp;&emsp;自己实现了一个简单的co函数，传入一个generator，获取generator的函数对象，然后定义一个next方法用于递归，在next方法里执行generator.next()并且传入data，执行完generator.next()会获取到{value:XX, done: true|false}的对象，如果done为true，说明generator已经迭代完毕，退出。否则，假设当前执行到yield new Promise()，也就是返回的result.value就是Promise对象的，直接执行Promise的then方法，并且在then方法的onFulfilled回调（也就是Promise中的异步执行完毕后，调用resolve的时候会触发该回调函数）中执行next方法进行递归，并且将onFulfilled中传入的数据传入next方法，也就可以在下一次generator.next()中把数据传进去。
 
 ```javascript
+
 // co简易实现
 function co(generator){
     var gen = generator();
@@ -100,6 +103,7 @@ function co(generator){
 
     next();
 }
+
 ```
 
 &emsp;&emsp;写个demo测试一下：

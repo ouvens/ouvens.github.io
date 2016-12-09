@@ -77,7 +77,7 @@ app.use(function *(){
 
 &emsp;&emsp;tj的co函数就如同一个魔法，把所有异步都变成了同步，看起来好像很高大上。但是co函数做的事其实并不复杂。整个co函数说白了，就是使用Promise递归调用generator的next方法，并且在后一次调用的时候把前一次返回的数据传入，直到调用完毕。而co函数同时把非Promise对象的function、generator、array等也组装成了Promise对象。所以可以在yield后面不仅仅可以接Promise，还可以接generator对象等。
 
-&emsp;&emsp;自己实现了一个简单的co函数，传入一个generator，获取generator的函数对象，然后定义一个next方法用于递归，在next方法里执行generator.next()并且传入data，执行完generator.next()会获取到`{value:XX, done: true | false}`的对象，如果done为true，说明generator已经迭代完毕，退出。否则，假设当前执行到yield new Promise()，也就是返回的result.value就是Promise对象的，直接执行Promise的then方法，并且在then方法的onFulfilled回调（也就是Promise中的异步执行完毕后，调用resolve的时候会触发该回调函数）中执行next方法进行递归，并且将onFulfilled中传入的数据传入next方法，也就可以在下一次generator.next()中把数据传进去。
+&emsp;&emsp;自己实现了一个简单的co函数，传入一个generator，获取generator的函数对象，然后定义一个next方法用于递归，在next方法里执行generator.next()并且传入data，执行完generator.next()会获取到{value:XX, done: true}的对象，如果done为true，说明generator已经迭代完毕，退出。否则，假设当前执行到yield new Promise()，也就是返回的result.value就是Promise对象的，直接执行Promise的then方法，并且在then方法的onFulfilled回调（也就是Promise中的异步执行完毕后，调用resolve的时候会触发该回调函数）中执行next方法进行递归，并且将onFulfilled中传入的数据传入next方法，也就可以在下一次generator.next()中把数据传进去。
 
 ```javascript
 

@@ -8,9 +8,9 @@ categories: frontend-javascript
 cover:  "assets/category/type-javascript.png"
 ---
 
-&emsp;&emsp;当下前端开发框架设计显然已经在mvvm方式上又发展了一步，virtual dom提出不久，使用前端代码来调用native的思路就开始被实践。相信大家也知道是什么东西。到了今天，我们不得不承认，mnv* 框架开发时代已经到来。
+&emsp;&emsp;当下前端开发框架设计显然已经在mvvm方式上又发展了一步，virtual dom提出不久，使用前端代码来调用native的思路就开始被实践。相信大家也知道是什么东西。到了今天，我们不得不承认，mnv\* 框架开发时代已经到来。
 
-&emsp;&emsp;mnv*是什么，具体可以这么理解，model-Native-View-*，而后面的*则可以认为是 virtual dom 或 mvvm 中的 ViewModel，或者我们也可以自己使用controller来实现的调用方式。想想这样定义是非常合适的。相比之前的不同，就是用 nativeView代替了 htmlView。那么我们再看看下从dom api 到 mnv\*，我们为什么会看到这样的变化。 
+&emsp;&emsp;mnv\*是什么，具体可以这么理解，model-Native-View-\*，而后面的\*则可以认为是 virtual dom 或 mvvm 中的 ViewModel，或者我们也可以自己使用controller来实现的调用方式。想想这样定义是非常合适的。相比之前的不同，就是用 nativeView代替了 htmlView。那么我们再看看下从dom api 到 mnv\*，我们为什么会看到这样的变化。 
 
 #### 一、dom交互
 
@@ -145,9 +145,9 @@ var element = {
 &emsp;&emsp;这里的javascript对象就相当于virtual dom，用户的某个交互操作可能导致dom的多个地方，如果没有vitual dom，那可能就要进行多次dom操作，virtual dom则可以将多个用户交互操作反映在virtual dom上，最后做的virtual dom DIFF算法然后再dispatch到页面view层上。相对于mvvm，在页面初始化渲染阶段，也避免了扫面节点，解析directives，要知道这些操作都是dom操作，使用virtual dom显然能将页面渲染速度提高不少。
 
 
-#### 六、前端 mnv*
+#### 六、前端 mnv\*
 
-&emsp;&emsp;如果说vitual dom减少了dom的交互次数，那么mnv*想要做的一件事情就是完全抛弃使用dom，那样就只能在view层做改进了，使用nativeView来代替目前html的view，而交互逻辑依然可以使用viewModel、virtual Dom或者controller来实现，具体就看实现的方式了。
+&emsp;&emsp;如果说vitual dom减少了dom的交互次数，那么mnv\*想要做的一件事情就是完全抛弃使用dom，那样就只能在view层做改进了，使用nativeView来代替目前html的view，而交互逻辑依然可以使用viewModel、virtual Dom或者controller来实现，具体就看实现的方式了。
 
 &emsp;&emsp;要做到NativeView的操作，这里与之前不同之处就是调用时通过衍生HTML语法通过解释器执行nativeView的渲染，这是就需要在native和衍生HTML语法之间添加一层解释器来解析现有的view描述语法了。比如我们看一个渲染Native的例子：
 
@@ -180,4 +180,4 @@ class App extends Component {
 
 ####  七、总结
 
-&emsp;&emsp;总结下来，前端框架一次次进化，先从效率的方向上提升，然后再性能上完善，这里只是想提出mnv*的一个概念来描述前端native开发的这个阶段。目前mnv的开发模式开始进入视线，也在快速地形成和建立生态。但尽管如此，我们如果需要选择的技术栈方案，当然还是以最适合我们的作为最高原则。切忌过度设计。
+&emsp;&emsp;总结下来，前端框架一次次进化，先从效率的方向上提升，然后再性能上完善，这里只是想提出mnv\*的一个概念来描述前端native开发的这个阶段。目前mnv的开发模式开始进入视线，也在快速地形成和建立生态。但尽管如此，我们如果需要选择的技术栈方案，当然还是以最适合我们的作为最高原则。切忌过度设计。

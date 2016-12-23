@@ -149,7 +149,7 @@ cover:  "assets/category/type-javascript.png"
 目录具体可以参考github地址：[koa-fis3-isomorphic](https://github.com/ouvens/koa-fis3-isomorphic)
 
 &emsp;&emsp;根据这个目录总结一下：
-- 这里编译出前端页面和后端的pages模板（和views相同功能，但避免和原生views命名冲突）是通过fis3配置的不同任务来实现的，例如调试时可以使用`fis3 release dev`和`fis3 release server`来完成不同构建，暂时使用的一个目录
+- 这里编译出前端页面和后端的pages模板（和views相同功能，但避免和原生views命名冲突）是通过fis3配置的不同任务来实现的，例如调试时可以使用fis3 release dev和fis3 release server来完成不同构建，暂时使用的一个目录
 
 - 这里只需要维护一套代码目录规范，前后端打包进行两次（当然你可以合并下两个命令变为一条）
 &emsp;

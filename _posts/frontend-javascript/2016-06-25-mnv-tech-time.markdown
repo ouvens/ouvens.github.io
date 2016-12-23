@@ -8,9 +8,9 @@ categories: frontend-javascript
 cover:  "assets/category/type-javascript.png"
 ---
 
-&emsp;&emsp;当下前端开发框架设计显然已经在mvvm方式上又发展了一步，`virtual dom` 提出不久，使用前端代码来调用native的思路就开始被实践。相信大家也知道是什么东西。到了今天，我们不得不承认，`mnv*` 框架开发时代已经到来。
+&emsp;&emsp;当下前端开发框架设计显然已经在mvvm方式上又发展了一步，virtual dom提出不久，使用前端代码来调用native的思路就开始被实践。相信大家也知道是什么东西。到了今天，我们不得不承认，mnv* 框架开发时代已经到来。
 
-&emsp;&emsp;mnv*是什么，具体可以这么理解，`model-Native-View-*`，而后面的*则可以认为是 `virtual dom` 或 `mvvm` 中的 `ViewModel`，或者我们也可以自己使用controller来实现的调用方式。想想这样定义是非常合适的。相比之前的不同，就是用 `nativeView`代替了 `htmlView`。那么我们再看看下从`dom api` 到 `mnv*`，我们为什么会看到这样的变化。 
+&emsp;&emsp;mnv*是什么，具体可以这么理解，model-Native-View-*，而后面的*则可以认为是 virtual dom 或 mvvm 中的 ViewModel，或者我们也可以自己使用controller来实现的调用方式。想想这样定义是非常合适的。相比之前的不同，就是用 nativeView代替了 htmlView。那么我们再看看下从dom api 到 mnv\*，我们为什么会看到这样的变化。 
 
 #### 一、dom交互
 

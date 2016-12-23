@@ -160,7 +160,7 @@ cover:  "assets/category/type-javascript.png"
 
 ##### 4.4 渲染和直出区分
 
-&emsp;&emsp;受平时项目经验的启发，在koa + swig + fis3 + fis3-parser-swig的条件下，我们配置url地址中的一个特定r参数来判断使用前端渲染还是后台支持，例如：`http://localhost:3000/index.html?r=1` 使用前端渲染，不带`r=1`则使用后台支持。服务端判断带有`r=1`则转到前端的html服务器上，前端判断`r=1`则调用数据render方法；否则后台直接渲染模板，前端不做数据render，只做事件绑定。这样简单可靠的解决了这个问题。
+&emsp;&emsp;受平时项目经验的启发，在koa + swig + fis3 + fis3-parser-swig的条件下，我们配置url地址中的一个特定r参数来判断使用前端渲染还是后台支持，例如：http://localhost:3000/index.html?r=1 使用前端渲染，不带r=1则使用后台支持。服务端判断带有r=1则转到前端的html服务器上，前端判断r=1则调用数据render方法；否则后台直接渲染模板，前端不做数据render，只做事件绑定。这样简单可靠的解决了这个问题。
 
 
 ```

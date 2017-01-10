@@ -490,7 +490,39 @@ _triggerHello: function(){
 
 > 其实我们可以在SSR时也使用Redux管理，可以增强组件的一部分复用性，但目前还没有用到，其实redux是用来管理组件状态变化的，更推荐在前端使用，服务端使用感觉有点不大必要，服务端只用来做首次内容的渲染。
 
-#### 九、小结
+#### 九、事件
+
+&emsp;&emsp;React自定义了一些事件，可以方便我们的开发使用。
+
+stopPropagation() 和 preventDefault()，React标准化了事件对象，因此在不同的浏览器中都会有相同的属性。事件处理器也可以在事件冒泡阶段触发。要在捕获阶段触发某个事件处理器，在事件名字后面追加Capture字符串；例如，使用onClickCapture而不是onClick来在捕获阶段处理点击事件
+
+- 系统事件
+
+onCopy onCut onPaste
+
+- 键盘事件
+
+onKeyDown onKeyPress onKeyUp
+
+- 表单事件
+
+onFocus onBlur onChange onInput onSubmit
+
+- 鼠标事件
+
+onClick onDoubleClick onDrag onDragEnd onDragEnter onDragExitonDragLeave
+onDragOver onDragStart onDrop onMouseDown onMouseEnteronMouseLeave
+onMouseMove onMouseOut onMouseOver onMouseUp
+
+- 触摸事件
+
+onTouchCancel onTouchEnd onTouchMove onTouchStart
+
+- 窗口和滚轮事件
+
+onScroll onWheel
+
+#### 十、小结
 &emsp;&emsp;总得来说react生态的还是很健全的，解决的了实际开发中组件和组件状态管理的问题，前后端同构的模式也解决了React库本身较大前端加载缓慢的弊端，但是如果实际项目中没有Node服务层，个人建议还是不要直接使用React，React库文件比较大，还需要其它的依赖，会大大延后页面渲染时机，这是例如使用Vue会显得更轻量级。
 
 工程化项目代码样例：https://github.com/ouvens/fis3-koa-node （内含react的页面，可直接用来开发大型项目）

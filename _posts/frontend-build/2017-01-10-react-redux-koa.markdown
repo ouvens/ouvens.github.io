@@ -49,13 +49,14 @@ ReactDOM.render(
 );
 ```
 
-> JSX语法代码实际上是JavaScript代码，所以html中的部分标签属性在JSX中不能直接使用，例如html class属性在JSX中需要使用className表示，for属性需要使用htmlFor代替，style属性标签中内容需要写成JSON格式。同时，JSX使用带个{}来包含变量，一次返回的render内容必须放在单独一个标签内，返回统计的多个标签是不允许的，例如下面这样是不对的:
+> JSX语法代码实际上是JavaScript代码，所以html中的部分标签属性在JSX中不能直接使用，例如html class属性在JSX中需要使用className表示，for属性需要使用htmlFor代替，style属性标签中内容需要写成JSON格式。同时，JSX使用单个{}来包含变量模板，一次返回的JSX render内容必须放在单独一个标签内，返回统计的多个标签是不允许的，例如下面这样是不对的:
 
 ```javascript
+// 不正确
 render: function(){
     return (<div>{this.props.name}</div>
         <div>{this.props.site}</div>
-    )
+    );
 }
 ```
 

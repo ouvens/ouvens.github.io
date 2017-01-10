@@ -37,7 +37,7 @@ cover:  "assets/category/type-javascript.png"
 
 &emsp;&emsp;React使用JSX来替代常规的 JavaScript，以为JSX执行时进行了优化，含有错误检测而且方便我们书写模板。
 
-```
+```javascript
 var arr = [
     <h1>W3Cschool教程</h1>,
     <h2>从W3Cschool开始！</h2>,
@@ -54,7 +54,7 @@ ReactDOM.render(
 
 > JSX语法代码实际上是JavaScript代码，所以html中的部分标签属性在JSX中不能直接使用，例如html class属性在JSX中需要使用className表示，for属性需要使用htmlFor代替，style属性标签中内容需要写成JSON格式。同时，JSX使用带个{}来包含变量，一次返回的render内容必须放在单独一个标签内，返回统计的多个标签是不允许的，例如下面这样是不对的:
 
-```
+```javascript
 render: function(){
     return (<div>{this.props.name}</div>
         <div>{this.props.site}</div>
@@ -66,7 +66,7 @@ render: function(){
 
 &emsp;&emsp;实现了输出网站名字和网址的组件，另外if和for循环的输出大家也可以注意下:
 
-```
+```javascript
 var Name = require('Name');
 var Link = require('LINK');
 var list = ['list-item-1', 'list-item-2', 'list-item-3'];
@@ -136,7 +136,7 @@ module.exports = Link;
 
 &emsp;&emsp;下面展示的一个典型实例中创建了 LikeButton 组件，getInitialState 方法用于定义初始状态，也就是一个对象，这个对象可以通过 this.state 属性读取。当用户点击组件，导致状态变化，this.setState 方法就修改状态值，每次修改以后，自动调用 this.render 方法，再次渲染组件。
 
-```
+```javascript
 var LikeButton = React.createClass({
   getInitialState: function() {
     return {liked: 0};
@@ -162,7 +162,7 @@ React.render(
 
 &emsp;&emsp;上面的例子也可以这样来做：
 
-```
+```javascript
 var Name = require('Name');
 var Link = require('LINK');
 var list = ['list-item-1', 'list-item-2', 'list-item-3'];
@@ -262,7 +262,7 @@ setState()总是会触发一次组件重绘，除非在shouldComponentUpdate()�
 
 > React的网络请求通常是将请求的url放在组件props中传入，然后在componentDidMount时发送ajax请求。
 
-```
+```javascript
 var UserGist = React.createClass({
   getInitialState: function() {
     return {
@@ -305,7 +305,7 @@ ReactDOM.render(
 
 &emsp;&emsp;如果绑定一个 ref 属性到render内容的返回值上，组件或其它组件就可以这样来引用这个内容关联的DOM元素。
 
-```
+```javascript
 <input ref="myInput" />
 
 var input = this.refs.myInput;
@@ -317,7 +317,7 @@ var inputRect = input.getBoundingClientRect();
 
 &emsp;&emsp;React服务端渲染需要用到react-dom/server模块，以koa(koa使用教程省略)为例，我们渲染一个服务端返回的页面就可以这样写：
 
-```
+```javascript
 /**
  * react前后端同构页面
  * @param {[type]} req           [description]
@@ -363,7 +363,8 @@ const reactController = function*(req, res) {
 
 &emsp;&emsp;这里用到了一个统一react的render处理模块:
 
-```
+```javascript
+
 'use strict';
 const React = require('react');
 const ReactDOM = require('react-dom');
@@ -402,7 +403,7 @@ module.exports = {
 > 这里这样做还不够，我们还需要将renderToString的字符串内容填充到真正的页面模板中，这里以swig模板为例，同时后端渲染的初始数据状态也要通过storeData变量带到前端页面上，保证初始的页面组件状态和后端直出是一样的。
 
 
-```
+```html
 <div id="testHello">
     <div>{{ reactHello | safe }}</div>
 </div>
@@ -419,7 +420,7 @@ var storeData = {{ storeData | json| raw }};
 &emsp;&emsp;React组件间的通信分为几种，父组件向子组件通信、子组件向父组件通信、同级组件间通信。第一种通常是将父组件的state传给子组件props来实现，父组件state变化，子组件的状态就直接变化；子组件向父组件通信是将父组件的方法通过props传入的子组件中，然后再子组件中调用来通知父组件；同级组件通信则是创建一个共同父组件，先发起子组件向父组件通信，然后再让父组件向另一子组件发起通信。
 &emsp;&emsp;另一种通用的机制就是Redux，Redux可以创建一个全局的store，统一保存管理不同组件的状态，然后通过subscribe订阅事件，当dispatch调用时可以修改组件状态触发订阅事件重新渲染视图。
 
-```
+```javascript
 var reactContent = require('react-content');
 var reactHello = require('react-hello');
 var store = Redux.createStore(reducer);
@@ -442,7 +443,7 @@ reactHello.init(store);
 
 &emsp;&emsp;此时如果react-content组件重要控制react-hello组件状态的变化，reactHello中就可以这样监听
 
-```
+```javascript
 componentDidMount: function() {
 
     var store = this.props.store;
@@ -458,7 +459,7 @@ componentDidMount: function() {
 
 &emsp;&emsp;reactContent中控制reactHello变化的动作中则需要这样写。
 
-```
+```javascript
 // 触发reactHello组件变化
 _triggerHello: function(){
 

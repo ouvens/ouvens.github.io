@@ -8,11 +8,11 @@ categories: frontend-javascript
 cover:  "assets/category/type-javascript.png"
 ---
 
-&emsp;&emsp;虽然别人整理的入门知识资料已经挺多的了，感觉不够全，还是重新整理下。
+&emsp;&emsp;虽然别人整理的入门知识资料已经挺多的了，但不一定适合自己，还是重新整理下。
 
 #### 一、React 安装使用
 
-&emsp;&emsp;使用react，只需要引入react.min.js（eact 的核心库）和react-dom.min.js（提供与 DOM 相关的功能）即可。
+&emsp;&emsp;使用react，只需要引入react.min.js（React 的核心库）和react-dom.min.js（提供与 DOM 相关的功能）即可。
 
 ```html
 <script src="../js/lib/react.min.js"></script>

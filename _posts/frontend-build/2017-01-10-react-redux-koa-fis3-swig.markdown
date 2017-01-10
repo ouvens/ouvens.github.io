@@ -30,7 +30,7 @@ cover:  "assets/category/type-javascript.png"
 </script>
 ```
 
-> 通常为了使用JSX语法，我们需要在文件打包时使用插件将含有JSX语法的文件解析成普通的JavaScript语法，例如fis3-parser-react；如果使用到了ES6的写法，也需要将其转为ES5的格式，例如使用fis3-parser-babel。
+> 通常为了使用JSX语法，我们需要在文件打包时使用插件将含有JSX语法的文件解析成普通的JavaScript语法，例如fis3-parser-react；如果使用到了ES6的写法，也需要将其转为ES5的格式，例如使用fis3-parser-babel。(现在还是用ES5了，babel转的太慢了,影响效率，Node上使用ES6)
 
 #### 二、React JSX
 

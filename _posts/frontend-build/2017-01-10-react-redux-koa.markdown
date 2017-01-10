@@ -311,6 +311,21 @@ var inputValue = input.value;
 var inputRect = input.getBoundingClientRect();
 ```
 
+> 我们也可以使用getDOMNode()方法获取当前真实DOM元素，但是findDOMNode()不能用在无状态组件上。此外也可以使用bind的方法来实现当前事件的处理。
+
+```javascript
+componentDidMound() {
+  const el = findDOMNode(this);
+}
+// do something ...
+onClick = {this.handleClick.bind(this, value1, value2)}
+
+// do something 
+handleClick(value1, value2, ..., event) {
+    // 事件处理函数
+}
+```
+
 #### 七、服务端渲染(SSR)
 
 &emsp;&emsp;React服务端渲染需要用到react-dom/server模块，以koa(koa使用教程省略)为例，我们渲染一个服务端返回的页面就可以这样写：

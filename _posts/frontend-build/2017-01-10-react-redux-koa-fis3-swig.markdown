@@ -255,6 +255,7 @@ setState()总是会触发一次组件重绘，除非在shouldComponentUpdate()�
 &emsp;&emsp;componentDidUpdate:可以修改DOM
 
 - 销毁阶段：
+
 &emsp;&emsp;componentWillUnmount:开发者需要来销毁（组件真正删除之前调用，比如计时器和事件监听器）
 
 ![](http://7tszky.com1.z0.glb.clouddn.com/FhABffZwXfgMzo3nUNi2M6dgYxlD)

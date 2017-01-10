@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "react + redux + fis3 + koa + swig技术栈实现小结"
+title:  "react+redux+swig技术栈实现小结"
 date:   2017-01-10
 author: ouven
 tags:   react redux fis3 koa

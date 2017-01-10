@@ -4,7 +4,7 @@ title:  "react+redux+koa技术栈实现小结"
 date:   2017-01-10
 author: ouven
 tags:   react redux fis3 koa
-categories: frontend-javascript
+categories: frontend-build
 cover:  "assets/category/type-javascript.png"
 ---
 

@@ -8,7 +8,7 @@ categories: frontend-javascript
 cover:  "assets/category/type-javascript.png"
 ---
 
-&emsp;&emsp;虽然别人整理的入门知识资料已经挺多的了，但不一定适合自己，还是重新整理下。
+&emsp;&emsp;虽然别人整理的入门知识资料已经挺多的了，但不一定适合自己，还是重新整理下，理一理React的开发生态。
 
 #### 一、React 安装使用
 

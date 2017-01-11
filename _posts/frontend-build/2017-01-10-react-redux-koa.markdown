@@ -525,4 +525,4 @@ onScroll onWheel
 #### 十、小结
 &emsp;&emsp;总得来说react生态的还是很健全的，解决的了实际开发中组件和组件状态管理的问题，前后端同构的模式也解决了React库本身较大前端加载缓慢的弊端，但是如果实际项目中没有Node服务层，个人建议还是不要直接使用React，React库文件比较大，还需要其它的依赖，会大大延后页面渲染时机，这是例如使用Vue会显得更轻量级。
 
-工程化项目代码样例：https://github.com/ouvens/fis3-koa-node （内含react的页面，可直接用来开发大型项目）
+工程化项目代码样例：[https://github.com/ouvens/fis3-koa-node](https://github.com/ouvens/fis3-koa-node) （内含react的页面，可直接用来开发大型项目）

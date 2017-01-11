@@ -365,3 +365,36 @@ function caculateTower(number){
 
 caculateTower(4); // 24
 ```
+
+###### 21，使用promise 4秒后打印'A'，然后经过3秒打印'B'，再经过2秒打印'C'，再经过一秒打印'D'。
+
+```javascript
+let promise = new Promise(function(resolve){
+    setTimeout(function(){
+        console.log('A');
+        resolve();
+    }, 4000);    
+});
+
+promise.then(function(){
+    return new Promise(function(resolve, reject){
+        setTimeout(function(){
+            console.log('B');
+            resolve();
+        }, 3000)
+    });
+}).then(function(){
+    return new Promise(function(resolve, reject){
+        setTimeout(function(){
+            console.log('C');
+            resolve();
+        }, 2000)
+    });
+}).then(function(){
+    return new Promise(function(resolve, reject){
+        setTimeout(function(){
+            console.log('D');
+        }, 1000)
+    });
+});
+```

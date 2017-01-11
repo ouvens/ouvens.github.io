@@ -317,9 +317,7 @@ $('test').on('click', function(e) {
 ###### 16，实现一个Animal类，type属性为animal，实现一个Dog继承Animal，catogery属性为dog，用Dog类生成一个Mydog实例，name属性为Bolt？（尽量用多种方法实现）
 
 
-###### 17，js实现选择排序算法?（或者其它的排序算法）。
-
-###### 18，实现银行卡号输入时自动按四个数字格式化;数字按照因为数字添加逗号；
+###### 17，实现银行卡号输入时自动按四个数字格式化;数字按照因为数字添加逗号；
 
 ```javascript
 '937493453453'.replace(/(\d{4})/g, '$1 ').trim()
@@ -327,13 +325,13 @@ $('test').on('click', function(e) {
 '937493453453'.split('').reverse().join('').replace(/(\d{3})/g, '$1,').replace(/,$/,'').split('').reverse().join('');
 ```
 
-###### 19，实现一个超大数组的计算。
+###### 18，实现一个超大数组的计算。
 
 function chunkExec(content, processArr, lengthArr, delayArr){
     
 }
 
-###### 20， js保留两位小数的修正方法
+###### 19， js保留两位小数的修正方法
 
 ```javascript
 function fixedNumber(num){
@@ -355,7 +353,7 @@ function fixedNumber(num){
 console.log(fixedNumber(1.2354));
 ```
 
-###### 21,，实现一个迭代相加函数，求阶乘。
+###### 20，实现一个迭代相加函数，求阶乘。
 
 ```javascript
 function caculateTower(number){

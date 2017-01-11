@@ -398,3 +398,45 @@ promise.then(function(){
     });
 });
 ```
+
+###### 22，利用闭包实现一个缓存型函数
+
+```javascript
+function cache(fn){
+    var map = {};
+    return function(){
+        var args = arguments;
+        var key = Array.prototype.join.call(args, ',');
+        console.log("--key=" + key);
+        if(map[key]){
+            console.log("该调用被缓存");
+            return map[key];
+        }else{
+            console.log("该调用未被缓存");
+            return map[key] = fn.apply(this, args);
+        }
+    }
+}
+
+var factorial = cache(function(n){
+   return n < 1?1:n* factorial(n-1);
+});
+
+console.log(factorial(3));
+console.log(factorial(4));
+```
+
+###### 23，fn1和fn2是串行执行的函数fn1();fn2();如果需要将fn1改成异步函数，执行完后再执行fn2，应该怎样改写。
+
+```javascript
+
+function fn1(callback){
+    setTimeout(function(){
+        // f1的代码
+        callback();
+    }, 0);
+}
+
+fn1(fn2);
+
+```

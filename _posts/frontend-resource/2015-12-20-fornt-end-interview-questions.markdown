@@ -9,7 +9,6 @@ cover:  "assets/category/type-javascript.png"
 ---
 
 
-
 ###### 1，数组元素统计方法，统一数组中各个元素出现的次数，使用O(1)复杂度算法。
 
 ```javascript
@@ -439,4 +438,128 @@ function fn1(callback){
 
 fn1(fn2);
 
+```
+
+###### 24，使用javaScript模拟实现一个hashTable
+
+```javascript
+
+function HashTable() {
+    var size = 0;
+    var entry = new Object();
+    this.add = function (key, value) {
+        if (!this.containsKey(key)) {
+            size++;
+        }
+        entry[key] = value;
+    }
+    this.getValue = function (key) {
+        return this.containsKey(key) ? entry[key] : null;
+    }
+    this.remove = function (key) {
+        if (this.containsKey(key) && (delete entry[key])) {
+            size--;
+        }
+    }
+    this.containsKey = function (key) {
+        return (key in entry);
+    }
+    this.containsValue = function (value) {
+        for (var prop in entry) {
+            if (entry[prop] == value) {
+                return true;
+            }
+        }
+        return false;
+    }
+    this.getValues = function () {
+        var values = new Array();
+        for (var prop in entry) {
+            values.push(entry[prop]);
+        }
+        return values;
+    }
+    this.getKeys = function () {
+        var keys = new Array();
+        for (var prop in entry) {
+            keys.push(prop);
+        }
+        return keys;
+    }
+    this.getSize = function () {
+        return size;
+    }
+    this.clear = function () {
+        size = 0;
+        entry = new Object();
+    }
+}
+
+var manHTable = new HashTable();
+manHTable.add("p1","刘备");
+manHTable.add("p2","关羽");
+
+$("#div1").text(manHTable.getValue("p1"));
+
+```
+
+###### 25，实现一个数组中删除一个子数组的函数，要求函数中不return返回新的数组。
+
+```javascript
+    var main = [1, 2, 3, 4, 5];
+    var sub = [3, 4];
+    removeSubArray(main, sub);
+    console.log(main);  // 要求输出为: [1, 2, 5]
+
+    // 要实现的移除子数组函数如下
+    function removeSubArray(main, sub) {
+
+        for(var i = 0; i < sub.length; i++){
+            for(var j = 0; j < main.length; j++ ){
+                if(sub[i] === main[j]){
+                    main.splice(j, 1);
+                    j--;
+                }
+            }
+        }
+    }
+```
+
+> 这里考察了JavaScript的实参和形参的概念，传入的数组在函数是形参的地址，所以函数里面不能使用map等循环，因为会重新生成新的数组，不能影响外面的形参
+
+###### 26，实现一个函数，遍历一个DOM节点下的所以子节点。
+
+```javascript
+function traverse(el, callback){
+    callback(el);
+    var children = el.children;
+    for(var i = 0; i < children.length;i++){
+        traverse(children[i], callback);
+    }
+}
+```
+
+##### 27，下面的结果输出是啥，如何改成正确输出
+
+```javascript
+for (var i = 0; i < 5; i++) {
+  setTimeout(function() { console.log(i); }, i * 1000 );
+}
+// 输出全部是5
+
+for (var i = 0; i < 5; i++) {
+  setTimeout(console.log.bind(console, i), i * 1000 );
+}
+// 输出为0，1，2，3，4
+```
+
+###### 28，下面表达式的输出结果
+
+```javascript
+console.log(1 +  "2" + "2"); // 122
+console.log(1 +  +"2" + "2"); // 32
+console.log(1 +  -"1" + "2"); // 02
+console.log(+"1" +  "1" + "2"); // 112
+console.log( "A" - "B" + "2"); //NaN2
+console.log( "A" - "B" + 2); // Nan
 ```

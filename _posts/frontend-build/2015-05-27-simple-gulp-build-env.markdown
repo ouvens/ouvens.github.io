@@ -92,6 +92,8 @@ Gulp是基于 Node.js的，需要要安装 Node.js
 
 > 新建gulpfile.js 配置文件放在项目根目录下
 
+```
+
    演示项目目录结构
     testProject   (项目名称)
     |–.git      通过git进行版本控制,项目自动生成这个文件
@@ -108,7 +110,7 @@ Gulp是基于 Node.js的，需要要安装 Node.js
         |–index.html    静态文件
     |–gulpfile.js       gulp配置文件
     |–package.json      依赖模块json文件,在项目目录下npm install会安装项目所有的依赖模块，简化项目的安装程序
-
+```
 
 
 
@@ -116,6 +118,7 @@ Gulp是基于 Node.js的，需要要安装 Node.js
 
     gulpfile.js内容如下：
 
+```
     // 引入gulp
     var gulp = require('gulp');
 
@@ -164,6 +167,7 @@ Gulp是基于 Node.js的，需要要安装 Node.js
             gulp.run('lint','scripts');
         });
     });
+```
 
 7、现在，回到命令行窗口，可以直接运行gulp任务了。
 

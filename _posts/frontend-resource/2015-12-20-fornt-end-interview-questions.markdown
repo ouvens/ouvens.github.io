@@ -326,9 +326,11 @@ $('test').on('click', function(e) {
 
 ###### 18，实现一个超大数组的计算。
 
+```javascript
 function chunkExec(content, processArr, lengthArr, delayArr){
     
 }
+```
 
 ###### 19， js保留两位小数的修正方法
 

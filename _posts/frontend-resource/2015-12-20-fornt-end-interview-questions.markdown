@@ -565,3 +565,41 @@ console.log(+"1" +  "1" + "2"); // 112
 console.log( "A" - "B" + "2"); //NaN2
 console.log( "A" - "B" + 2); // Nan
 ```
+
+###### 29，koa中co实现的原理。
+
+```javascript
+'use strict';
+
+function* gen() {
+    var a = yield 'AAA';
+    var b = yield 'BBB';
+    console.log(a);
+    console.log(b);
+}
+
+// 直接用法
+// var A = a();
+// console.log(A.next().value);
+// console.log(A.next().value);
+// console.log(A.next().value);
+
+// co简易实现
+function co(generator) {
+
+    var gen = generator();
+
+    next();
+
+    function next(data) {
+        var result = gen.next(data);
+
+        if (result.done) return ;
+
+        // next传入参数会被当做上一个阶段执行返回的结果，并用作下一阶段的输入
+        next(result.value);
+    };
+}
+
+co(gen);
+```

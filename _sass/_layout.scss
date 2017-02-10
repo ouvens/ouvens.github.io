@@ -98,7 +98,6 @@ blockquote{
     width: 100%;
     text-align: center;
     &.has-cover {
-        color: $white;
         background-repeat: no-repeat;
         background-position: top center;
         .title {
@@ -126,9 +125,10 @@ blockquote{
 */
 
 .navigation {
-    box-shadow: 0 2px $highlight-color;
     padding: 0 1em;
     margin: 0;
+    padding-top: .5em;
+    border-bottom: 3px solid #6bcaee;
     /*
     *   Navigation Menu - http://refills.bourbon.io/unstyled/ (see "Navigation")
     */
@@ -166,7 +166,7 @@ blockquote{
     }
     span.nav {
         float: none;
-        padding: 1.25em 0;
+        padding: .8em 0;
         @include media ($tablet) {
             float: right;
             line-height: 1.5em;
@@ -179,6 +179,7 @@ blockquote{
         overflow: visible;
         padding: 0;
         width: 100%;
+        line-height: 34px;
         @include media ($tablet) {
             display: block;
             margin: 0;

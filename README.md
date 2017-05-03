@@ -1,5 +1,5 @@
 
-## 访问地址(大家别尽量别去fork哈)
+## 访问地址
 
 http://ouvens.github.io/
 
@@ -44,4 +44,5 @@ git push origin gh-pages
 
 本地开发：
 安装jekyll
+gem install gem
 jekyll server start

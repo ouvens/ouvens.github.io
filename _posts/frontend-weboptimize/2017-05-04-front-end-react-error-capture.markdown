@@ -123,7 +123,7 @@ React直接报错不利于定位问题
 ![](http://7tszky.com1.z0.glb.clouddn.com/FjmDKhbEjqlM_QhL_HHA7zzIjTi1)
 封装后直接获取堆栈错误
 
-### 四、小结
+#### 四、小结
 
 &emsp;&emsp;小结一下，其实和原有的方式差别不大，仍然通过try-catch的方式，覆盖到React组件prototype属性中进行异常捕获，极大增加了错误捕获范围，不仅能帮助我们快速定位开发中的问题，也能捕获React线上应用的运行时错误。
 

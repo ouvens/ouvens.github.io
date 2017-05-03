@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "一站式前端异常解决方案"
+title:  "前端一站式异常解决方案"
 date:   2017-05-04
 author: ouven
 tags: 前端异常 错误监控 前端监控
@@ -31,6 +31,7 @@ window.onerror = function(msg, file, row, column, errorObj) {
     }, 5000);
 }
 ```
+
 ```html
 <script src="//domain.com/path/main.js" crossorigin></script>
 ```

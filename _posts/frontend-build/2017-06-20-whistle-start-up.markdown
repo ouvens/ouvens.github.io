@@ -1,3 +1,13 @@
+---
+layout: post
+title:  "whistle工具全程入门"
+date:   2017-06-20
+author: ouven
+tags:   whistle
+categories: frontend-build
+cover:  "assets/category/type-javascript.png"
+---
+
 &emsp;&emsp;接触过前后端开发的同学应该都了解网络请求代理工具fiddler(mac下面常用的是Charles)，可以用来拦截分析请求、包装请求、本地调试和移动端代理开发调试等。多多少少，fiddler和Charles使用起来还是有些区别，不过还好都是可视化的界面使用配置起来也都比较方便。
 
 &emsp;&emsp;先说下使用体验。对于一个追求高效的开发者来说，总是觉得要经常切换两个工具的使用比较麻烦，但是配置规则不通用，fiddler+willow组合的使用很不错，但也总是让电脑比较慢，而且规则配置需要点击输入显得不那么高效；Charles是mac上一款不错的网络代理工具，不过是收费的，价格不便宜（当然你可以找破解），但是路径替换功能使用起来比较麻烦，这点体验很不好。在两个平台上都折腾过，而且要经常切来切去（自己的电脑是windows），后来决定尝试入坑whistle（由avenwu@tencent开发），发现非常高效易用，解决了困扰多年的问题。这里总结梳理下常用的功能和使用方式。

@@ -43,6 +43,9 @@ w2 start
 ctc.i.gtimg.cn/qzone/biz/gdt/atlas/mod/message.html  C:\Users\ouvenzhang\Desktop\edit.html # 单个文件的本地替换
 ctc.i.gtimg.cn/qzone/biz/   C:\Users\ouvenzhang\Desktop\biz\build\  # 文件路径的替换，一般用这条就可以了
 http://ctc.i.gtimg.cn/qzone/biz/ C:\Users\ouvenzhang\Desktop\biz\build\   #只针对http请求的文件路径替换
+
+/ctc\.i\.gtimg\.cn\/qzone\/biz\/gdt\/phoenix\/(\S+?)_\d{8}_\d{3,10}\.js/ E:/svn/daily_1.1.18/app/qzap/build/gdt/phoenix/$1.js # 根据正则替换匹配
+/ctc\.i\.gtimg\.cn\/qzone\/biz\/gdt\/phoenix\/(\S+?)\.js/ E:/svn/daily_1.1.18/app/qzap/build/gdt/phoenix/$1.js # 根据正则替换匹配
 ```
 
 ##### 3，请求转发，将指定域名请求转发到另一个域名

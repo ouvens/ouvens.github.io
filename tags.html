@@ -12,7 +12,7 @@ permalink: /tags/
             {% for post in site.tags[cat] %}
                 <li>
                     <strong>
-                        <a target="_blank" href="{{ post.url | remove_first: '/' | prepend: site.baseurl }}">{{ post.title }}</a>
+                        <a target="_blank" href="/{{ post.url | remove_first: '/' | prepend: site.baseurl }}">{{ post.title }}</a>
                     </strong>
                     <span class="post-date">- {{ post.date | date: "%Y年%m月%d日" }}</span>
                 </li>

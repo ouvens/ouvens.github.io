@@ -16,8 +16,8 @@ name: ouvenzhang
 description: "极限前端, 极限前端社区, ouven的博客, ouvenzhang的博客, www.jixianqianduan.com, github地址, 前端技术, 讲述前端高效技术与前沿。"
 baseurl: "/"  # the subpath of your site, e.g. /blog/
 url: "http://ouvens.github.io" # the base hostname & protocol for your site
-cover: "assets/header_image.png"
-logo: "assets/logo.png"
+cover: "/assets/header_image.png"
+logo: "/assets/logo.png"
 keywords: "极限前端, ouenzhang, ouven, 博客, github, 前端技术, javascript, css, html"
 image: "http://ouvens.github.io/blog/assets/logo.png"
 
@@ -118,12 +118,12 @@ social:
 # These are for automatically generating sharing metadata for FB and Twitter
 # OS Protocol is for sharing the source of your site, if you're interested. For more, see osprotocol.com
 protocols:
-    fb_image: "assets/logo.png"
+    fb_image: "/assets/logo.png"
     fb_image_width: 612
     fb_image_height: 605
     fb_image_type: "image/png"
 
-    twitter_image: "assets/logo.png"
+    twitter_image: "/assets/logo.png"
 
     os_repo: "https://github.com/RichardLitt/wordhoardpress.com"
     os_rcs_type: "git"

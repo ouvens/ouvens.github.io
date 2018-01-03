@@ -8,6 +8,7 @@ categories: frontend-weboptimize
 cover:  "assets/category/type-javascript.png"
 ---
 
+&emsp;&emsp;本文摘自书籍[《现代前端技术解析》](http://jixianqianduan.com/frontend-resource/2017/04/10/modern-front-end-theroy.html)。
 
 &emsp;&emsp;相对于桌面端浏览器，移动端Web浏览器上有一些较为明显的特点：设备屏幕较小、新特性兼容性较好、支持一些较新的HTML5和CSS3特性、需要与Native应用交互等。但移动端浏览器可用的CPU计算资源和网络资源极为有限，因此要做好移动端Web上的优化往往需要做更多的事情。首先，在移动端Web的前端页面渲染中，桌面浏览器端上的优化规则同样适用，此外针对移动端也要做一些极致的优化来达到更好的效果。需要注意的是，并不是移动端的优化原则在桌面浏览器端就不适用，而是由于兼容性和差异性的原因，一些优化原则在移动端更具代表性。
 

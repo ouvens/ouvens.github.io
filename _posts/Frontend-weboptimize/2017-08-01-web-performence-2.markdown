@@ -8,6 +8,7 @@ categories: frontend-weboptimize
 cover:  "assets/category/type-javascript.png"
 ---
 
+&emsp;&emsp;本文摘自书籍[《现代前端技术解析》](http://jixianqianduan.com/frontend-resource/2017/04/10/modern-front-end-theroy.html)。
 
 &emsp;&emsp;通过性能测速和分析，我们基本可以获取收集到页面上大部分的具体性能数据，如何根据这些数据采取适当的方法和手段对当前的页面进行优化呢？目前来看，前端优化的策略很多，如YSlow（YSlow是Yahoo发布的一款Firefox插件，可以对网站的页面性能进行分析，提出对该页面性能优化的建议）原则等，总结起来主要包括网络加载类、页面渲染类、CSS优化类、JavaScript执行类、缓存类、图片类、架构协议类等几类，下面逐一介绍。
 

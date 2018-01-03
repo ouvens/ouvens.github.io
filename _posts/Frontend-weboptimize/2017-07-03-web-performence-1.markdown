@@ -16,7 +16,7 @@ cover:  "assets/category/type-javascript.png"
 
 &emsp;&emsp;获取和衡量一个页面的性能，主要可以通过以下几个方面：Performance Timing API、Profile工具、页面埋点计时、资源加载时序图分析。
 
-一、Performance Timing API
+#### 一、Performance Timing API
 
 &emsp;&emsp;Performance Timing API是一个支持Internet Explorer 9以上版本及WebKit内核浏览器中用于记录页面加载和解析过程中关键时间点的机制，它可以详细记录每个页面资源从开始加载到解析完成这一过程中具体操作发生的时间点，这样根据开始和结束时间戳就可以计算出这个过程所花的时间了。
 
@@ -69,7 +69,7 @@ performance.navigation.redirectCount // 记录当前网页重定向跳转的次�
 
 参考资料：https://www.w3.org/TR/resource-timing/。
 
-二、 Profile工具
+#### 二、 Profile工具
 
 &emsp;&emsp;Performance Timing API描述了页面资源从加载到解析各个阶段的执行关键点时间记录，但是无法统计JavaScript执行过程中系统资源的占用情况。Profile是Chrome和Firefox等标准浏览器提供的一种用于测试页面脚本运行时系统内存和CPU资源占用情况的API，以Chrome浏览器为例，结合Profile，可以实现以下几个功能。
 
@@ -90,7 +90,7 @@ for(let i = 0; i < 100000; i ++){
 console.profileEnd();
 ```
 
-三、  页面埋点计时
+#### 三、  页面埋点计时
 
 &emsp;&emsp;使用Profile可以在一定程度上帮助我们分析页面的性能，但缺点是不够灵活。实际项目中，我们不会过多关注页面内存或CPU资源的消耗情况，因为JavaScript有自动内存回收机制。我们关注更多的是页面脚本逻辑执行的时间。除了Performance Timing的关键过程耗时计算，我们还希望检测代码的具体解析或执行时间，这就不能写很多的console.profile()和console.profileEnd()来逐段实现，为了更加简单地处理这种情况，往往选择通过脚本埋点计时的方式来统计每部分代码的运行时间。
 
@@ -136,7 +136,7 @@ function parseTime(time){
 
 &emsp;&emsp;这种方式常常在移动端页面中使用，因为移动端浏览器HTML解析和JavaScript执行相对较慢，通常为了进行性能优化，我们需要找到页面中执行JavaScript耗时的操作，如果将关键JavaScript的执行过程进行埋点计时并上报，就可以轻松找出JavaScript执行慢的地方，并有针对性地进行优化。
 
-四、  资源加载时序图
+#### 四、资源加载时序图
 
 &emsp;&emsp;我们还可以借助浏览器或其他工具的资源加载时序图来帮助分析页面资源加载过程中的性能问题。这种方法可以粗粒度地宏观分析浏览器的所有资源文件请求耗时和文件加载顺序情况，如保证CSS和数据请求等关键性资源优先加载，JavaScript文件和页面中非关键性图片等内容延后加载。如果因为某个资源的加载十分耗时而阻塞了页面的内容展示，那就要着重考虑。所以，我们需要通过资源加载时序图来辅助分析页面上资源加载顺序的问题。
 

@@ -9,17 +9,6 @@ cover:  "assets/category/type-javascript.png"
 ---
 
 
----
-layout: post
-title:  "前端性能优化（二） 桌面浏览器前端优化策略"
-date:   2017-07-03
-author: ouven
-tags: 前端性能优化 前端性能分析 桌面浏览器 前端优化策略
-categories: frontend-weboptimize
-cover:  "assets/category/type-javascript.png"
----
-
-
 &emsp;&emsp;通过性能测速和分析，我们基本可以获取收集到页面上大部分的具体性能数据，如何根据这些数据采取适当的方法和手段对当前的页面进行优化呢？目前来看，前端优化的策略很多，如YSlow（YSlow是Yahoo发布的一款Firefox插件，可以对网站的页面性能进行分析，提出对该页面性能优化的建议）原则等，总结起来主要包括网络加载类、页面渲染类、CSS优化类、JavaScript执行类、缓存类、图片类、架构协议类等几类，下面逐一介绍。
 
 #### 一、 网络加载类

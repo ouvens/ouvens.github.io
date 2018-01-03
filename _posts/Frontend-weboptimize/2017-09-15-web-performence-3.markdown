@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "前端性能优化（一） 移动端浏览器前端优化策略"
+title:  "前端性能优化（三） 移动端浏览器前端优化策略"
 date:   2017-09-15
 author: ouven
-tags: 前端性能优化 前端性能分析
+tags: 前端性能优化 前端性能分析 移动浏览器 前端优化策略
 categories: frontend-weboptimize
 cover:  "assets/category/type-javascript.png"
 ---

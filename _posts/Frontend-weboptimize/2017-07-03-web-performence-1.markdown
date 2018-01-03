@@ -8,7 +8,6 @@ categories: frontend-weboptimize
 cover:  "assets/category/type-javascript.png"
 ---
 
-&emsp;&emsp;本文摘自书籍[《现代前端技术解析》](http://jixianqianduan.com/frontend-resource/2017/04/10/modern-front-end-theroy.html)。
 
 &emsp;&emsp;前端性能优化是一个很宽泛的概念，本书前面的部分也多多少少提到一些前端优化方法，这也是我们一直在关注的一件重要事情。配合各种方式、手段、辅助系统，前端优化的最终目的都是提升用户体验，改善页面性能，我们常常竭尽全力进行前端页面优化，但却忽略了这样做的效果和意义。先不急于探究前端优化具体可以怎样去做，先看看什么是前端性能，应该怎样去了解和评价前端页面的性能。
 
@@ -147,3 +146,6 @@ function parseTime(time){
 图5-5
 
 &emsp;&emsp;图5-5为使用Fiddler获取浏览器访问地址http://www.jixianqianduan.com时的资源加载时序图。根据此图，我们可以很直观地看到页面上各个资源加载过程所需要的时间和先后顺序，有利于找出加载过程中比较耗时的文件资源，帮助我们有针对性地进行优化。
+
+
+&emsp;&emsp;本文摘自书籍[《现代前端技术解析》](http://jixianqianduan.com/frontend-resource/2017/04/10/modern-front-end-theroy.html)。

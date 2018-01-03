@@ -28,7 +28,7 @@ cover:  "assets/category/type-javascript.png"
 
 图5-4  performance API关键时间点记录
 
-```
+```javascript
 function performanceTest(){
 
     let timing = performance.timing,
@@ -60,7 +60,7 @@ function performanceTest(){
 
 &emsp;&emsp;通过上面的时间戳计算可以得到几个关键步骤所消耗的时间，对前端有意义的几个过程主要是解析DOM树耗时、load事件耗时和整个加载过程耗时等，不过在页面性能获取时我们可以尽量获取更详细的数据信息，以供后面分析。除了资源加载解析的关键点计时，performance还提供了一些其他方面的功能，我们可以根据具体需要进行选择使用。
 
-```
+```javascript
 performance.memory      // 内存占用的具体数据
 performance.now()       // performance.now()方法返回当前网页自performance.timing到现在的时间，可以精确到微秒，用于更加精确的计数。但实际上，目前网页性能通过毫秒来计算就足够了。
 performance.getEntries() // 获取页面所有加载资源的performance timing情况。浏览器获取网页时，会对网页中每一个对象（脚本文件、样式表、图片文件等）发出一个HTTP请求。performance.getEntries方法以数组形式返回所有请求的时间统计信息。
@@ -82,7 +82,7 @@ performance.navigation.redirectCount // 记录当前网页重定向跳转的次�
 
 &emsp;&emsp;使用console.profile()和console.profileEnd()就可以分析中间一段代码执行时系统的内存或CPU资源的消耗情况，然后配合浏览器的Profile查看比较消耗系统内存或CPU资源的操作，这样就可以有针对性地进行优化了。
 
-```
+```javascript
 console.profile();
 // TODOS，需要测试的页面逻辑动作
 for(let i = 0; i < 100000; i ++){
@@ -97,7 +97,7 @@ console.profileEnd();
 
 &emsp;&emsp;页面JavaScript埋点计时比较容易实现，和Performance Timing记录时间戳有点类似，我们可以记录JavaScript代码开始执行的时间戳，后面在需要记录的地方埋点记录结束时的时间戳，最后通过差值来计算一段HTML解析或JavaScript解析执行的时间。为了方便操作，可以将某个操作开始和结束的时间戳记录到一个数组中，然后分析数组之间的间隔就得到每个步骤的执行时间，下面来看一个时间点记录和分析的例子。
 
-```
+```javascript
 let timeList = []; 
 function addTime(tag){ timeList.push({"tag":tag,"time":+new Date}); }
 

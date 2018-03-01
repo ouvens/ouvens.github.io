@@ -19,7 +19,7 @@ cover:  "assets/category/type-javascript.png"
 #### 二、现有的异常监控方案
 
 - window.onerror全局异常捕获
-- 
+
 &emsp;&emsp;目前前端捕获页面异常的方式主要有两种：try...catch和window.onerror。
 
 &emsp;&emsp;window.onerror的方法可以在任何执行上下文中执行，如果给window对象增加一个错误处理函数，便既能处理捕获错误又能保持代码的优雅性了。window.onerror一般用于捕捉脚本语法错误和运行时错误，可以获得出错的文件信息，如出错信息、出错文件、行号等，当前页面执行的所有JavaScript脚本出错都会被捕捉到。

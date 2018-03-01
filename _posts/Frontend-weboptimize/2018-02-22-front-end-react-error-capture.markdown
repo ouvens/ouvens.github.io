@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "前端一站式异常解决方案(全)"
+title:  "前端一站式异常捕获方案(全)"
 date:   2018-02-22
 author: ouven
 tags: 前端异常 错误监控 前端监控

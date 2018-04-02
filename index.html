@@ -62,7 +62,7 @@ layout: default
 
     <span class="page-number">第{{ paginator.page }}页  共{{ paginator.total_pages }}页</span>
     {% if paginator.next_page %}
-    <a class="newer-posts" href="{{ site.baseurl }}page{{paginator.next_page}}">
+    <a class="newer-posts" href="/{{ site.baseurl }}page{{paginator.next_page}}">
       <span class="icon-page">
         <i class="icon-font i-v-right"></i>
       </span>

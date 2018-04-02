@@ -18,7 +18,7 @@ layout: default
   {% for post in paginator.posts %}
   <li>
     <h2>
-      <a class="post-link" target="_blank" href="{{ post.url | remove_first: '/' | prepend: site.baseurl }}">{{ post.title }}</a>
+      <a class="post-link" target="_blank" href="/{{ post.url | remove_first: '/' | prepend: site.baseurl }}">{{ post.title }}</a>
     </h2>
     <section class="post-excerpt" itemprop="description">
       <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
@@ -27,7 +27,7 @@ layout: default
     	<div class="post-date">{{ post.date | date: "%Y年%m月%d日" }}</div>
     	<div class="post-categories">
     	{% if post.categories %} in  {% for cat in post.categories %}
-    		<a href="{{ site.baseurl }}category/?cate={{ cat }}">{{ cat | capitalize }}</a>
+    		<a href="/{{ site.baseurl }}category/?cate={{ cat }}">{{ cat | capitalize }}</a>
     	{% endfor %}{% endif %}
     	</div>
     </section>
@@ -42,13 +42,13 @@ layout: default
 	<p>
     {% if paginator.previous_page %}
       {% if paginator.page == 2 %}
-      <a class="newer-posts" href="{{ site.baseurl }}">
+      <a class="newer-posts" href="/{{ site.baseurl }}">
         <span class="icon-page">
           <i class="icon-font i-v-left"></i>
         </span>
       </a>
       {% else %}
-      <a class="newer-posts" href="{{ site.baseurl }}page{{paginator.previous_page}}">
+      <a class="newer-posts" href="/{{ site.baseurl }}page{{paginator.previous_page}}">
         <span class="icon-page">
           <i class="icon-font i-v-left"></i>
         </span>
